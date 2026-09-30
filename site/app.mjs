@@ -4,8 +4,41 @@ import { trips } from './trips.mjs?v=4';
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
 const history = [];
+export function nextHint(state) {
+  if (state.won) return 'Home. Try another trip.';
+  const direction = Math.sign(state.target - state.boat);
+  const reach = state.boat % 2 === 0;
+  const lock = reach
+    ? direction === 1 ? state.boat / 2 : state.boat / 2 - 1
+    : (state.boat - 1) / 2;
+  const side = reach
+    ? direction === 1 ? 'low' : 'high'
+    : direction === 1 ? 'high' : 'low';
+  const chamber = state.chambers[lock];
+  const gate = side === 'low' ? 'Lower gate' : 'Upper gate';
+  const opposite = side === 'low' ? 'high' : 'low';
+  const targetWater = side === 'low' ? state.reaches[lock] : state.reaches[lock + 1];
+  const sail = direction === 1 ? 'Try Sail forward.' : 'Try Sail back.';
+  if (chamber[side]) return sail;
+  if (chamber[opposite]) return `Try Lock ${lock + 1}: ${opposite === 'low' ? 'Lower' : 'Upper'} gate.`;
+  if (chamber.water !== targetWater) {
+    if (targetWater > chamber.water && state.budget !== null && state.fills >= state.budget) {
+      return 'No water tokens left. Undo or restart.';
+    }
+    return `Try Lock ${lock + 1}: ${side === 'low' ? 'Drain to lower reach.' : 'Fill from upper reach.'}`;
+  }
+  return `Try Lock ${lock + 1}: ${gate}.`;
+}
 const $ = id => document.getElementById(id);
 const lockControls = $('lock-controls');
+let hintVisible = false;
+$('show-hint').addEventListener('click', () => {
+  hintVisible = !hintVisible;
+  $('show-hint').setAttribute('aria-pressed', String(hintVisible));
+  $('show-hint').textContent = hintVisible ? 'Hide the hint' : 'Show a hint';
+  $('hint').hidden = !hintVisible;
+  updateHint();
+});
 const control = (id, label, action, parent) => {
   const button = document.createElement('button');
   button.id = id;
@@ -37,6 +70,7 @@ function order(action) {
   const result = act(state, action);
   if (result.error) {
     $('status').textContent = result.error;
+    updateHint();
     return;
   }
   history.push(state);
@@ -56,6 +90,10 @@ function render() {
   for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won;
   renderLocks();
   renderCanal();
+  updateHint();
+}
+function updateHint() {
+  $('hint').textContent = nextHint(state);
 }
 function renderLocks() {
   lockControls.replaceChildren();

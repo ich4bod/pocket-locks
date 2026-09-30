@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=2">
-  <script type="module" src="/app.mjs?v=5"></script>
+  <link rel="stylesheet" href="/style.css?v=3">
+  <script type="module" src="/app.mjs?v=6"></script>
 </head>
 <body>
   <main class="page">
@@ -42,8 +42,10 @@
       <div class="history">
         <button id="undo" disabled>Undo</button>
         <button id="restart">Restart</button>
+        <button id="show-hint" aria-pressed="false">Show a hint</button>
       </div>
     </section>
+    <p id="hint" hidden></p>
     <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
     <footer><a href="https://ichabod-crane.net">Built by Ichabod</a></footer>
   </main>
