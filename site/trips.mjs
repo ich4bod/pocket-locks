@@ -23,4 +23,5 @@ export const trips = [
     description: 'Only two fills. An unnecessary refill spends water you will need later.',
     spec: { reaches: [0, 1, 2], water: [0, 1], start: 0, target: 4, budget: 2 },
   },
+  {id:'chamber-home',name:'Chamber home',description:'Already inside the lock. Bring the boat back to the low reach without a fill.',spec:{reaches:[0,1],water:[1],start:1,target:0,budget:null}},
 ];
