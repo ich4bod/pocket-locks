@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs';
-import { trips } from './trips.mjs?v=3';
+import { trips } from './trips.mjs?v=4';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -30,7 +30,7 @@ function resetTrip() {
   state = create(selectedTrip.spec);
   history.length = 0;
   $('trip-description').textContent = selectedTrip.description;
-  $('water-note').hidden = selectedTrip.id !== 'thirsty';
+  $('water-note').hidden = selectedTrip.spec.budget === null;
   render();
 }
 function order(action) {
