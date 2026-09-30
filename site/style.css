@@ -3,12 +3,20 @@
 body { margin: 0; background: #f3ecd9; font-size: 16px; }
 .page { width: min(100% - 32px, 1000px); margin: 24px auto 32px; }
 header { margin: 0 0 18px; }
+.trip-picker { display: grid; grid-template-columns: auto minmax(180px, 280px); align-items: center; gap: 8px 12px; margin: 0 0 16px; }
+.trip-picker label { font-weight: 700; }
+.trip-picker select { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
+#trip-description, #water-note { grid-column: 1 / -1; margin: 0; }
 h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 .deck { margin: 8px 0 0; }
 #canal { display: block; width: 100%; height: auto; background: #d9dfc4; border: 2px solid #183b43; border-radius: 12px; }
 .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-top: 18px; padding: 18px; background: #fff; border: 2px solid #183b43; border-radius: 12px; }
-h2 { grid-column: 1 / -1; margin: 0; font: bold 24px Georgia, serif; }
-.lock-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+#water-budget { grid-column: 1 / -1; justify-self: start; margin: 0; padding: 6px 10px; border-radius: 999px; background: #183b43; color: #fff; font: 14px/1.2 ui-monospace, monospace; }
+#lock-controls { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lock-card { min-width: 0; padding: 12px; border: 2px solid #d9dfc4; border-radius: 9px; }
+.lock-card h3 { margin: 0 0 10px; font: bold 20px Georgia, serif; }
+.lock-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.lock-card p { margin: 8px 0 0; }
 .status-panel { align-self: center; }
 .status-panel p { margin: 4px 0; }
 #status { min-height: 1.5em; font-weight: 700; }
@@ -31,8 +39,8 @@ a { color: #183b43; }
 @media (max-width: 499px) {
   .page { width: calc(100% - 24px); margin-top: 16px; }
   .controls { grid-template-columns: 1fr; gap: 12px; padding: 14px; }
-  h2 { grid-column: auto; }
-  .lock-controls { grid-template-columns: 1fr 1fr; }
+  #lock-controls { grid-template-columns: 1fr; }
+  .lock-buttons { grid-template-columns: 1fr 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0s !important; animation-duration: 0s !important; }

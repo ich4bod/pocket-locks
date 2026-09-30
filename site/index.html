@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=1">
-  <script type="module" src="/app.mjs?v=1"></script>
+  <link rel="stylesheet" href="/style.css?v=2">
+  <script type="module" src="/app.mjs?v=2"></script>
 </head>
 <body>
   <main class="page">
@@ -14,15 +14,23 @@
       <h1>Pocket Locks</h1>
       <p class="deck">Carry a little boat uphill. Match the water before you open a gate.</p>
     </header>
+    <section class="trip-picker" aria-label="Choose a canal trip">
+      <label for="trip">Trip</label>
+      <select id="trip">
+        <option value="uphill">First hill</option>
+        <option value="downhill">Downhill delivery</option>
+        <option value="two-step">Two-step hill</option>
+        <option value="thirsty">Thirsty hill</option>
+      </select>
+      <p id="trip-description">Lift the boat into the upper reach.</p>
+      <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
+    </section>
     <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
-    <section class="controls" aria-labelledby="lock-heading">
-      <h2 id="lock-heading">Lock 1</h2>
+    <section class="controls">
+      <p id="water-budget" hidden></p>
       <div id="lock-controls" class="lock-controls"></div>
       <div class="status-panel" aria-live="polite">
         <p id="status">Boat in reach 1.</p>
-        <p id="lower-state">Lower gate: shut</p>
-        <p id="upper-state">Upper gate: shut</p>
-        <p id="water-state">Water level: 0</p>
         <p id="moves-state">Moves: 0</p>
       </div>
       <div class="sailing">

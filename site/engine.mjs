@@ -47,6 +47,9 @@ export function act(state, action) {
     if (chamber.low || chamber.high) return reject('Close both gates before changing the water.');
     const level = side === 'low' ? state.reaches[lock] : state.reaches[lock + 1];
     if (chamber.water === level) return reject('The water is already at that level.');
+    if (level > chamber.water && state.budget !== null && state.fills >= state.budget) {
+      return reject('No water tokens left. Undo or restart.');
+    }
     const chambers = state.chambers.map((item, index) => index === lock
       ? { ...item, water: level }
       : { ...item });
