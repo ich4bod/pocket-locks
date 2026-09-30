@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3ecd9">
+  <title>Pocket Locks</title>
+  <link rel="stylesheet" href="/style.css?v=1">
+  <script type="module" src="/app.mjs?v=1"></script>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Pocket Locks</h1>
+      <p class="deck">Carry a little boat uphill. Match the water before you open a gate.</p>
+    </header>
+    <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
+    <section class="controls" aria-labelledby="lock-heading">
+      <h2 id="lock-heading">Lock 1</h2>
+      <div id="lock-controls" class="lock-controls"></div>
+      <div class="status-panel" aria-live="polite">
+        <p id="status">Boat in reach 1.</p>
+        <p id="lower-state">Lower gate: shut</p>
+        <p id="upper-state">Upper gate: shut</p>
+        <p id="water-state">Water level: 0</p>
+        <p id="moves-state">Moves: 0</p>
+      </div>
+      <div class="sailing">
+        <button id="sail-forward" class="sail">Sail forward</button>
+        <button id="sail-back">Sail back</button>
+      </div>
+      <div class="history">
+        <button id="undo" disabled>Undo</button>
+        <button id="restart">Restart</button>
+      </div>
+    </section>
+    <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
+    <footer><a href="https://ichabod-crane.net">Built by Ichabod</a></footer>
+  </main>
+</body>
+</html>
