@@ -107,6 +107,8 @@ function renderCanal() {
     const y = 300 - 70 * zone.level;
     add('rect', { x, y, width: zoneWidth, height: 400 - y, class: 'water' });
     add('line', { x1: x, y1: 300, x2: x + zoneWidth, y2: 300, stroke: '#183b43', 'stroke-width': 3, opacity: .35 });
+    const name = zone.type === 'reach' ? `Reach ${Math.floor(index / 2) + 1}` : `Lock ${(index + 1) / 2}`;
+    add('text', { x: x + zoneWidth / 2, y: 38, 'text-anchor': 'middle', 'font-size': 22, 'font-weight': 'bold', 'font-family': 'system-ui, sans-serif', fill: '#183b43', class: 'zone-label' }).textContent = name;
   });
   state.chambers.forEach((chamber, lock) => {
     const chamberX = (2 * lock + 1) * zoneWidth;
@@ -118,6 +120,17 @@ function renderCanal() {
     gate('low', chamberX, chamber.low);
     gate('high', chamberX + zoneWidth, chamber.high);
   });
+  const targetLevel = state.target % 2 === 0
+    ? state.reaches[state.target / 2]
+    : state.chambers[(state.target - 1) / 2].water;
+  const targetCenter = (state.target + .5) * zoneWidth;
+  const flagPoleX = targetCenter + 45;
+  const waterY = 300 - 70 * targetLevel;
+  const flagTop = waterY - 75;
+  const marker = add('g', { id: 'destination-marker', 'data-zone': state.target });
+  add('line', { x1: flagPoleX, y1: flagTop, x2: flagPoleX, y2: waterY, stroke: '#183b43', 'stroke-width': 4 }, marker);
+  add('path', { d: `M${flagPoleX} ${flagTop} h32 v22 Z`, fill: '#e56b54' }, marker);
+  add('text', { id: 'destination-label', x: flagPoleX, y: flagTop - 10, 'text-anchor': 'middle', 'font-size': 20, 'font-family': 'system-ui, sans-serif', fill: '#183b43' }, marker).textContent = 'Home';
   const center = (state.boat + .5) * zoneWidth;
   const level = state.boat % 2 === 0 ? state.reaches[state.boat / 2] : state.chambers[(state.boat - 1) / 2].water;
   const base = 300 - 70 * level;
