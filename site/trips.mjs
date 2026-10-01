@@ -29,4 +29,5 @@ export const trips = [
   {id:'middle-mooring',name:'Middle mooring',description:'Start between the locks. Take the boat up the second chamber with one fill.',spec:{reaches:[0,1,2],water:[0,1],start:2,target:4,budget:1}},
   {id:'high-chamber-home',name:'High chamber home',description:'Drain the upper chamber, then prepare the lower lock to bring the boat home. One fill is enough.',spec:{reaches:[0,1,2],water:[0,2],start:3,target:0,budget:1}},
   {"id": "long-climb", "name": "Long climb", "description": "Three locks, three fills. Take the boat all the way to the top.", "spec": {"reaches": [0, 1, 2, 3], "water": [0, 1, 2], "start": 0, "target": 6, "budget": 3}},
+  {"id": "long-way-home", "name": "Long way home", "description": "The chambers start low. Prepare each one for a boat coming down from above.", "spec": {"reaches": [0, 1, 2, 3], "water": [0, 1, 2], "start": 6, "target": 0, "budget": 3}},
 ];
