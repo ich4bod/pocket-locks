@@ -32,4 +32,5 @@ export const trips = [
   {"id": "long-way-home", "name": "Long way home", "description": "The chambers start low. Prepare each one for a boat coming down from above.", "spec": {"reaches": [0, 1, 2, 3], "water": [0, 1, 2], "start": 6, "target": 0, "budget": 3}},
   {"id": "last-chamber-home", "name": "Last chamber home", "description": "Start inside the top lock. All three chambers are full; bring the boat home without a fill.", "spec": {"reaches": [0, 1, 2, 3], "water": [1, 2, 3], "start": 5, "target": 0, "budget": 0}},
   {id:"there-and-back",name:"There and back",description:"Visit the upper reach, then bring the boat back. The water you leave behind matters.",spec:{reaches:[0,1],water:[0],start:0,target:0,budget:1,stops:[2,0]}},
+  {id:"chamber-visit",name:"Chamber visit",description:"Visit the second lock, then turn around. You only need to fill the first lock.",spec:{reaches:[0,1,2],water:[0,1],start:0,target:0,budget:1,stops:[3,0]}},
 ];
