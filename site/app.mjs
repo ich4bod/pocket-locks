@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs';
-import { trips } from './trips.mjs?v=4';
+import { trips } from './trips.mjs?v=5';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
