@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs?v=2';
-import { trips } from './trips.mjs?v=10';
+import { trips } from './trips.mjs?v=11';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -78,6 +78,12 @@ function order(action) {
   render();
 }
 function render() {
+  $('journey-stage').hidden = !state.stops;
+  if (state.stops) {
+    $('journey-stage').textContent = state.won
+      ? 'All stops visited.'
+      : `Stop ${state.stopIndex + 1} of ${state.stops.length} · ${state.target % 2 === 0 ? `Reach ${state.target / 2 + 1}` : `Lock ${(state.target + 1) / 2}`}`;
+  }
   $('water-budget').hidden = state.budget === null;
   if (state.budget !== null) $('water-budget').textContent = `Water tokens: ${state.budget - state.fills} / ${state.budget}`;
   $('status').textContent = state.won
@@ -170,7 +176,7 @@ function renderCanal() {
   const marker = add('g', { id: 'destination-marker', 'data-zone': state.target });
   add('line', { x1: flagPoleX, y1: flagTop, x2: flagPoleX, y2: waterY, stroke: '#183b43', 'stroke-width': 4 }, marker);
   add('path', { d: `M${flagPoleX} ${flagTop} h32 v22 Z`, fill: '#e56b54' }, marker);
-  add('text', { id: 'destination-label', x: flagPoleX, y: flagTop - 10, 'text-anchor': 'middle', 'font-size': 20, 'font-family': 'system-ui, sans-serif', fill: '#183b43' }, marker).textContent = 'Home';
+  add('text', { id: 'destination-label', x: flagPoleX, y: flagTop - 10, 'text-anchor': 'middle', 'font-size': 20, 'font-family': 'system-ui, sans-serif', fill: '#183b43' }, marker).textContent = state.stops && state.stopIndex < state.stops.length - 1 ? 'Stop' : 'Home';
   const center = (state.boat + .5) * zoneWidth;
   const level = state.boat % 2 === 0 ? state.reaches[state.boat / 2] : state.chambers[(state.boat - 1) / 2].water;
   const base = 300 - unit * level;
