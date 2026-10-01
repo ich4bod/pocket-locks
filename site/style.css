@@ -12,6 +12,7 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 #canal { display: block; width: 100%; height: auto; background: #d9dfc4; border: 2px solid #183b43; border-radius: 12px; }
 .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-top: 18px; padding: 18px; background: #fff; border: 2px solid #183b43; border-radius: 12px; }
 #water-budget { grid-column: 1 / -1; justify-self: start; margin: 0; padding: 6px 10px; border-radius: 999px; background: #183b43; color: #fff; font: 14px/1.2 ui-monospace, monospace; }
+.journey-controls { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 #lock-controls { order: 1; grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .lock-card { min-width: 0; padding: 12px; border: 2px solid #d9dfc4; border-radius: 9px; }
 .lock-card h3 { margin: 0 0 10px; font: bold 20px Georgia, serif; }
@@ -20,7 +21,7 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 .status-panel { align-self: center; }
 .status-panel p { margin: 4px 0; }
 #status { min-height: 1.5em; font-weight: 700; }
-#journey-stage { grid-column: 1 / -1; margin: 0; color: #183b43; font-size: 16px; font-weight: 700; }
+#journey-stage { flex-basis: 100%; margin: 0; color: #183b43; font-size: 16px; font-weight: 700; }
 #hint { min-height: 48px; margin: 12px 0; padding: 12px; background: #f3ecd9; color: #183b43; font-size: 16px; }
 .sailing, .history { display: flex; flex-wrap: wrap; gap: 10px; }
 button { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; cursor: pointer; }

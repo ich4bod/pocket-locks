@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="stylesheet" href="/style.css?v=6">
   <script type="module" src="/app.mjs?v=14"></script>
 </head>
 <body>
@@ -38,21 +38,23 @@
     <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
     <section class="controls">
       <p id="water-budget" hidden></p>
+      <div class="journey-controls">
+        <p id="journey-stage" hidden></p>
+        <div class="status-panel" aria-live="polite">
+          <p id="status">Boat in reach 1.</p>
+          <p id="moves-state">Moves: 0</p>
+        </div>
+        <div class="sailing">
+          <button id="sail-forward" class="sail">Sail forward</button>
+          <button id="sail-back">Sail back</button>
+        </div>
+        <div class="history">
+          <button id="undo" disabled>Undo</button>
+          <button id="restart">Restart</button>
+          <button id="show-hint" aria-pressed="false">Show a hint</button>
+        </div>
+      </div>
       <div id="lock-controls" class="lock-controls"></div>
-      <p id="journey-stage" hidden></p>
-      <div class="status-panel" aria-live="polite">
-        <p id="status">Boat in reach 1.</p>
-        <p id="moves-state">Moves: 0</p>
-      </div>
-      <div class="sailing">
-        <button id="sail-forward" class="sail">Sail forward</button>
-        <button id="sail-back">Sail back</button>
-      </div>
-      <div class="history">
-        <button id="undo" disabled>Undo</button>
-        <button id="restart">Restart</button>
-        <button id="show-hint" aria-pressed="false">Show a hint</button>
-      </div>
     </section>
     <p id="hint" hidden></p>
     <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
