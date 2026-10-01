@@ -35,4 +35,5 @@ export const trips = [
   {id:"chamber-visit",name:"Chamber visit",description:"Visit the second lock, then turn around. You only need to fill the first lock.",spec:{reaches:[0,1,2],water:[0,1],start:0,target:0,budget:1,stops:[3,0]}},
   {"id": "two-hills-home", "name": "Two hills and home", "description": "Climb both hills, then bring the boat back. Keep the water you leave behind.", "spec": {"reaches": [0, 1, 2], "water": [0, 1], "start": 0, "target": 0, "budget": 2, "stops": [4, 0]}},
   {"id": "middle-errand", "name": "Middle errand", "description": "Visit the middle reach, carry on to the top, then moor in the middle again.", "spec": {"reaches": [0, 1, 2], "water": [0, 1], "start": 0, "target": 2, "budget": 2, "stops": [2, 4, 2]}},
+  {"id": "two-deliveries", "name": "Two deliveries", "description": "Visit the middle reach, return to the beginning, then climb to the top. The first lock must lift you twice.", "spec": {"reaches": [0, 1, 2], "water": [0, 1], "start": 0, "target": 4, "budget": 3, "stops": [2, 0, 4]}},
 ];
