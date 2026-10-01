@@ -1,4 +1,4 @@
-import { create, act } from './engine.mjs';
+import { create, act } from './engine.mjs?v=2';
 import { trips } from './trips.mjs?v=10';
 
 let selectedTrip = trips[0];

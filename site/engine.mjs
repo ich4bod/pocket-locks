@@ -1,7 +1,7 @@
 export function create(spec) {
   const reaches = [...spec.reaches];
   const water = [...spec.water];
-  return {
+  const state = {
     reaches,
     chambers: water.map(level => ({ water: level, low: false, high: false })),
     boat: spec.start,
@@ -12,6 +12,12 @@ export function create(spec) {
     budget: spec.budget,
     won: false,
   };
+  if (spec.stops) {
+    state.stops = [...spec.stops];
+    state.stopIndex = 0;
+    state.target = state.stops[0];
+  }
+  return state;
 }
 
 export function act(state, action) {
@@ -81,6 +87,14 @@ export function act(state, action) {
 
 function succeed(state, changes) {
   const next = { ...state, ...changes, moves: state.moves + 1 };
-  next.won = next.boat === next.target;
+  if (next.boat === next.target) {
+    if (next.stops && next.stopIndex + 1 < next.stops.length) {
+      next.stopIndex++;
+      next.target = next.stops[next.stopIndex];
+      next.won = false;
+    } else {
+      next.won = true;
+    }
+  }
   return { state: next, error: null };
 }
