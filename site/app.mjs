@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs';
-import { trips } from './trips.mjs?v=7';
+import { trips } from './trips.mjs?v=8';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -126,6 +126,8 @@ function renderLocks() {
 }
 function renderCanal() {
   const svg = $('canal');
+  const levelMax = Math.max(...state.reaches, ...state.chambers.map(c => c.water));
+  const unit = levelMax > 2 ? 150 / levelMax : 70;
   const zoneWidth = 1000 / (state.reaches.length + state.chambers.length);
   const zones = [];
   for (let i = 0; i < state.reaches.length; i++) {
@@ -142,7 +144,7 @@ function renderCanal() {
   add('rect', { x: 0, y: 300, width: 1000, height: 100, class: 'bank' });
   zones.forEach((zone, index) => {
     const x = index * zoneWidth;
-    const y = 300 - 70 * zone.level;
+    const y = 300 - unit * zone.level;
     add('rect', { x, y, width: zoneWidth, height: 400 - y, class: 'water' });
     add('line', { x1: x, y1: 300, x2: x + zoneWidth, y2: 300, stroke: '#183b43', 'stroke-width': 3, opacity: .35 });
     const name = zone.type === 'reach' ? `Reach ${Math.floor(index / 2) + 1}` : `Lock ${(index + 1) / 2}`;
@@ -151,8 +153,8 @@ function renderCanal() {
   state.chambers.forEach((chamber, lock) => {
     const chamberX = (2 * lock + 1) * zoneWidth;
     const gate = (side, x, open) => {
-      const waterY = 300 - 70 * chamber.water;
-      const boundaryY = Math.min(waterY, 300 - 70 * (side === 'low' ? state.reaches[lock] : state.reaches[lock + 1]));
+      const waterY = 300 - unit * chamber.water;
+      const boundaryY = Math.min(waterY, 300 - unit * (side === 'low' ? state.reaches[lock] : state.reaches[lock + 1]));
       add('line', { x1: x, y1: boundaryY - 8, x2: open ? x + (side === 'low' ? -38 : 38) : x, y2: boundaryY + (open ? 35 : 55), class: 'gate' });
     };
     gate('low', chamberX, chamber.low);
@@ -162,8 +164,8 @@ function renderCanal() {
     ? state.reaches[state.target / 2]
     : state.chambers[(state.target - 1) / 2].water;
   const targetCenter = (state.target + .5) * zoneWidth;
-  const flagPoleX = targetCenter + 45;
-  const waterY = 300 - 70 * targetLevel;
+  const flagPoleX = Math.min(targetCenter + 45, 960);
+  const waterY = 300 - unit * targetLevel;
   const flagTop = waterY - 75;
   const marker = add('g', { id: 'destination-marker', 'data-zone': state.target });
   add('line', { x1: flagPoleX, y1: flagTop, x2: flagPoleX, y2: waterY, stroke: '#183b43', 'stroke-width': 4 }, marker);
@@ -171,7 +173,7 @@ function renderCanal() {
   add('text', { id: 'destination-label', x: flagPoleX, y: flagTop - 10, 'text-anchor': 'middle', 'font-size': 20, 'font-family': 'system-ui, sans-serif', fill: '#183b43' }, marker).textContent = 'Home';
   const center = (state.boat + .5) * zoneWidth;
   const level = state.boat % 2 === 0 ? state.reaches[state.boat / 2] : state.chambers[(state.boat - 1) / 2].water;
-  const base = 300 - 70 * level;
+  const base = 300 - unit * level;
   const boat = add('g', { class: 'boat', transform: `translate(${center - 58} ${base - 22})` });
   add('path', { d: 'M8 22 L108 22 L92 42 Q58 52 24 42 Z', class: 'hull' }, boat);
   add('rect', { x: 43, y: 2, width: 34, height: 20, rx: 3, class: 'cabin' }, boat);
