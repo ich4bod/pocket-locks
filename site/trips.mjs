@@ -34,4 +34,5 @@ export const trips = [
   {id:"there-and-back",name:"There and back",description:"Visit the upper reach, then bring the boat back. The water you leave behind matters.",spec:{reaches:[0,1],water:[0],start:0,target:0,budget:1,stops:[2,0]}},
   {id:"chamber-visit",name:"Chamber visit",description:"Visit the second lock, then turn around. You only need to fill the first lock.",spec:{reaches:[0,1,2],water:[0,1],start:0,target:0,budget:1,stops:[3,0]}},
   {"id": "two-hills-home", "name": "Two hills and home", "description": "Climb both hills, then bring the boat back. Keep the water you leave behind.", "spec": {"reaches": [0, 1, 2], "water": [0, 1], "start": 0, "target": 0, "budget": 2, "stops": [4, 0]}},
+  {"id": "middle-errand", "name": "Middle errand", "description": "Visit the middle reach, carry on to the top, then moor in the middle again.", "spec": {"reaches": [0, 1, 2], "water": [0, 1], "start": 0, "target": 2, "budget": 2, "stops": [2, 4, 2]}},
 ];
