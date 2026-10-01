@@ -17,23 +17,31 @@
     <section class="trip-picker" aria-label="Choose a canal trip">
       <label for="trip">Trip</label>
       <select id="trip">
-        <option value="uphill">First hill</option>
-        <option value="downhill">Downhill delivery</option>
-        <option value="two-step">Two-step hill</option>
-        <option value="thirsty">Thirsty hill</option>
-        <option value="chamber-home">Chamber home</option>
-        <option value="long-descent">Long descent</option>
-        <option value="ready-water">Ready water</option>
-        <option value="middle-mooring">Middle mooring</option>
-        <option value="high-chamber-home">High chamber home</option>
-        <option value="long-climb">Long climb</option>
-        <option value="long-way-home">Long way home</option>
-        <option value="last-chamber-home">Last chamber home</option>
-        <option value="there-and-back">There and back</option>
-        <option value="chamber-visit">Chamber visit</option>
-        <option value="two-hills-home">Two hills and home</option>
-        <option value="middle-errand">Middle errand</option>
-        <option value="two-deliveries">Two deliveries</option>
+        <optgroup label="Learn the gates">
+          <option value="uphill">First hill</option>
+          <option value="downhill">Downhill delivery</option>
+          <option value="chamber-home">Chamber home</option>
+          <option value="two-step">Two-step hill</option>
+          <option value="thirsty">Thirsty hill</option>
+        </optgroup>
+        <optgroup label="Water already waiting">
+          <option value="ready-water">Ready water</option>
+          <option value="high-chamber-home">High chamber home</option>
+          <option value="last-chamber-home">Last chamber home</option>
+        </optgroup>
+        <optgroup label="Longer crossings">
+          <option value="long-descent">Long descent</option>
+          <option value="middle-mooring">Middle mooring</option>
+          <option value="long-climb">Long climb</option>
+          <option value="long-way-home">Long way home</option>
+        </optgroup>
+        <optgroup label="Visit and return">
+          <option value="there-and-back">There and back</option>
+          <option value="chamber-visit">Chamber visit</option>
+          <option value="two-hills-home">Two hills and home</option>
+          <option value="middle-errand">Middle errand</option>
+          <option value="two-deliveries">Two deliveries</option>
+        </optgroup>
       </select>
       <p id="trip-description">Lift the boat into the upper reach.</p>
       <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
