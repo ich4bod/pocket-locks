@@ -122,10 +122,17 @@ function renderLocks() {
   lockControls.replaceChildren();
   state.chambers.forEach((chamber, lock) => {
     const card = document.createElement('article');
-    card.className = 'lock-card';
+    const occupied = state.boat === 2 * lock + 1;
+    card.className = occupied ? 'lock-card boat-lock' : 'lock-card';
     const heading = document.createElement('h3');
     heading.textContent = `Lock ${lock + 1}`;
     card.append(heading);
+    if (occupied) {
+      const presence = document.createElement('p');
+      presence.className = 'boat-presence';
+      presence.textContent = 'Boat here';
+      card.append(presence);
+    }
     const buttons = document.createElement('div');
     buttons.className = 'lock-buttons';
     const gateLow = control(`gate-${lock}-low`, 'Lower gate', () => order({ type: 'gate', lock, side: 'low' }), buttons);

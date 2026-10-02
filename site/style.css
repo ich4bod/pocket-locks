@@ -23,7 +23,9 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 .journey-controls { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 #lock-controls { order: 1; grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .lock-card { min-width: 0; padding: 12px; border: 2px solid #d9dfc4; border-radius: 9px; }
+.lock-card.boat-lock { border-color: #e56b54; background: #fff; }
 .lock-card h3 { margin: 0 0 10px; font: bold 20px Georgia, serif; }
+.lock-card p.boat-presence { margin: 0 0 10px; color: #183b43; font: bold 13px system-ui, sans-serif; }
 .lock-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .lock-card p { margin: 8px 0 0; }
 .status-panel { align-self: center; }
