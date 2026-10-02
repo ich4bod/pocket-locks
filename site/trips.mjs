@@ -43,4 +43,5 @@ export const trips = [
   {"id": "middle-patrol", "name": "Middle patrol", "description": "Start at Reach 2. Visit the top chamber, inspect the bottom chamber, then moor at Reach 3.", "spec": {"reaches": [0, 1, 2, 3], "water": [0, 2, 2], "start": 2, "target": 4, "budget": 3, "stops": [5, 1, 4]}},
   {"id": "double-summit", "name": "Two visits to the top", "description": "From Reach 3, visit the top, go down to Reach 2, then climb to the top again. The last lock lifts you twice.", "spec": {"reaches": [0, 1, 2, 3], "water": [0, 1, 2], "start": 4, "target": 6, "budget": 4, "stops": [6, 2, 6]}},
   {"id": "chamber-relay", "name": "Chamber relay", "description": "Leave the bottom chamber, visit the top chamber and the middle chamber, then sail to the top and home.", "spec": {"reaches": [0, 1, 2, 3], "water": [1, 1, 3], "start": 1, "target": 0, "budget": 2, "stops": [5, 3, 6, 0]}},
+  {"id": "steep-middle", "name": "The tall middle hill", "description": "The second lift is taller than the first. Visit Reach 3, then return home on two fill tokens.", "spec": {"reaches": [0, 1, 4], "water": [0, 1], "start": 0, "target": 0, "budget": 2, "stops": [4, 0]}},
 ];
