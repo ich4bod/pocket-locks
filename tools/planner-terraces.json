@@ -1,0 +1,83 @@
+[
+  {
+    "id": "steep-middle",
+    "name": "The tall middle hill",
+    "description": "The second lift is taller than the first. Visit Reach 3, then return home on two fill tokens.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4
+      ],
+      "water": [
+        0,
+        1
+      ],
+      "start": 0,
+      "target": 0,
+      "budget": 2,
+      "stops": [
+        4,
+        0
+      ]
+    },
+    "path": "gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back",
+    "moves": 22,
+    "fills": 2
+  },
+  {
+    "id": "high-landing",
+    "name": "High landing",
+    "description": "Start inside the upper chamber. Visit the low reach, then climb both hills to Reach 3.",
+    "spec": {
+      "reaches": [
+        0,
+        3,
+        4
+      ],
+      "water": [
+        3,
+        3
+      ],
+      "start": 3,
+      "target": 4,
+      "budget": 2,
+      "stops": [
+        0,
+        4
+      ]
+    },
+    "path": "gate-0-high,gate-1-low,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward",
+    "moves": 18,
+    "fills": 2
+  },
+  {
+    "id": "terrace-patrol",
+    "name": "Terrace patrol",
+    "description": "From Reach 3, inspect the bottom chamber, visit the top chamber, then moor at Reach 2.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "water": [
+        2,
+        2,
+        6
+      ],
+      "start": 4,
+      "target": 2,
+      "budget": 2,
+      "stops": [
+        1,
+        5,
+        2
+      ]
+    },
+    "path": "gate-0-high,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,sail-forward,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,water-2-low,gate-2-low,sail-forward,sail-back,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back",
+    "moves": 24,
+    "fills": 2
+  }
+]
