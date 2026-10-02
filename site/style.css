@@ -7,6 +7,14 @@ header { margin: 0 0 18px; }
 .trip-picker label { font-weight: 700; }
 .trip-picker select { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
 #trip-description, #water-note { grid-column: 1 / -1; margin: 0; }
+#journey-itinerary { margin: 0 0 12px; color: #183b43; font-size: 14px; }
+#journey-itinerary[hidden] { display: none; }
+.itinerary-heading { margin: 0; font-size: 14px; font-weight: 700; }
+#journey-itinerary ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; padding: 0; list-style: none; }
+#journey-itinerary li { padding: 6px 10px; border: 1px solid #183b43; border-radius: 999px; }
+#journey-itinerary li.current { background: #e56b54; }
+#journey-itinerary li.visited { background: #d9dfc4; }
+#journey-itinerary li:not(.current):not(.visited) { background: #f3ecd9; }
 h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 .deck { margin: 8px 0 0; }
 #canal { display: block; width: 100%; height: auto; background: #d9dfc4; border: 2px solid #183b43; border-radius: 12px; }

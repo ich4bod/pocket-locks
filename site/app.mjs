@@ -78,6 +78,23 @@ function order(action) {
   render();
 }
 function render() {
+  const itinerary = $('journey-itinerary');
+  itinerary.hidden = !state.stops;
+  const stopList = itinerary.querySelector('ol');
+  stopList.replaceChildren();
+  if (state.stops) {
+    state.stops.forEach((stop, index) => {
+      const item = document.createElement('li');
+      item.textContent = stop % 2 === 0 ? `Reach ${stop / 2 + 1}` : `Lock ${(stop + 1) / 2}`;
+      if (state.won || index < state.stopIndex) {
+        item.className = 'visited';
+      } else if (!state.won && index === state.stopIndex) {
+        item.className = 'current';
+        item.setAttribute('aria-current', 'step');
+      }
+      stopList.append(item);
+    });
+  }
   $('journey-stage').hidden = !state.stops;
   if (state.stops) {
     $('journey-stage').textContent = state.won
