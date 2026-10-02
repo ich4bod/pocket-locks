@@ -34,6 +34,7 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 .sailing, .history { display: flex; flex-wrap: wrap; gap: 10px; }
 button { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; cursor: pointer; }
 button:hover:not(:disabled) { background: #e8f2ef; }
+.lock-buttons button[aria-pressed="true"], .lock-buttons button[aria-pressed="true"]:hover { background: #d9dfc4; color: #183b43; }
 button:focus-visible, a:focus-visible { outline: 3px solid #e56b54; outline-offset: 2px; }
 button:disabled { opacity: .52; cursor: not-allowed; }
 button.sail { background: #e56b54; color: #183b43; font-weight: 700; }

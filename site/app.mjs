@@ -130,6 +130,8 @@ function renderLocks() {
     buttons.className = 'lock-buttons';
     const gateLow = control(`gate-${lock}-low`, 'Lower gate', () => order({ type: 'gate', lock, side: 'low' }), buttons);
     const gateHigh = control(`gate-${lock}-high`, 'Upper gate', () => order({ type: 'gate', lock, side: 'high' }), buttons);
+    gateLow.setAttribute('aria-pressed', String(chamber.low));
+    gateHigh.setAttribute('aria-pressed', String(chamber.high));
     const drain = control(`water-${lock}-low`, 'Drain to lower reach', () => order({ type: 'water', lock, side: 'low' }), buttons);
     const fill = control(`water-${lock}-high`, 'Fill from upper reach', () => order({ type: 'water', lock, side: 'high' }), buttons);
     card.append(buttons);
