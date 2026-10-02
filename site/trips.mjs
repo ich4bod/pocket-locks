@@ -45,4 +45,5 @@ export const trips = [
   {"id": "chamber-relay", "name": "Chamber relay", "description": "Leave the bottom chamber, visit the top chamber and the middle chamber, then sail to the top and home.", "spec": {"reaches": [0, 1, 2, 3], "water": [1, 1, 3], "start": 1, "target": 0, "budget": 2, "stops": [5, 3, 6, 0]}},
   {"id": "steep-middle", "name": "The tall middle hill", "description": "The second lift is taller than the first. Visit Reach 3, then return home on two fill tokens.", "spec": {"reaches": [0, 1, 4], "water": [0, 1], "start": 0, "target": 0, "budget": 2, "stops": [4, 0]}},
   {"id": "high-landing", "name": "High landing", "description": "Start inside the upper chamber. Visit the low reach, then climb both hills to Reach 3.", "spec": {"reaches": [0, 3, 4], "water": [3, 3], "start": 3, "target": 4, "budget": 2, "stops": [0, 4]}},
+  {"id": "terrace-patrol", "name": "Terrace patrol", "description": "From Reach 3, inspect the bottom chamber, visit the top chamber, then moor at Reach 2.", "spec": {"reaches": [0, 2, 5, 6], "water": [2, 2, 6], "start": 4, "target": 2, "budget": 2, "stops": [1, 5, 2]}}
 ];
