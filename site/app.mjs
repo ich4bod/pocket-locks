@@ -4,6 +4,28 @@ import { trips } from './trips.mjs?v=30';
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
 const history = [];
+export function nextHintControl(state) {
+  if (state.won) return null;
+  const direction = Math.sign(state.target - state.boat);
+  const reach = state.boat % 2 === 0;
+  const lock = reach
+    ? direction === 1 ? state.boat / 2 : state.boat / 2 - 1
+    : (state.boat - 1) / 2;
+  const side = reach
+    ? direction === 1 ? 'low' : 'high'
+    : direction === 1 ? 'high' : 'low';
+  const chamber = state.chambers[lock];
+  const opposite = side === 'low' ? 'high' : 'low';
+  const targetWater = state.reaches[lock + (side === 'high' ? 1 : 0)];
+  if (chamber[side]) return direction === 1 ? 'sail-forward' : 'sail-back';
+  if (chamber[opposite]) return `gate-${lock}-${opposite}`;
+  if (chamber.water !== targetWater) {
+    if (targetWater > chamber.water && state.budget !== null && state.fills >= state.budget) return null;
+    return `water-${lock}-${side}`;
+  }
+  return `gate-${lock}-${side}`;
+}
+
 export function nextHint(state) {
   if (state.won) return 'Home. Try another trip.';
   const direction = Math.sign(state.target - state.boat);
@@ -142,7 +164,18 @@ function render() {
   updateHint();
 }
 function updateHint() {
+  for (const marker of document.querySelectorAll('.hint-next')) {
+    marker.classList.remove('hint-next');
+    if (marker.getAttribute('aria-describedby') === 'hint') marker.removeAttribute('aria-describedby');
+  }
   $('hint').textContent = nextHint(state);
+  if (!hintVisible) return;
+  const id = nextHintControl(state);
+  const target = id && $(id);
+  if (target) {
+    target.classList.add('hint-next');
+    target.setAttribute('aria-describedby', 'hint');
+  }
 }
 function renderLocks() {
   lockControls.replaceChildren();
