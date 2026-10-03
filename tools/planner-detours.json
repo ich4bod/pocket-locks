@@ -1,0 +1,123 @@
+[
+  {
+    "id": "summit-inspection",
+    "name": "Inspect the tall lock and return",
+    "description": "From Reach 4, visit Lock 2, return to Reach 4, then descend to Reach 1. All locks start high; one fill is enough.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "water": [
+        2,
+        5,
+        6
+      ],
+      "start": 6,
+      "target": 0,
+      "budget": 1,
+      "stops": [
+        3,
+        6,
+        0
+      ]
+    },
+    "path": "gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-1-high,sail-back,sail-forward,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back",
+    "moves": 30,
+    "fills": 1,
+    "output": "summit-inspection visits every stop in 30 moves and 1 fill"
+  },
+  {
+    "id": "chamber-departure",
+    "name": "Leave a chamber, return, climb",
+    "description": "Leave Lock 1 for Reach 3, come back to Lock 1, then climb to Reach 4 on three fill tokens.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "water": [
+        2,
+        2,
+        5
+      ],
+      "start": 1,
+      "target": 6,
+      "budget": 3,
+      "stops": [
+        4,
+        1,
+        6
+      ]
+    },
+    "path": "gate-0-high,sail-forward,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,sail-forward,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward",
+    "moves": 26,
+    "fills": 3,
+    "output": "chamber-departure visits every stop in 26 moves and 3 fills"
+  },
+  {
+    "id": "upper-chamber-detour",
+    "name": "Upper chamber detour",
+    "description": "Visit Reach 2, inspect Lock 3 without climbing out, return to Reach 2, then climb to Reach 4 on four fill tokens.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "water": [
+        0,
+        2,
+        5
+      ],
+      "start": 0,
+      "target": 6,
+      "budget": 4,
+      "stops": [
+        2,
+        5,
+        2,
+        6
+      ]
+    },
+    "path": "gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-2-low,sail-forward,sail-back,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward",
+    "moves": 30,
+    "fills": 4,
+    "output": "upper-chamber-detour visits every stop in 30 moves and 4 fills"
+  },
+  {
+    "id": "low-inspection-return",
+    "name": "From the bottom, inspect and return",
+    "description": "Descend from Reach 4 to Reach 1, visit Lock 2 without climbing out, then return to Reach 1. One fill token is enough.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "water": [
+        2,
+        5,
+        6
+      ],
+      "start": 6,
+      "target": 0,
+      "budget": 1,
+      "stops": [
+        0,
+        3,
+        0
+      ]
+    },
+    "path": "gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,sail-forward,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back",
+    "moves": 30,
+    "fills": 1,
+    "output": "low-inspection-return visits every stop in 30 moves and 1 fill"
+  }
+]
