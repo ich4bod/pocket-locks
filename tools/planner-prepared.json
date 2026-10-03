@@ -26,7 +26,7 @@
     "fills": 4
   },
   {
-    "id": "ready-return",
+    "id": "prepared-return",
     "name": "Ready for descent",
     "description": "Both chambers start high. Take the same down-and-back journey on two fill tokens.",
     "spec": {
