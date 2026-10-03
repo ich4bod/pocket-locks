@@ -6,6 +6,17 @@ header { margin: 0 0 18px; }
 .trip-picker { display: grid; grid-template-columns: auto minmax(180px, 280px); align-items: center; gap: 8px 12px; margin: 0 0 16px; }
 .trip-picker label { font-weight: 700; }
 .trip-picker select { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
+#prepared-comparison { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #183b43; border-radius: 12px; background: #fff; }
+#prepared-comparison summary { min-height: 44px; display: flex; align-items: center; font: 18px Georgia, serif; cursor: pointer; }
+#prepared-comparison p { margin: 0 0 8px; }
+#prepared-comparison table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px system-ui, sans-serif; }
+#prepared-comparison th, #prepared-comparison td { padding: 6px 2px; text-align: left; vertical-align: middle; }
+#prepared-comparison th:first-child, #prepared-comparison td:first-child { overflow-wrap: anywhere; }
+#prepared-comparison th:nth-child(1) { width: 31%; }
+#prepared-comparison th:nth-child(2) { width: 22%; }
+#prepared-comparison th:nth-child(3) { width: 23%; }
+#prepared-comparison th:nth-child(4) { width: 24%; }
+#prepared-comparison button { min-height: 44px; padding: 6px 8px; }
 #trip-description, #water-note { grid-column: 1 / -1; margin: 0; }
 #journey-itinerary { margin: 0 0 12px; color: #183b43; font-size: 14px; }
 #journey-itinerary[hidden] { display: none; }

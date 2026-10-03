@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=9">
-  <script type="module" src="/app.mjs?v=35"></script>
+  <link rel="stylesheet" href="/style.css?v=11">
+  <script type="module" src="/app.mjs?v=37"></script>
 </head>
 <body>
   <main class="page">
@@ -61,6 +61,14 @@
       </select>
       <p id="trip-description">Lift the boat into the upper reach.</p>
       <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
+      <details id="prepared-comparison">
+        <summary>Same journey, different water</summary>
+        <p>Reach 3 → Reach 1 → Reach 3. The canal stays at levels 0, 2 and 5; only the starting chamber water and fill allowance change.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
     </section>
     <section id="journey-itinerary" hidden>
       <h2 class="itinerary-heading">Stops in order</h2>

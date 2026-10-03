@@ -58,6 +58,32 @@ $('trip').addEventListener('change', () => {
   selectedTrip = trips.find(trip => trip.id === $('trip').value);
   resetTrip();
 });
+const comparisonIds = ['cold-return', 'prepared-return', 'lower-ready', 'upper-ready'];
+const comparisonBody = $('prepared-comparison').querySelector('tbody');
+for (const id of comparisonIds) {
+  const trip = trips.find(item => item.id === id);
+  if (!trip) throw new Error(`Missing preparation trip: ${id}`);
+  const row = document.createElement('tr');
+  for (const text of [trip.name, trip.spec.water.join(' / '), String(trip.spec.budget)]) {
+    const cell = document.createElement('td');
+    cell.textContent = text;
+    row.append(cell);
+  }
+  const actionCell = document.createElement('td');
+  const start = document.createElement('button');
+  start.type = 'button';
+  start.dataset.trip = trip.id;
+  start.textContent = 'Start';
+  start.setAttribute('aria-label', `Start ${trip.name}`);
+  start.addEventListener('click', () => {
+    selectedTrip = trip;
+    $('trip').value = trip.id;
+    resetTrip();
+  });
+  actionCell.append(start);
+  row.append(actionCell);
+  comparisonBody.append(row);
+}
 $('restart').addEventListener('click', resetTrip);
 function resetTrip() {
   state = create(selectedTrip.spec);
