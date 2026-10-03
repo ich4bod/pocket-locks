@@ -1,0 +1,106 @@
+[
+  {
+    "id": "cold-return",
+    "name": "Unprepared return",
+    "description": "Both chambers start low. Descend from Reach 3 to Reach 1, then return on four fill tokens.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5
+      ],
+      "water": [
+        0,
+        2
+      ],
+      "start": 4,
+      "target": 4,
+      "budget": 4,
+      "stops": [
+        0,
+        4
+      ]
+    },
+    "path": "water-0-high,gate-0-high,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward",
+    "moves": 24,
+    "fills": 4
+  },
+  {
+    "id": "ready-return",
+    "name": "Ready for descent",
+    "description": "Both chambers start high. Take the same down-and-back journey on two fill tokens.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5
+      ],
+      "water": [
+        2,
+        5
+      ],
+      "start": 4,
+      "target": 4,
+      "budget": 2,
+      "stops": [
+        0,
+        4
+      ]
+    },
+    "path": "gate-0-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward",
+    "moves": 22,
+    "fills": 2
+  },
+  {
+    "id": "lower-ready",
+    "name": "Lower lock ready",
+    "description": "Only the lower chamber starts high. Visit Reach 1 and return to Reach 3 on three fill tokens.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5
+      ],
+      "water": [
+        2,
+        2
+      ],
+      "start": 4,
+      "target": 4,
+      "budget": 3,
+      "stops": [
+        0,
+        4
+      ]
+    },
+    "path": "gate-0-high,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward",
+    "moves": 23,
+    "fills": 3
+  },
+  {
+    "id": "upper-ready",
+    "name": "Upper lock ready",
+    "description": "Only the upper chamber starts high. Visit Reach 1 and return to Reach 3 on three fill tokens.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5
+      ],
+      "water": [
+        0,
+        5
+      ],
+      "start": 4,
+      "target": 4,
+      "budget": 3,
+      "stops": [
+        0,
+        4
+      ]
+    },
+    "path": "water-0-high,gate-0-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward",
+    "moves": 23,
+    "fills": 3
+  }
+]
