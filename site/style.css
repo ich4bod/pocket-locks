@@ -29,6 +29,9 @@ header { margin: 0 0 18px; }
 h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 .deck { margin: 8px 0 0; }
 #canal { display: block; width: 100%; height: auto; background: #d9dfc4; border: 2px solid #183b43; border-radius: 12px; }
+#lock-jumps { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+#lock-jump-help { margin: 0 0 12px; color: #183b43; font-size: 13px; text-align: center; }
+.lock-card h3:focus-visible { outline: 2px solid #e56b54; outline-offset: 3px; }
 .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-top: 18px; padding: 18px; background: #fff; border: 2px solid #183b43; border-radius: 12px; }
 #water-budget { grid-column: 1 / -1; justify-self: start; margin: 0; padding: 6px 10px; border-radius: 999px; background: #183b43; color: #fff; font: 14px/1.2 ui-monospace, monospace; }
 .journey-controls { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }

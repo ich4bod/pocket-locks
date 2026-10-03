@@ -53,6 +53,7 @@ export function nextHint(state) {
 }
 const $ = id => document.getElementById(id);
 const lockControls = $('lock-controls');
+const lockJumps = $('lock-jumps');
 let hintVisible = false;
 $('show-hint').addEventListener('click', () => {
   hintVisible = !hintVisible;
@@ -160,6 +161,7 @@ function render() {
   $('undo').disabled = history.length === 0;
   for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won;
   renderLocks();
+  renderLockJumps();
   renderCanal();
   updateHint();
 }
@@ -177,6 +179,22 @@ function updateHint() {
     target.setAttribute('aria-describedby', 'hint');
   }
 }
+function renderLockJumps() {
+  lockJumps.replaceChildren();
+  state.chambers.forEach((_, lock) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.id = `jump-lock-${lock}`;
+    button.textContent = `Lock ${lock + 1}`;
+    button.addEventListener('click', () => {
+      const heading = $(`lock-heading-${lock}`);
+      if (!heading) return;
+      heading.scrollIntoView({ block: 'center', behavior: 'auto' });
+      heading.focus({ preventScroll: true });
+    });
+    lockJumps.append(button);
+  });
+}
 function renderLocks() {
   lockControls.replaceChildren();
   state.chambers.forEach((chamber, lock) => {
@@ -184,6 +202,8 @@ function renderLocks() {
     const occupied = state.boat === 2 * lock + 1;
     card.className = occupied ? 'lock-card boat-lock' : 'lock-card';
     const heading = document.createElement('h3');
+    heading.id = `lock-heading-${lock}`;
+    heading.tabIndex = -1;
     heading.textContent = `Lock ${lock + 1}`;
     card.append(heading);
     if (occupied) {
