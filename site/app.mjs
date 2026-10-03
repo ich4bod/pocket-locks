@@ -159,6 +159,16 @@ function renderLocks() {
       presence.textContent = 'Boat here';
       card.append(presence);
     }
+    const ends = document.createElement('p');
+    ends.id = `lock-ends-${lock}`;
+    ends.className = 'lock-ends';
+    ends.textContent = `Reach ${lock + 1}: level ${state.reaches[lock]} → Reach ${lock + 2}: level ${state.reaches[lock + 1]}`;
+    card.append(ends);
+    const lift = document.createElement('p');
+    lift.id = `lift-size-${lock}`;
+    lift.className = 'lift-size';
+    lift.textContent = `Lift: ${state.reaches[lock + 1] - state.reaches[lock]} level steps.`;
+    card.append(lift);
     const buttons = document.createElement('div');
     buttons.className = 'lock-buttons';
     const gateLow = control(`gate-${lock}-low`, 'Lower gate', () => order({ type: 'gate', lock, side: 'low' }), buttons);
