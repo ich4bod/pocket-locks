@@ -181,6 +181,9 @@ function renderCanal() {
     add('line', { x1: x, y1: 300, x2: x + zoneWidth, y2: 300, stroke: '#183b43', 'stroke-width': 3, opacity: .35 });
     const name = zone.type === 'reach' ? `Reach ${Math.floor(index / 2) + 1}` : `Lock ${(index + 1) / 2}`;
     add('text', { x: x + zoneWidth / 2, y: 38, 'text-anchor': 'middle', 'font-size': 22, 'font-weight': 'bold', 'font-family': 'system-ui, sans-serif', fill: '#183b43', class: 'zone-label' }).textContent = name;
+    if (zone.type === 'reach') {
+      add('text', { x: x + zoneWidth / 2, y: 65, 'text-anchor': 'middle', 'font-size': 20, 'font-family': 'system-ui, sans-serif', fill: '#183b43', class: 'reach-level' }).textContent = `Level ${zone.level}`;
+    }
   });
   state.chambers.forEach((chamber, lock) => {
     const chamberX = (2 * lock + 1) * zoneWidth;
