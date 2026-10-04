@@ -1,11 +1,30 @@
 import { create, act } from './engine.mjs?v=2';
-import { trips } from './trips.mjs?v=40';
+import { trips } from './trips.mjs?v=41';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
 const history = [];
+function finalArrival(state) {
+  return state.finishClosed === true
+    && state.boat === state.target
+    && (!state.stops || state.stopIndex === state.stops.length - 1);
+}
+function pendingClosure(state) {
+  return finalArrival(state) && !state.won;
+}
+function openGateCount(state) {
+  return state.chambers.reduce((count, chamber) => count + Number(chamber.low) + Number(chamber.high), 0);
+}
+function firstOpenGate(state) {
+  for (let lock = 0; lock < state.chambers.length; lock++) {
+    if (state.chambers[lock].low) return `gate-${lock}-low`;
+    if (state.chambers[lock].high) return `gate-${lock}-high`;
+  }
+  return null;
+}
 export function nextHintControl(state) {
   if (state.won) return null;
+  if (pendingClosure(state)) return firstOpenGate(state);
   const direction = Math.sign(state.target - state.boat);
   const reach = state.boat % 2 === 0;
   const lock = reach
@@ -28,6 +47,11 @@ export function nextHintControl(state) {
 
 export function nextHint(state) {
   if (state.won) return 'Home. Try another trip.';
+  if (pendingClosure(state)) {
+    const id = firstOpenGate(state);
+    const [, lock, side] = id.match(/^gate-(\d+)-(low|high)$/);
+    return `Try Lock ${Number(lock) + 1}: ${side === 'low' ? 'Lower' : 'Upper'} gate.`;
+  }
   const direction = Math.sign(state.target - state.boat);
   const reach = state.boat % 2 === 0;
   const lock = reach
@@ -112,6 +136,7 @@ function resetTrip() {
   state = create(selectedTrip.spec);
   history.length = 0;
   $('trip-description').textContent = selectedTrip.description;
+  $('mooring-rule').hidden = selectedTrip.spec.finishClosed !== true;
   $('water-note').hidden = selectedTrip.spec.budget === null;
   render();
 }
@@ -135,7 +160,7 @@ function render() {
     state.stops.forEach((stop, index) => {
       const item = document.createElement('li');
       item.textContent = stop % 2 === 0 ? `Reach ${stop / 2 + 1}` : `Lock ${(stop + 1) / 2}`;
-      if (state.won || index < state.stopIndex) {
+      if (pendingClosure(state) || state.won || index < state.stopIndex) {
         item.className = 'visited';
       } else if (!state.won && index === state.stopIndex) {
         item.className = 'current';
@@ -146,20 +171,31 @@ function render() {
   }
   $('journey-stage').hidden = !state.stops;
   if (state.stops) {
-    $('journey-stage').textContent = state.won
-      ? 'All stops visited.'
-      : `Stop ${state.stopIndex + 1} of ${state.stops.length} · ${state.target % 2 === 0 ? `Reach ${state.target / 2 + 1}` : `Lock ${(state.target + 1) / 2}`}`;
+    $('journey-stage').textContent = pendingClosure(state)
+      ? 'All stops visited. Close every gate.'
+      : state.won
+        ? 'All stops visited.'
+        : `Stop ${state.stopIndex + 1} of ${state.stops.length} · ${state.target % 2 === 0 ? `Reach ${state.target / 2 + 1}` : `Lock ${(state.target + 1) / 2}`}`;
   }
   $('water-budget').hidden = state.budget === null;
   if (state.budget !== null) $('water-budget').textContent = `Water tokens: ${state.budget - state.fills} / ${state.budget}`;
   $('status').textContent = state.won
     ? `Moored! You brought the boat home in ${state.moves} moves.`
-    : state.boat % 2 === 0
-      ? `Boat in reach ${state.boat / 2 + 1}.`
-      : `Boat in lock ${(state.boat + 1) / 2}.`;
+    : pendingClosure(state)
+      ? 'Boat at the mooring. Close every gate.'
+      : state.boat % 2 === 0
+        ? `Boat in reach ${state.boat / 2 + 1}.`
+        : `Boat in lock ${(state.boat + 1) / 2}.`;
   $('moves-state').textContent = `Moves: ${state.moves}`;
+  const mooringState = $('mooring-state');
+  mooringState.hidden = state.finishClosed !== true;
+  if (!mooringState.hidden) mooringState.textContent = state.won
+    ? 'Every gate is shut.'
+    : pendingClosure(state)
+      ? `Open gates to close: ${openGateCount(state)}.`
+      : 'Finish with every gate shut.';
   $('undo').disabled = history.length === 0;
-  for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won;
+  for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won || pendingClosure(state);
   renderLocks();
   renderLockJumps();
   renderCanal();
@@ -241,7 +277,10 @@ function renderLocks() {
       status.textContent = text;
       card.append(status);
     }
-    for (const button of [gateLow, gateHigh, drain, fill]) button.disabled = state.won;
+    gateLow.disabled = state.won || (pendingClosure(state) && !chamber.low);
+    gateHigh.disabled = state.won || (pendingClosure(state) && !chamber.high);
+    drain.disabled = state.won || pendingClosure(state);
+    fill.disabled = state.won || pendingClosure(state);
     lockControls.append(card);
   });
 }

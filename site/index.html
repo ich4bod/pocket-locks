@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=14">
-  <script type="module" src="/app.mjs?v=51"></script>
+  <link rel="stylesheet" href="/style.css?v=15">
+  <script type="module" src="/app.mjs?v=54"></script>
 </head>
 <body>
   <main class="page">
@@ -71,8 +71,12 @@
           <option value="four-locks-inspection">Two chamber inspections</option>
           <option value="four-locks-middle">Middle reach patrol</option>
         </optgroup>
+        <optgroup label="Close up the canal">
+          <option value="secure-first-hill">Leave the first lock shut</option>
+        </optgroup>
       </select>
       <p id="trip-description">Lift the boat into the upper reach.</p>
+      <p id="mooring-rule" hidden>Moor only after every gate is shut. Closing a gate costs a move, not a fill.</p>
       <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
       <details id="prepared-comparison">
         <summary>Same journey, different water</summary>
@@ -97,6 +101,7 @@
         <div class="status-panel" aria-live="polite">
           <p id="status">Boat in reach 1.</p>
           <p id="moves-state">Moves: 0</p>
+          <p id="mooring-state" hidden></p>
         </div>
         <div class="sailing">
           <button id="sail-forward" class="sail">Sail forward</button>

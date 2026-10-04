@@ -17,7 +17,9 @@ header { margin: 0 0 18px; }
 #prepared-comparison th:nth-child(3) { width: 23%; }
 #prepared-comparison th:nth-child(4) { width: 24%; }
 #prepared-comparison button { min-height: 44px; padding: 6px 8px; }
-#trip-description, #water-note { grid-column: 1 / -1; margin: 0; }
+#trip-description, #mooring-rule, #water-note { grid-column: 1 / -1; margin: 0; }
+#mooring-rule { margin: 8px 0; max-width: 760px; color: #183b43; font-size: 14px; line-height: 1.5; }
+#mooring-state { margin: 8px 0; color: #183b43; font-size: 16px; line-height: 1.5; }
 #journey-itinerary { margin: 0 0 12px; color: #183b43; font-size: 14px; }
 #journey-itinerary[hidden] { display: none; }
 .itinerary-heading { margin: 0; font-size: 14px; font-weight: 700; }
