@@ -1,0 +1,93 @@
+[
+  {
+    "id": "secure-first-hill",
+    "name": "Leave the first lock shut",
+    "description": "Lift the boat to Reach 2, then close every gate before you moor.",
+    "spec": {
+      "reaches": [
+        0,
+        1
+      ],
+      "water": [
+        0
+      ],
+      "start": 0,
+      "target": 2,
+      "budget": 1,
+      "finishClosed": true
+    },
+    "arrivalMoves": 6,
+    "fills": 1,
+    "arrivalOpen": [
+      "gate-0-high"
+    ],
+    "path": "gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high",
+    "moves": 7,
+    "output": "secure-first-hill moors with every gate shut in 7 moves and 1 fills"
+  },
+  {
+    "id": "secure-round-trip",
+    "name": "Round trip, gates shut",
+    "description": "Visit Reach 3 and return to Reach 1 on two fill tokens. Close every gate before you moor.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5
+      ],
+      "water": [
+        0,
+        2
+      ],
+      "start": 0,
+      "target": 0,
+      "budget": 2,
+      "stops": [
+        4,
+        0
+      ],
+      "finishClosed": true
+    },
+    "arrivalMoves": 22,
+    "fills": 2,
+    "arrivalOpen": [
+      "gate-0-low",
+      "gate-1-low"
+    ],
+    "path": "gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-1-low",
+    "moves": 24,
+    "output": "secure-round-trip moors with every gate shut in 24 moves and 2 fills"
+  },
+  {
+    "id": "secure-descent",
+    "name": "Downhill, gates shut",
+    "description": "All three chambers start high. Descend to Reach 1 without a fill, then close every gate before you moor.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        5,
+        6
+      ],
+      "water": [
+        2,
+        5,
+        6
+      ],
+      "start": 6,
+      "target": 0,
+      "budget": 0,
+      "finishClosed": true
+    },
+    "arrivalMoves": 18,
+    "fills": 0,
+    "arrivalOpen": [
+      "gate-0-low",
+      "gate-1-low",
+      "gate-2-low"
+    ],
+    "path": "gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-1-low,gate-2-low",
+    "moves": 21,
+    "output": "secure-descent moors with every gate shut in 21 moves and 0 fills"
+  }
+]
