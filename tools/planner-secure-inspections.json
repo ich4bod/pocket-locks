@@ -1,7 +1,7 @@
 [
   {
     "id": "secure-inspection-home",
-    "name": "Inspect three chambers, shut up",
+    "name": "Inspect three chambers, close up",
     "description": "From Reach 1, visit Locks 1, 2 and 3 in order, then return to Reach 1 and close every gate.",
     "spec": {
       "reaches": [
