@@ -17,6 +17,7 @@ export function create(spec) {
     state.stopIndex = 0;
     state.target = state.stops[0];
   }
+  if (spec.finishClosed === true) state.finishClosed = true;
   return state;
 }
 
@@ -24,6 +25,10 @@ export function act(state, action) {
   const reject = error => ({ state, error });
   if (state.won) return reject('This trip is finished.');
   if (!action || typeof action !== 'object') return reject('Unknown order.');
+  const pendingClosure = finalArrival(state) && !state.won;
+  if (pendingClosure && (action.type === 'sail' || action.type === 'water')) {
+    return reject('Close every gate to finish this trip.');
+  }
 
   if (action.type === 'gate') {
     const { lock, side } = action;
@@ -32,6 +37,7 @@ export function act(state, action) {
     }
     const chamber = state.chambers[lock];
     const opening = !chamber[side];
+    if (pendingClosure && opening) return reject('Close every gate to finish this trip.');
     if (opening) {
       const other = side === 'low' ? 'high' : 'low';
       if (chamber[other]) return reject('Close the other gate first.');
@@ -93,8 +99,14 @@ function succeed(state, changes) {
       next.target = next.stops[next.stopIndex];
       next.won = false;
     } else {
-      next.won = true;
+      next.won = !next.finishClosed || next.chambers.every(chamber => !chamber.low && !chamber.high);
     }
   }
   return { state: next, error: null };
+}
+
+function finalArrival(state) {
+  return state.finishClosed === true
+    && state.boat === state.target
+    && (!state.stops || state.stopIndex === state.stops.length - 1);
 }
