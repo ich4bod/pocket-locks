@@ -1,0 +1,106 @@
+[
+  {
+    "key": "banks",
+    "label": "Lock 2, both banks, home",
+    "copy": "Lock 2 → Reach 3 → Reach 2 → Lock 2. Starting high lets you leave for Reach 3 without a fill. Shut every gate to finish.",
+    "ids": [
+      "chamber-three-banks-low",
+      "chamber-three-banks-high"
+    ],
+    "tripCards": [
+      401,
+      416
+    ]
+  },
+  {
+    "key": "three-first",
+    "label": "Lock 1, summit, bottom, home",
+    "copy": "Lock 1 → Reach 4 → Reach 1 → Lock 1. Compare the same round trip from low and high water. Shut every gate to finish.",
+    "ids": [
+      "chamber-three-first-low",
+      "chamber-three-first-high"
+    ],
+    "tripCards": [
+      402,
+      403
+    ]
+  },
+  {
+    "key": "three-middle",
+    "label": "Lock 2, bottom, summit, home",
+    "copy": "Lock 2 → Reach 1 → Reach 4 → Lock 2. Compare the same round trip from low and high water. Shut every gate to finish.",
+    "ids": [
+      "chamber-three-middle-low",
+      "chamber-three-middle-high"
+    ],
+    "tripCards": [
+      404,
+      405
+    ]
+  },
+  {
+    "key": "three-last",
+    "label": "Lock 3, lower reach, summit, home",
+    "copy": "Lock 3 → Reach 2 → Reach 4 → Lock 3. Compare the same round trip from low and high water. Shut every gate to finish.",
+    "ids": [
+      "chamber-three-last-low",
+      "chamber-three-last-high"
+    ],
+    "tripCards": [
+      406,
+      407
+    ]
+  },
+  {
+    "key": "four-first",
+    "label": "Lock 1, summit, lower reach, home",
+    "copy": "Lock 1 → Reach 5 → Reach 2 → Lock 1. Compare the same round trip from low and high water. Shut every gate to finish.",
+    "ids": [
+      "chamber-four-first-low",
+      "chamber-four-first-high"
+    ],
+    "tripCards": [
+      408,
+      409
+    ]
+  },
+  {
+    "key": "four-second",
+    "label": "Lock 2, upper reach, bottom, home",
+    "copy": "Lock 2 → Reach 4 → Reach 1 → Lock 2. Compare the same round trip from low and high water. Shut every gate to finish.",
+    "ids": [
+      "chamber-four-second-low",
+      "chamber-four-second-high"
+    ],
+    "tripCards": [
+      410,
+      411
+    ]
+  },
+  {
+    "key": "four-third",
+    "label": "Lock 3, bottom, summit, home",
+    "copy": "Lock 3 → Reach 1 → Reach 5 → Lock 3. Compare the same round trip from low and high water. Shut every gate to finish.",
+    "ids": [
+      "chamber-four-third-low",
+      "chamber-four-third-high"
+    ],
+    "tripCards": [
+      412,
+      413
+    ]
+  },
+  {
+    "key": "four-last",
+    "label": "Lock 4, middle reach, bottom, home",
+    "copy": "Lock 4 → Reach 3 → Reach 1 → Lock 4. Compare the same round trip from low and high water. Shut every gate to finish.",
+    "ids": [
+      "chamber-four-last-low",
+      "chamber-four-last-high"
+    ],
+    "tripCards": [
+      414,
+      415
+    ]
+  }
+]
