@@ -27,7 +27,7 @@ const action = id => {const [type,part,side] = id.split('-'); return type === 's
     assert.equal(state.stopIndex,row.spec.stops.length-1);
     assert(state.chambers.every(c => !c.low && !c.high));
   }
-  if (mode === 'facts') {console.log('fourteen chamber-start tours replay with exact budgets and shut gates');return;}
+  if (mode === 'facts') {console.log('fifteen chamber-start tours replay with exact budgets and shut gates');return;}
   const row = rows.find(r => r.id === mode);
   assert(row,'Unknown contract mode');
   const {trips} = await import('../site/trips.mjs');

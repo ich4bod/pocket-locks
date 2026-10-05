@@ -504,5 +504,40 @@
       "gate-3-low"
     ],
     "output": "chamber-four-last-high returns to its starting chamber with shut gates in 49 moves and 3 fills"
+  },
+  {
+    "id": "chamber-three-banks-low",
+    "name": "Lock 2, both banks, home — low water",
+    "description": "Start inside Lock 2. Every chamber starts low. Visit Reach 3, then Reach 2, return to Lock 2, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        0,
+        1,
+        4
+      ],
+      "start": 3,
+      "target": 3,
+      "stops": [
+        4,
+        2,
+        3
+      ],
+      "finishClosed": true,
+      "budget": 1
+    },
+    "path": "water-1-high,gate-1-high,sail-forward,gate-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-1-low,sail-forward,gate-1-low",
+    "moves": 14,
+    "fills": 1,
+    "arrivalMoves": 13,
+    "arrivalOpen": [
+      "gate-1-low"
+    ],
+    "output": "chamber-three-banks-low returns to its starting chamber with shut gates in 14 moves and 1 fills"
   }
 ]
