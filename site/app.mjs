@@ -161,6 +161,7 @@ $('restart').addEventListener('click', resetTrip);
 function resetTrip() {
   state = create(selectedTrip.spec);
   history.length = 0;
+  $('trip-name').textContent = selectedTrip.name;
   $('trip-description').textContent = selectedTrip.description;
   $('mooring-rule').hidden = selectedTrip.spec.finishClosed !== true;
   $('water-note').hidden = selectedTrip.spec.budget === null;

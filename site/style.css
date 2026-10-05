@@ -17,6 +17,7 @@ header { margin: 0 0 18px; }
 #prepared-comparison th:nth-child(3), #secure-comparison th:nth-child(3) { width: 23%; }
 #prepared-comparison th:nth-child(4), #secure-comparison th:nth-child(4) { width: 24%; }
 #prepared-comparison button, #secure-comparison button { min-height: 44px; padding: 6px 8px; }
+#trip-name { grid-column: 1 / -1; margin: 0; color: #183b43; font: 700 16px/1.5 system-ui, sans-serif; white-space: normal; overflow-wrap: anywhere; }
 #trip-description, #mooring-rule, #water-note { grid-column: 1 / -1; margin: 0; }
 #mooring-rule { margin: 8px 0; max-width: 760px; color: #183b43; font-size: 14px; line-height: 1.5; }
 #mooring-state { margin: 8px 0; color: #183b43; font-size: 16px; line-height: 1.5; }
