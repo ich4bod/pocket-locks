@@ -1,0 +1,508 @@
+[
+  {
+    "id": "chamber-three-first-low",
+    "name": "Lock 1, summit, bottom, home — low water",
+    "description": "Start inside Lock 1. Every chamber starts low. Visit Reach 4, then Reach 1, return to Lock 1, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        0,
+        1,
+        4
+      ],
+      "start": 1,
+      "target": 1,
+      "stops": [
+        6,
+        0,
+        1
+      ],
+      "finishClosed": true,
+      "budget": 3
+    },
+    "path": "water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low",
+    "moves": 42,
+    "fills": 3,
+    "arrivalMoves": 41,
+    "arrivalOpen": [
+      "gate-0-low"
+    ],
+    "output": "chamber-three-first-low returns to its starting chamber with shut gates in 42 moves and 3 fills"
+  },
+  {
+    "id": "chamber-three-first-high",
+    "name": "Lock 1, summit, bottom, home — high water",
+    "description": "Start inside Lock 1. Every chamber starts high. Visit Reach 4, then Reach 1, return to Lock 1, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        1,
+        4,
+        5
+      ],
+      "start": 1,
+      "target": 1,
+      "stops": [
+        6,
+        0,
+        1
+      ],
+      "finishClosed": true,
+      "budget": 2
+    },
+    "path": "gate-0-high,sail-forward,gate-0-high,water-1-low,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,water-2-low,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low",
+    "moves": 43,
+    "fills": 2,
+    "arrivalMoves": 42,
+    "arrivalOpen": [
+      "gate-0-low"
+    ],
+    "output": "chamber-three-first-high returns to its starting chamber with shut gates in 43 moves and 2 fills"
+  },
+  {
+    "id": "chamber-three-middle-low",
+    "name": "Lock 2, bottom, summit, home — low water",
+    "description": "Start inside Lock 2. Every chamber starts low. Visit Reach 1, then Reach 4, return to Lock 2, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        0,
+        1,
+        4
+      ],
+      "start": 3,
+      "target": 3,
+      "stops": [
+        0,
+        6,
+        3
+      ],
+      "finishClosed": true,
+      "budget": 4
+    },
+    "path": "gate-1-low,sail-back,gate-1-low,water-0-high,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high",
+    "moves": 42,
+    "fills": 4,
+    "arrivalMoves": 41,
+    "arrivalOpen": [
+      "gate-1-high"
+    ],
+    "output": "chamber-three-middle-low returns to its starting chamber with shut gates in 42 moves and 4 fills"
+  },
+  {
+    "id": "chamber-three-middle-high",
+    "name": "Lock 2, bottom, summit, home — high water",
+    "description": "Start inside Lock 2. Every chamber starts high. Visit Reach 1, then Reach 4, return to Lock 2, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        1,
+        4,
+        5
+      ],
+      "start": 3,
+      "target": 3,
+      "stops": [
+        0,
+        6,
+        3
+      ],
+      "finishClosed": true,
+      "budget": 3
+    },
+    "path": "water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,water-2-low,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high",
+    "moves": 43,
+    "fills": 3,
+    "arrivalMoves": 42,
+    "arrivalOpen": [
+      "gate-1-high"
+    ],
+    "output": "chamber-three-middle-high returns to its starting chamber with shut gates in 43 moves and 3 fills"
+  },
+  {
+    "id": "chamber-three-last-low",
+    "name": "Lock 3, lower reach, summit, home — low water",
+    "description": "Start inside Lock 3. Every chamber starts low. Visit Reach 2, then Reach 4, return to Lock 3, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        0,
+        1,
+        4
+      ],
+      "start": 5,
+      "target": 5,
+      "stops": [
+        2,
+        6,
+        5
+      ],
+      "finishClosed": true,
+      "budget": 3
+    },
+    "path": "gate-2-low,sail-back,gate-2-low,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high",
+    "moves": 28,
+    "fills": 3,
+    "arrivalMoves": 27,
+    "arrivalOpen": [
+      "gate-2-high"
+    ],
+    "output": "chamber-three-last-low returns to its starting chamber with shut gates in 28 moves and 3 fills"
+  },
+  {
+    "id": "chamber-three-last-high",
+    "name": "Lock 3, lower reach, summit, home — high water",
+    "description": "Start inside Lock 3. Every chamber starts high. Visit Reach 2, then Reach 4, return to Lock 3, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        1,
+        4,
+        5
+      ],
+      "start": 5,
+      "target": 5,
+      "stops": [
+        2,
+        6,
+        5
+      ],
+      "finishClosed": true,
+      "budget": 2
+    },
+    "path": "water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high",
+    "moves": 28,
+    "fills": 2,
+    "arrivalMoves": 27,
+    "arrivalOpen": [
+      "gate-2-high"
+    ],
+    "output": "chamber-three-last-high returns to its starting chamber with shut gates in 28 moves and 2 fills"
+  },
+  {
+    "id": "chamber-four-first-low",
+    "name": "Lock 1, summit, lower reach, home — low water",
+    "description": "Start inside Lock 1. Every chamber starts low. Visit Reach 5, then Reach 2, return to Lock 1, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        0,
+        2,
+        3,
+        6
+      ],
+      "start": 1,
+      "target": 1,
+      "stops": [
+        8,
+        2,
+        1
+      ],
+      "finishClosed": true,
+      "budget": 4
+    },
+    "path": "water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-3-low,sail-forward,gate-3-low,water-3-high,gate-3-high,sail-forward,gate-3-high,gate-3-high,sail-back,gate-3-high,water-3-low,gate-3-low,sail-back,gate-3-low,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high",
+    "moves": 49,
+    "fills": 4,
+    "arrivalMoves": 48,
+    "arrivalOpen": [
+      "gate-0-high"
+    ],
+    "output": "chamber-four-first-low returns to its starting chamber with shut gates in 49 moves and 4 fills"
+  },
+  {
+    "id": "chamber-four-first-high",
+    "name": "Lock 1, summit, lower reach, home — high water",
+    "description": "Start inside Lock 1. Every chamber starts high. Visit Reach 5, then Reach 2, return to Lock 1, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "start": 1,
+      "target": 1,
+      "stops": [
+        8,
+        2,
+        1
+      ],
+      "finishClosed": true,
+      "budget": 3
+    },
+    "path": "gate-0-high,sail-forward,gate-0-high,water-1-low,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,water-2-low,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,water-3-low,gate-3-low,sail-forward,gate-3-low,water-3-high,gate-3-high,sail-forward,gate-3-high,gate-3-high,sail-back,gate-3-high,water-3-low,gate-3-low,sail-back,gate-3-low,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high",
+    "moves": 51,
+    "fills": 3,
+    "arrivalMoves": 50,
+    "arrivalOpen": [
+      "gate-0-high"
+    ],
+    "output": "chamber-four-first-high returns to its starting chamber with shut gates in 51 moves and 3 fills"
+  },
+  {
+    "id": "chamber-four-second-low",
+    "name": "Lock 2, upper reach, bottom, home — low water",
+    "description": "Start inside Lock 2. Every chamber starts low. Visit Reach 4, then Reach 1, return to Lock 2, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        0,
+        2,
+        3,
+        6
+      ],
+      "start": 3,
+      "target": 3,
+      "stops": [
+        6,
+        0,
+        3
+      ],
+      "finishClosed": true,
+      "budget": 4
+    },
+    "path": "water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,water-0-high,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low",
+    "moves": 43,
+    "fills": 4,
+    "arrivalMoves": 42,
+    "arrivalOpen": [
+      "gate-1-low"
+    ],
+    "output": "chamber-four-second-low returns to its starting chamber with shut gates in 43 moves and 4 fills"
+  },
+  {
+    "id": "chamber-four-second-high",
+    "name": "Lock 2, upper reach, bottom, home — high water",
+    "description": "Start inside Lock 2. Every chamber starts high. Visit Reach 4, then Reach 1, return to Lock 2, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "start": 3,
+      "target": 3,
+      "stops": [
+        6,
+        0,
+        3
+      ],
+      "finishClosed": true,
+      "budget": 2
+    },
+    "path": "gate-1-high,sail-forward,gate-1-high,water-2-low,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low",
+    "moves": 42,
+    "fills": 2,
+    "arrivalMoves": 41,
+    "arrivalOpen": [
+      "gate-1-low"
+    ],
+    "output": "chamber-four-second-high returns to its starting chamber with shut gates in 42 moves and 2 fills"
+  },
+  {
+    "id": "chamber-four-third-low",
+    "name": "Lock 3, bottom, summit, home — low water",
+    "description": "Start inside Lock 3. Every chamber starts low. Visit Reach 1, then Reach 5, return to Lock 3, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        0,
+        2,
+        3,
+        6
+      ],
+      "start": 5,
+      "target": 5,
+      "stops": [
+        0,
+        8,
+        5
+      ],
+      "finishClosed": true,
+      "budget": 6
+    },
+    "path": "gate-2-low,sail-back,gate-2-low,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,water-0-high,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-3-low,sail-forward,gate-3-low,water-3-high,gate-3-high,sail-forward,gate-3-high,gate-3-high,sail-back,gate-3-high,water-3-low,gate-3-low,sail-back,gate-3-low,gate-2-high,sail-back,gate-2-high",
+    "moves": 57,
+    "fills": 6,
+    "arrivalMoves": 56,
+    "arrivalOpen": [
+      "gate-2-high"
+    ],
+    "output": "chamber-four-third-low returns to its starting chamber with shut gates in 57 moves and 6 fills"
+  },
+  {
+    "id": "chamber-four-third-high",
+    "name": "Lock 3, bottom, summit, home — high water",
+    "description": "Start inside Lock 3. Every chamber starts high. Visit Reach 1, then Reach 5, return to Lock 3, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "start": 5,
+      "target": 5,
+      "stops": [
+        0,
+        8,
+        5
+      ],
+      "finishClosed": true,
+      "budget": 4
+    },
+    "path": "water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,water-3-low,gate-3-low,sail-forward,gate-3-low,water-3-high,gate-3-high,sail-forward,gate-3-high,gate-3-high,sail-back,gate-3-high,water-3-low,gate-3-low,sail-back,gate-3-low,gate-2-high,sail-back,gate-2-high",
+    "moves": 57,
+    "fills": 4,
+    "arrivalMoves": 56,
+    "arrivalOpen": [
+      "gate-2-high"
+    ],
+    "output": "chamber-four-third-high returns to its starting chamber with shut gates in 57 moves and 4 fills"
+  },
+  {
+    "id": "chamber-four-last-low",
+    "name": "Lock 4, middle reach, bottom, home — low water",
+    "description": "Start inside Lock 4. Every chamber starts low. Visit Reach 3, then Reach 1, return to Lock 4, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        0,
+        2,
+        3,
+        6
+      ],
+      "start": 7,
+      "target": 7,
+      "stops": [
+        4,
+        0,
+        7
+      ],
+      "finishClosed": true,
+      "budget": 6
+    },
+    "path": "gate-3-low,sail-back,gate-3-low,water-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,water-0-high,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-3-low,sail-forward,gate-3-low",
+    "moves": 51,
+    "fills": 6,
+    "arrivalMoves": 50,
+    "arrivalOpen": [
+      "gate-3-low"
+    ],
+    "output": "chamber-four-last-low returns to its starting chamber with shut gates in 51 moves and 6 fills"
+  },
+  {
+    "id": "chamber-four-last-high",
+    "name": "Lock 4, middle reach, bottom, home — high water",
+    "description": "Start inside Lock 4. Every chamber starts high. Visit Reach 3, then Reach 1, return to Lock 4, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        3,
+        6,
+        7
+      ],
+      "water": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "start": 7,
+      "target": 7,
+      "stops": [
+        4,
+        0,
+        7
+      ],
+      "finishClosed": true,
+      "budget": 3
+    },
+    "path": "water-3-low,gate-3-low,sail-back,gate-3-low,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-3-low,sail-forward,gate-3-low",
+    "moves": 49,
+    "fills": 3,
+    "arrivalMoves": 48,
+    "arrivalOpen": [
+      "gate-3-low"
+    ],
+    "output": "chamber-four-last-high returns to its starting chamber with shut gates in 49 moves and 3 fills"
+  }
+]
