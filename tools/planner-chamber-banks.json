@@ -1,0 +1,14 @@
+[
+  {
+    "id": "chamber-three-banks-high",
+    "name": "Lock 2, both banks, home — high water",
+    "description": "Start inside Lock 2. Every chamber starts high. Visit Reach 3, then Reach 2, return to Lock 2, then close every gate.",
+    "spec": {"reaches": [0, 1, 4, 5], "water": [1, 4, 5], "start": 3, "target": 3, "stops": [4, 2, 3], "finishClosed": true, "budget": 0},
+    "path": "gate-1-high,sail-forward,gate-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-1-low,sail-forward,gate-1-low",
+    "moves": 13,
+    "fills": 0,
+    "arrivalMoves": 12,
+    "arrivalOpen": ["gate-1-low"],
+    "output": "chamber-three-banks-high returns to its starting chamber with shut gates in 13 moves and 0 fills"
+  }
+]
