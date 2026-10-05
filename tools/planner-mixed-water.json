@@ -1,0 +1,142 @@
+[
+  {
+    "id": "mixed-three-middle",
+    "name": "Three locks, middle prepared",
+    "description": "Only Lock 2 starts high. Visit Reach 1, return to Reach 4, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        0,
+        4,
+        4
+      ],
+      "start": 6,
+      "target": 6,
+      "stops": [
+        0,
+        6
+      ],
+      "finishClosed": true,
+      "budget": 5
+    },
+    "path": "water-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,water-0-high,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high",
+    "moves": 44,
+    "fills": 5,
+    "arrivalMoves": 43,
+    "arrivalOpen": [
+      "gate-2-high"
+    ],
+    "output": "mixed-three-middle returns through mixed water with shut gates in 44 moves and 5 fills"
+  },
+  {
+    "id": "mixed-three-outer",
+    "name": "Three locks, outer pair prepared",
+    "description": "Locks 1 and 3 start high. Visit Reach 1, return to Reach 4, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "water": [
+        1,
+        1,
+        5
+      ],
+      "start": 6,
+      "target": 6,
+      "stops": [
+        0,
+        6
+      ],
+      "finishClosed": true,
+      "budget": 4
+    },
+    "path": "gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high",
+    "moves": 43,
+    "fills": 4,
+    "arrivalMoves": 42,
+    "arrivalOpen": [
+      "gate-2-high"
+    ],
+    "output": "mixed-three-outer returns through mixed water with shut gates in 43 moves and 4 fills"
+  },
+  {
+    "id": "mixed-four-odd",
+    "name": "Four locks, first and third prepared",
+    "description": "Locks 1 and 3 start high. Visit Reach 1, return to Reach 5, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5,
+        8
+      ],
+      "water": [
+        1,
+        1,
+        5,
+        5
+      ],
+      "start": 8,
+      "target": 8,
+      "stops": [
+        0,
+        8
+      ],
+      "finishClosed": true,
+      "budget": 6
+    },
+    "path": "water-3-high,gate-3-high,sail-back,gate-3-high,water-3-low,gate-3-low,sail-back,gate-3-low,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,water-1-high,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-3-low,sail-forward,gate-3-low,water-3-high,gate-3-high,sail-forward,gate-3-high",
+    "moves": 58,
+    "fills": 6,
+    "arrivalMoves": 57,
+    "arrivalOpen": [
+      "gate-3-high"
+    ],
+    "output": "mixed-four-odd returns through mixed water with shut gates in 58 moves and 6 fills"
+  },
+  {
+    "id": "mixed-four-even",
+    "name": "Four locks, second and fourth prepared",
+    "description": "Locks 2 and 4 start high. Visit Reach 1, return to Reach 5, then close every gate.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        4,
+        5,
+        8
+      ],
+      "water": [
+        0,
+        4,
+        4,
+        8
+      ],
+      "start": 8,
+      "target": 8,
+      "stops": [
+        0,
+        8
+      ],
+      "finishClosed": true,
+      "budget": 6
+    },
+    "path": "gate-3-high,sail-back,gate-3-high,water-3-low,gate-3-low,sail-back,gate-3-low,water-2-high,gate-2-high,sail-back,gate-2-high,water-2-low,gate-2-low,sail-back,gate-2-low,gate-1-high,sail-back,gate-1-high,water-1-low,gate-1-low,sail-back,gate-1-low,water-0-high,gate-0-high,sail-back,gate-0-high,water-0-low,gate-0-low,sail-back,gate-0-low,gate-0-low,sail-forward,gate-0-low,water-0-high,gate-0-high,sail-forward,gate-0-high,gate-1-low,sail-forward,gate-1-low,water-1-high,gate-1-high,sail-forward,gate-1-high,gate-2-low,sail-forward,gate-2-low,water-2-high,gate-2-high,sail-forward,gate-2-high,gate-3-low,sail-forward,gate-3-low,water-3-high,gate-3-high,sail-forward,gate-3-high",
+    "moves": 58,
+    "fills": 6,
+    "arrivalMoves": 57,
+    "arrivalOpen": [
+      "gate-3-high"
+    ],
+    "output": "mixed-four-even returns through mixed water with shut gates in 58 moves and 6 fills"
+  }
+]
