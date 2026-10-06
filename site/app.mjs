@@ -78,6 +78,8 @@ export function nextHint(state) {
 const $ = id => document.getElementById(id);
 const lockControls = $('lock-controls');
 const lockJumps = $('lock-jumps');
+const previewLockSelect = $('preview-lock');
+let previewLock = 0;
 let hintVisible = false;
 $('show-hint').addEventListener('click', () => {
   hintVisible = !hintVisible;
@@ -329,6 +331,10 @@ function renderChamberComparison() {
 }
 $('chamber-route').addEventListener('change', renderChamberComparison);
 renderChamberComparison();
+previewLockSelect.addEventListener('change', () => {
+  previewLock = Number(previewLockSelect.value);
+  renderOrderPreview();
+});
 $('restart').addEventListener('click', resetTrip);
 function resetTrip() {
   state = create(selectedTrip.spec);
@@ -397,6 +403,7 @@ function render() {
   for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won || pendingClosure(state);
   renderLocks();
   renderLockJumps();
+  renderOrderPreview();
   renderCanal();
   updateHint();
 }
@@ -482,6 +489,38 @@ function renderLocks() {
     fill.disabled = state.won || pendingClosure(state);
     lockControls.append(card);
   });
+}
+function renderOrderPreview() {
+  if (previewLock < 0 || previewLock >= state.chambers.length) previewLock = 0;
+  const options = state.chambers.map((_, lock) => {
+    const option = document.createElement('option');
+    option.value = String(lock);
+    option.textContent = `Lock ${lock + 1}`;
+    option.selected = lock === previewLock;
+    return option;
+  });
+  previewLockSelect.replaceChildren(...options);
+  const body = $('lock-preview').querySelector('tbody');
+  const orders = [
+    { type: 'gate', side: 'low', label: 'Lower gate' },
+    { type: 'gate', side: 'high', label: 'Upper gate' },
+    { type: 'water', side: 'low', label: 'Drain to lower reach' },
+    { type: 'water', side: 'high', label: 'Fill from upper reach' },
+  ];
+  const rows = orders.map(order => {
+    const result = act(state, { type: order.type, lock: previewLock, side: order.side });
+    const message = result.error ?? (order.type === 'gate'
+      ? `${order.side === 'low' ? 'Lower' : 'Upper'} gate ${result.state.chambers[previewLock][order.side] ? 'open' : 'shut'}.`
+      : `Water level: ${result.state.chambers[previewLock].water}. Fill tokens used: ${result.state.fills - state.fills}.`);
+    const row = document.createElement('tr');
+    for (const text of [order.label, message]) {
+      const cell = document.createElement('td');
+      cell.textContent = text;
+      row.append(cell);
+    }
+    return row;
+  });
+  body.replaceChildren(...rows);
 }
 function renderCanal() {
   const svg = $('canal');

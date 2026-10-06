@@ -45,6 +45,16 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 .deck { margin: 8px 0 0; }
 #canal { display: block; width: 100%; height: auto; background: #d9dfc4; border: 2px solid #183b43; border-radius: 12px; }
 #lock-jumps { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+#lock-preview { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #183b43; border-radius: 12px; background: #fff; }
+#lock-preview summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }
+#lock-preview label { display: block; font-weight: 700; }
+#preview-lock { width: 100%; min-height: 44px; }
+#lock-preview p { margin: 8px 0; }
+#lock-preview table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px/1.5 system-ui, sans-serif; }
+#lock-preview th, #lock-preview td { padding: 6px 2px; text-align: left; overflow-wrap: anywhere; }
+#lock-preview th:nth-child(1), #lock-preview td:nth-child(1) { width: 40%; }
+#lock-preview th:nth-child(2), #lock-preview td:nth-child(2) { width: 60%; }
+#preview-lock:focus-visible { outline: 3px solid #e56b54; outline-offset: 3px; }
 #lock-jump-help { margin: 0 0 12px; color: #183b43; font-size: 13px; text-align: center; }
 .lock-card h3:focus-visible { outline: 2px solid #e56b54; outline-offset: 3px; }
 .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-top: 18px; padding: 18px; background: #fff; border: 2px solid #183b43; border-radius: 12px; }

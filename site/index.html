@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=19">
-  <script type="module" src="/app.mjs?v=115"></script>
+  <link rel="stylesheet" href="/style.css?v=20">
+  <script type="module" src="/app.mjs?v=116"></script>
 </head>
 <body>
   <main class="page">
@@ -204,6 +204,16 @@
     </section>
     <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
     <nav id="lock-jumps" aria-label="Jump to a lock"></nav>
+    <details id="lock-preview">
+      <summary>Before changing a lock</summary>
+      <label for="preview-lock">Lock to inspect</label>
+      <select id="preview-lock"></select>
+      <p id="lock-preview-help">These are previews, not orders. Use the lock’s buttons to act.</p>
+      <table>
+        <thead><tr><th>Order</th><th>Result</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </details>
     <p id="lock-jump-help">Choose a lock to jump to its gates.</p>
     <section class="controls">
       <p id="water-budget" hidden></p>
