@@ -183,6 +183,32 @@ for (const id of threeReturnComparisonIds) {
   row.append(actionCell);
   threeReturnComparisonBody.append(row);
 }
+const fourReturnComparisonIds = ['summit-four-return-low', 'summit-four-return-high'];
+const fourReturnComparisonBody = $('four-return-comparison').querySelector('tbody');
+for (const id of fourReturnComparisonIds) {
+  const trip = trips.find(item => item.id === id);
+  if (!trip) throw new Error(`Missing four-return comparison trip: ${id}`);
+  const row = document.createElement('tr');
+  for (const text of [trip.name, trip.spec.water.join(' / '), String(trip.spec.budget)]) {
+    const cell = document.createElement('td');
+    cell.textContent = text;
+    row.append(cell);
+  }
+  const actionCell = document.createElement('td');
+  const start = document.createElement('button');
+  start.type = 'button';
+  start.dataset.trip = trip.id;
+  start.textContent = 'Start';
+  start.setAttribute('aria-label', `Start ${trip.name}`);
+  start.addEventListener('click', () => {
+    selectedTrip = trip;
+    $('trip').value = trip.id;
+    resetTrip();
+  });
+  actionCell.append(start);
+  row.append(actionCell);
+  fourReturnComparisonBody.append(row);
+}
 $('restart').addEventListener('click', resetTrip);
 function resetTrip() {
   state = create(selectedTrip.spec);
