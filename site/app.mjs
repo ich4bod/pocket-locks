@@ -157,6 +157,32 @@ for (const id of secureComparisonIds) {
   row.append(actionCell);
   secureComparisonBody.append(row);
 }
+const threeReturnComparisonIds = ['summit-three-return-low', 'mixed-three-middle', 'mixed-three-outer', 'summit-three-return-high'];
+const threeReturnComparisonBody = $('three-return-comparison').querySelector('tbody');
+for (const id of threeReturnComparisonIds) {
+  const trip = trips.find(item => item.id === id);
+  if (!trip) throw new Error(`Missing three-return comparison trip: ${id}`);
+  const row = document.createElement('tr');
+  for (const text of [trip.name, trip.spec.water.join(' / '), String(trip.spec.budget)]) {
+    const cell = document.createElement('td');
+    cell.textContent = text;
+    row.append(cell);
+  }
+  const actionCell = document.createElement('td');
+  const start = document.createElement('button');
+  start.type = 'button';
+  start.dataset.trip = trip.id;
+  start.textContent = 'Start';
+  start.setAttribute('aria-label', `Start ${trip.name}`);
+  start.addEventListener('click', () => {
+    selectedTrip = trip;
+    $('trip').value = trip.id;
+    resetTrip();
+  });
+  actionCell.append(start);
+  row.append(actionCell);
+  threeReturnComparisonBody.append(row);
+}
 $('restart').addEventListener('click', resetTrip);
 function resetTrip() {
   state = create(selectedTrip.spec);

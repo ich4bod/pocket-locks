@@ -6,17 +6,17 @@ header { margin: 0 0 18px; }
 .trip-picker { display: grid; grid-template-columns: auto minmax(180px, 280px); align-items: center; gap: 8px 12px; margin: 0 0 16px; }
 .trip-picker label { font-weight: 700; }
 .trip-picker select { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
-#prepared-comparison, #secure-comparison { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #183b43; border-radius: 12px; background: #fff; }
-#prepared-comparison summary, #secure-comparison summary { min-height: 44px; display: flex; align-items: center; font: 18px Georgia, serif; cursor: pointer; }
-#prepared-comparison p, #secure-comparison p { margin: 0 0 8px; }
-#prepared-comparison table, #secure-comparison table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px system-ui, sans-serif; }
-#prepared-comparison th, #prepared-comparison td, #secure-comparison th, #secure-comparison td { padding: 6px 2px; text-align: left; vertical-align: middle; }
-#prepared-comparison th:first-child, #prepared-comparison td:first-child, #secure-comparison th:first-child, #secure-comparison td:first-child { overflow-wrap: anywhere; }
-#prepared-comparison th:nth-child(1), #secure-comparison th:nth-child(1) { width: 31%; }
-#prepared-comparison th:nth-child(2), #secure-comparison th:nth-child(2) { width: 22%; }
-#prepared-comparison th:nth-child(3), #secure-comparison th:nth-child(3) { width: 23%; }
-#prepared-comparison th:nth-child(4), #secure-comparison th:nth-child(4) { width: 24%; }
-#prepared-comparison button, #secure-comparison button { min-height: 44px; padding: 6px 8px; }
+.water-ladder { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #183b43; border-radius: 12px; background: #fff; }
+.water-ladder summary { min-height: 44px; display: flex; align-items: center; font: 18px Georgia, serif; cursor: pointer; }
+.water-ladder p { margin: 0 0 8px; }
+.water-ladder table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px system-ui, sans-serif; }
+.water-ladder th, .water-ladder td { padding: 6px 2px; text-align: left; vertical-align: middle; }
+.water-ladder th:first-child, .water-ladder td:first-child { overflow-wrap: anywhere; }
+.water-ladder th:nth-child(1) { width: 31%; }
+.water-ladder th:nth-child(2) { width: 22%; }
+.water-ladder th:nth-child(3) { width: 23%; }
+.water-ladder th:nth-child(4) { width: 24%; }
+.water-ladder button { min-height: 44px; padding: 6px 8px; }
 #trip-name { grid-column: 1 / -1; margin: 0; color: #183b43; font: 700 16px/1.5 system-ui, sans-serif; white-space: normal; overflow-wrap: anywhere; }
 #trip-description, #mooring-rule, #water-note { grid-column: 1 / -1; margin: 0; }
 #mooring-rule { margin: 8px 0; max-width: 760px; color: #183b43; font-size: 14px; line-height: 1.5; }
