@@ -103,6 +103,16 @@ $('undo').addEventListener('click', () => {
   state = history.pop();
   render();
 });
+$('undo-sail').addEventListener('click', () => {
+  let index = -1;
+  for (let i = 0; i < history.length; i++) {
+    if (history[i].boat !== state.boat) index = i;
+  }
+  if (index === -1) return;
+  state = history[index];
+  history.splice(index);
+  render();
+});
 $('trip').addEventListener('change', () => {
   selectedTrip = trips.find(trip => trip.id === $('trip').value);
   resetTrip();
@@ -400,6 +410,7 @@ function render() {
       ? `Open gates to close: ${openGateCount(state)}.`
       : 'Finish with every gate shut.';
   $('undo').disabled = history.length === 0;
+  $('undo-sail').disabled = !history.some(snapshot => snapshot.boat !== state.boat);
   for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won || pendingClosure(state);
   renderLocks();
   renderLockJumps();
