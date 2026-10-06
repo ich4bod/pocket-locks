@@ -235,6 +235,32 @@ for (const id of threeInspectionComparisonIds) {
   row.append(actionCell);
   threeInspectionComparisonBody.append(row);
 }
+const fourInspectionComparisonIds = ['summit-four-middle-low', 'summit-four-middle-high'];
+const fourInspectionComparisonBody = $('four-inspection-comparison').querySelector('tbody');
+for (const id of fourInspectionComparisonIds) {
+  const trip = trips.find(item => item.id === id);
+  if (!trip) throw new Error(`Missing four-inspection comparison trip: ${id}`);
+  const row = document.createElement('tr');
+  for (const text of [trip.name, trip.spec.water.join(' / '), String(trip.spec.budget)]) {
+    const cell = document.createElement('td');
+    cell.textContent = text;
+    row.append(cell);
+  }
+  const actionCell = document.createElement('td');
+  const start = document.createElement('button');
+  start.type = 'button';
+  start.dataset.trip = trip.id;
+  start.textContent = 'Start';
+  start.setAttribute('aria-label', `Start ${trip.name}`);
+  start.addEventListener('click', () => {
+    selectedTrip = trip;
+    $('trip').value = trip.id;
+    resetTrip();
+  });
+  actionCell.append(start);
+  row.append(actionCell);
+  fourInspectionComparisonBody.append(row);
+}
 $('restart').addEventListener('click', resetTrip);
 function resetTrip() {
   state = create(selectedTrip.spec);
