@@ -114,6 +114,10 @@ const chamberComparisonFamilies = {
     ids: ['chamber-three-first-low', 'chamber-three-first-high'],
     copy: 'Lock 1 → Reach 4 → Reach 1 → Lock 1. Compare the same round trip from low and high water. Shut every gate to finish.',
   },
+  'three-middle': {
+    ids: ['chamber-three-middle-low', 'chamber-three-middle-high'],
+    copy: 'Lock 2 → Reach 1 → Reach 4 → Lock 2. Compare the same round trip from low and high water. Shut every gate to finish.',
+  },
 };
 const comparisonIds = ['cold-return', 'prepared-return', 'lower-ready', 'upper-ready'];
 const comparisonBody = $('prepared-comparison').querySelector('tbody');
