@@ -17,6 +17,18 @@ header { margin: 0 0 18px; }
 .water-ladder th:nth-child(3) { width: 23%; }
 .water-ladder th:nth-child(4) { width: 24%; }
 .water-ladder button { min-height: 44px; padding: 6px 8px; }
+#chamber-comparison { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #183b43; border-radius: 12px; background: #fff; }
+#chamber-comparison summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }
+#chamber-comparison label { display: block; font-weight: 700; }
+#chamber-route { width: 100%; min-height: 44px; }
+#chamber-comparison p { margin: 8px 0; }
+#chamber-comparison table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px system-ui, sans-serif; }
+#chamber-comparison th, #chamber-comparison td { padding: 6px 2px; text-align: left; vertical-align: middle; overflow-wrap: anywhere; }
+#chamber-comparison th:nth-child(1), #chamber-comparison td:nth-child(1) { width: 31%; }
+#chamber-comparison th:nth-child(2), #chamber-comparison td:nth-child(2) { width: 22%; }
+#chamber-comparison th:nth-child(3), #chamber-comparison td:nth-child(3) { width: 23%; }
+#chamber-comparison th:nth-child(4), #chamber-comparison td:nth-child(4) { width: 24%; }
+#chamber-comparison button { min-height: 44px; padding: 6px 8px; }
 #trip-name { grid-column: 1 / -1; margin: 0; color: #183b43; font: 700 16px/1.5 system-ui, sans-serif; white-space: normal; overflow-wrap: anywhere; }
 #trip-description, #mooring-rule, #water-note { grid-column: 1 / -1; margin: 0; }
 #mooring-rule { margin: 8px 0; max-width: 760px; color: #183b43; font-size: 14px; line-height: 1.5; }

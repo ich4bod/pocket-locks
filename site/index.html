@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=18">
-  <script type="module" src="/app.mjs?v=109"></script>
+  <link rel="stylesheet" href="/style.css?v=19">
+  <script type="module" src="/app.mjs?v=110"></script>
 </head>
 <body>
   <main class="page">
@@ -129,6 +129,19 @@
       <p id="trip-description">Lift the boat into the upper reach.</p>
       <p id="mooring-rule" hidden>Moor only after every gate is shut. Closing a gate costs a move, not a fill.</p>
       <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
+      <details id="chamber-comparison">
+        <summary>Start inside a lock</summary>
+        <label for="chamber-route">Route</label>
+        <select id="chamber-route">
+          <option value="banks">Lock 2, both banks, home</option>
+        </select>
+        <p id="chamber-route-copy"></p>
+        <p class="chamber-token-note">Fill tokens are puzzle allowances, not volumes of canal water.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
       <details id="prepared-comparison">
         <summary>Same journey, different water</summary>
         <p>Reach 3 → Reach 1 → Reach 3. The canal stays at levels 0, 2 and 5; only the starting chamber water and fill allowance change.</p>

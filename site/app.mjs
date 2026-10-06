@@ -105,6 +105,12 @@ $('trip').addEventListener('change', () => {
   selectedTrip = trips.find(trip => trip.id === $('trip').value);
   resetTrip();
 });
+const chamberComparisonFamilies = {
+  banks: {
+    ids: ['chamber-three-banks-low', 'chamber-three-banks-high'],
+    copy: 'Lock 2 → Reach 3 → Reach 2 → Lock 2. Starting high lets you leave for Reach 3 without a fill. Shut every gate to finish.',
+  },
+};
 const comparisonIds = ['cold-return', 'prepared-return', 'lower-ready', 'upper-ready'];
 const comparisonBody = $('prepared-comparison').querySelector('tbody');
 for (const id of comparisonIds) {
@@ -261,6 +267,40 @@ for (const id of fourInspectionComparisonIds) {
   row.append(actionCell);
   fourInspectionComparisonBody.append(row);
 }
+function renderChamberComparison() {
+  const key = $('chamber-route').value;
+  const family = chamberComparisonFamilies[key];
+  if (!family) throw new Error(`Missing chamber comparison family: ${key}`);
+  $('chamber-route-copy').textContent = family.copy;
+  const body = $('chamber-comparison').querySelector('tbody');
+  const rows = family.ids.map(id => {
+    const trip = trips.find(item => item.id === id);
+    if (!trip) throw new Error(`Missing chamber comparison trip: ${id}`);
+    const row = document.createElement('tr');
+    for (const text of [trip.name, trip.spec.water.join(' / '), String(trip.spec.budget)]) {
+      const cell = document.createElement('td');
+      cell.textContent = text;
+      row.append(cell);
+    }
+    const actionCell = document.createElement('td');
+    const start = document.createElement('button');
+    start.type = 'button';
+    start.dataset.trip = trip.id;
+    start.textContent = 'Start';
+    start.setAttribute('aria-label', `Start ${trip.name}`);
+    start.addEventListener('click', () => {
+      selectedTrip = trip;
+      $('trip').value = trip.id;
+      resetTrip();
+    });
+    actionCell.append(start);
+    row.append(actionCell);
+    return row;
+  });
+  body.replaceChildren(...rows);
+}
+$('chamber-route').addEventListener('change', renderChamberComparison);
+renderChamberComparison();
 $('restart').addEventListener('click', resetTrip);
 function resetTrip() {
   state = create(selectedTrip.spec);
