@@ -4,6 +4,7 @@ import { trips } from './trips.mjs?v=91';
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
 const history = [];
+let keptCanal = null;
 function finalArrival(state) {
   return state.finishClosed === true
     && state.boat === state.target
@@ -346,6 +347,19 @@ previewLockSelect.addEventListener('change', () => {
   renderOrderPreview();
 });
 $('restart').addEventListener('click', resetTrip);
+$('keep-canal').addEventListener('click', () => {
+  keptCanal = {
+    tripId: selectedTrip.id,
+    tripName: selectedTrip.name,
+    state: structuredClone(state),
+  };
+  renderCanalMemory();
+});
+$('forget-canal').addEventListener('click', () => {
+  if (keptCanal === null) return;
+  keptCanal = null;
+  renderCanalMemory();
+});
 function resetTrip() {
   state = create(selectedTrip.spec);
   history.length = 0;
@@ -416,7 +430,48 @@ function render() {
   renderLockJumps();
   renderOrderPreview();
   renderCanal();
+  renderCanalMemory();
   updateHint();
+}
+function renderCanalMemory() {
+  const info = $('canal-kept-info');
+  const note = $('canal-comparison-note');
+  const table = $('canal-memory-table');
+  const forget = $('forget-canal');
+  forget.disabled = keptCanal === null;
+  if (keptCanal === null) {
+    info.textContent = 'No canal arrangement kept.';
+    note.textContent = 'Keep one arrangement to compare.';
+    table.hidden = true;
+    table.querySelector('tbody').replaceChildren();
+    return;
+  }
+  const keptState = keptCanal.state;
+  const boatZone = keptState.boat % 2 === 0
+    ? `Reach ${keptState.boat / 2 + 1}`
+    : `Lock ${(keptState.boat + 1) / 2}`;
+  info.textContent = `Kept ${keptCanal.tripName} · boat in ${boatZone} · moves ${keptState.moves} · fills ${keptState.fills}.`;
+  if (keptCanal.tripId !== selectedTrip.id) {
+    note.textContent = 'Kept from another trip. Choose that trip to compare.';
+    table.hidden = true;
+    table.querySelector('tbody').replaceChildren();
+    return;
+  }
+  note.textContent = 'The kept gates and water stay put while you try another order.';
+  table.hidden = false;
+  const body = table.querySelector('tbody');
+  const rows = state.chambers.map((chamber, lock) => {
+    const keptChamber = keptState.chambers[lock];
+    const cellText = item => `Water ${item.water} · lower ${item.low ? 'open' : 'shut'} · upper ${item.high ? 'open' : 'shut'}`;
+    const row = document.createElement('tr');
+    for (const text of [`Lock ${lock + 1}`, cellText(chamber), cellText(keptChamber)]) {
+      const cell = document.createElement('td');
+      cell.textContent = text;
+      row.append(cell);
+    }
+    return row;
+  });
+  body.replaceChildren(...rows);
 }
 function updateHint() {
   for (const marker of document.querySelectorAll('.hint-next')) {

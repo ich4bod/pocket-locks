@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=20">
-  <script type="module" src="/app.mjs?v=117"></script>
+  <link rel="stylesheet" href="/style.css?v=21">
+  <script type="module" src="/app.mjs?v=118"></script>
 </head>
 <body>
   <main class="page">
@@ -211,6 +211,19 @@
       <p id="lock-preview-help">These are previews, not orders. Use the lock’s buttons to act.</p>
       <table>
         <thead><tr><th>Order</th><th>Result</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </details>
+    <details id="canal-memory">
+      <summary>Keep a canal arrangement</summary>
+      <div class="canal-memory-controls">
+        <button id="keep-canal" type="button">Keep this arrangement</button>
+        <button id="forget-canal" type="button" disabled>Forget kept arrangement</button>
+      </div>
+      <p id="canal-kept-info">No canal arrangement kept.</p>
+      <p id="canal-comparison-note">Keep one arrangement to compare.</p>
+      <table id="canal-memory-table" hidden>
+        <thead><tr><th>Lock</th><th>Now</th><th>Kept</th></tr></thead>
         <tbody></tbody>
       </table>
     </details>
