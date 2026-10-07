@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=22">
-  <script type="module" src="/app.mjs?v=120"></script>
+  <link rel="stylesheet" href="/style.css?v=23">
+  <script type="module" src="/app.mjs?v=121"></script>
 </head>
 <body>
   <main class="page">
@@ -213,6 +213,33 @@
         <thead><tr><th>Order</th><th>Result</th><th>Try it</th></tr></thead>
         <tbody></tbody>
       </table>
+    </details>
+    <details id="two-order-reader">
+      <summary>Try two orders</summary>
+      <label for="two-order-lock">Lock for both orders</label>
+      <select id="two-order-lock"></select>
+      <label for="two-order-first">First order</label>
+      <select id="two-order-first">
+        <option value="gate-low">Toggle lower gate</option>
+        <option value="gate-high">Toggle upper gate</option>
+        <option value="water-low">Drain to lower reach</option>
+        <option value="water-high">Fill from upper reach</option>
+        <option value="sail-forward">Sail forward</option>
+        <option value="sail-back">Sail back</option>
+      </select>
+      <p id="two-order-first-result">First order: accepted.</p>
+      <label for="two-order-second">Second order</label>
+      <select id="two-order-second">
+        <option value="gate-low">Toggle lower gate</option>
+        <option value="gate-high">Toggle upper gate</option>
+        <option value="water-low">Drain to lower reach</option>
+        <option value="water-high">Fill from upper reach</option>
+        <option value="sail-forward">Sail forward</option>
+        <option value="sail-back">Sail back</option>
+      </select>
+      <p id="two-order-second-result">Second order: accepted.</p>
+      <button id="two-order-apply" type="button">Do both orders</button>
+      <p id="two-order-help">The second order sees the first order’s result. Doing both makes one Undo step; previews do not change the canal.</p>
     </details>
     <details id="canal-memory">
       <summary>Keep a canal arrangement</summary>

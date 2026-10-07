@@ -59,6 +59,13 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 #lock-preview button:hover:not(:disabled) { background: #e8f2ef; }
 #lock-preview button:focus-visible { outline: 3px solid #e56b54; outline-offset: 2px; }
 #preview-lock:focus-visible { outline: 3px solid #e56b54; outline-offset: 3px; }
+#two-order-reader { margin: 12px 0; padding: 0 12px; border: 1px solid #203a32; border-radius: 12px; background: #f3ecd9; color: #203a32; }
+#two-order-reader summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }
+#two-order-reader label { display: block; margin-top: 8px; font-weight: 700; }
+#two-order-reader select { width: 100%; min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
+#two-order-reader p { margin: 8px 0; overflow-wrap: anywhere; }
+#two-order-reader button { min-height: 44px; }
+#two-order-reader button[hidden], #two-order-reader p[hidden] { display: none; }
 #canal-memory { margin: 12px 0; padding: 0 12px; border: 1px solid #203a32; border-radius: 12px; background: #f3ecd9; color: #203a32; }
 #canal-memory[hidden] { display: none; }
 #canal-memory summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }

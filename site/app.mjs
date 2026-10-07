@@ -80,7 +80,13 @@ const $ = id => document.getElementById(id);
 const lockControls = $('lock-controls');
 const lockJumps = $('lock-jumps');
 const previewLockSelect = $('preview-lock');
+const twoOrderLockSelect = $('two-order-lock');
+const twoOrderFirstSelect = $('two-order-first');
+const twoOrderSecondSelect = $('two-order-second');
 let previewLock = 0;
+let twoOrderLock = 0;
+let twoOrderFirst = 'gate-low';
+let twoOrderSecond = 'sail-forward';
 let hintVisible = false;
 $('show-hint').addEventListener('click', () => {
   hintVisible = !hintVisible;
@@ -346,6 +352,26 @@ previewLockSelect.addEventListener('change', () => {
   previewLock = Number(previewLockSelect.value);
   renderOrderPreview();
 });
+twoOrderLockSelect.addEventListener('change', () => {
+  twoOrderLock = Number(twoOrderLockSelect.value);
+  renderTwoOrderControls();
+});
+$('two-order-apply').addEventListener('click', () => {
+  const evaluation = evaluateTwoOrders(state, twoOrderFirst, twoOrderSecond, twoOrderLock);
+  renderTwoOrderResults(evaluation);
+  if (evaluation.first.error || !evaluation.second || evaluation.second.error) return;
+  history.push(state);
+  state = evaluation.second.state;
+  render();
+});
+twoOrderFirstSelect.addEventListener('change', () => {
+  twoOrderFirst = twoOrderFirstSelect.value;
+  renderTwoOrderControls();
+});
+twoOrderSecondSelect.addEventListener('change', () => {
+  twoOrderSecond = twoOrderSecondSelect.value;
+  renderTwoOrderControls();
+});
 $('restart').addEventListener('click', resetTrip);
 $('keep-canal').addEventListener('click', () => {
   keptCanal = {
@@ -440,6 +466,7 @@ function render() {
   renderLocks();
   renderLockJumps();
   renderOrderPreview();
+  renderTwoOrderControls();
   renderCanal();
   renderCanalMemory();
   updateHint();
@@ -611,6 +638,46 @@ function renderOrderPreview() {
     return row;
   });
   body.replaceChildren(...rows);
+}
+function renderTwoOrderControls() {
+  if (twoOrderLock < 0 || twoOrderLock >= state.chambers.length) twoOrderLock = 0;
+  const options = state.chambers.map((_, lock) => {
+    const option = document.createElement('option');
+    option.value = String(lock);
+    option.textContent = `Lock ${lock + 1}`;
+    option.selected = lock === twoOrderLock;
+    return option;
+  });
+  twoOrderLockSelect.replaceChildren(...options);
+  twoOrderLockSelect.value = String(twoOrderLock);
+  twoOrderFirstSelect.value = twoOrderFirst;
+  twoOrderSecondSelect.value = twoOrderSecond;
+  renderTwoOrderResults(evaluateTwoOrders(state, twoOrderFirst, twoOrderSecond, twoOrderLock));
+}
+function twoOrderAction(value, lock) {
+  if (value === 'gate-low') return { type: 'gate', lock, side: 'low' };
+  if (value === 'gate-high') return { type: 'gate', lock, side: 'high' };
+  if (value === 'water-low') return { type: 'water', lock, side: 'low' };
+  if (value === 'water-high') return { type: 'water', lock, side: 'high' };
+  if (value === 'sail-forward') return { type: 'sail', direction: 1 };
+  if (value === 'sail-back') return { type: 'sail', direction: -1 };
+  return { type: 'unknown' };
+}
+function evaluateTwoOrders(source, firstValue, secondValue, lock) {
+  const first = act(source, twoOrderAction(firstValue, lock));
+  const second = first.error ? null : act(first.state, twoOrderAction(secondValue, lock));
+  return { first, second };
+}
+function renderTwoOrderResults(evaluation) {
+  $('two-order-first-result').textContent = evaluation.first.error
+    ? `First order: ${evaluation.first.error}`
+    : 'First order: accepted.';
+  $('two-order-second-result').textContent = evaluation.first.error
+    ? 'Second order: not tried because the first was rejected.'
+    : evaluation.second.error
+      ? `Second order: ${evaluation.second.error}`
+      : 'Second order: accepted.';
+  $('two-order-apply').disabled = Boolean(evaluation.first.error || !evaluation.second || evaluation.second.error);
 }
 function renderCanal() {
   const svg = $('canal');
