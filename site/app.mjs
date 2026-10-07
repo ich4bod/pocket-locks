@@ -586,17 +586,28 @@ function renderOrderPreview() {
     { type: 'water', side: 'low', label: 'Drain to lower reach' },
     { type: 'water', side: 'high', label: 'Fill from upper reach' },
   ];
-  const rows = orders.map(order => {
-    const result = act(state, { type: order.type, lock: previewLock, side: order.side });
-    const message = result.error ?? (order.type === 'gate'
-      ? `${order.side === 'low' ? 'Lower' : 'Upper'} gate ${result.state.chambers[previewLock][order.side] ? 'open' : 'shut'}.`
+  const rows = orders.map((spec, index) => {
+    const action = { type: spec.type, lock: previewLock, side: spec.side };
+    const result = act(state, action);
+    const message = result.error ?? (spec.type === 'gate'
+      ? `${spec.side === 'low' ? 'Lower' : 'Upper'} gate ${result.state.chambers[previewLock][spec.side] ? 'open' : 'shut'}.`
       : `Water level: ${result.state.chambers[previewLock].water}. Fill tokens used: ${result.state.fills - state.fills}.`);
     const row = document.createElement('tr');
-    for (const text of [order.label, message]) {
+    for (const text of [spec.label, message]) {
       const cell = document.createElement('td');
       cell.textContent = text;
       row.append(cell);
     }
+    const actionCell = document.createElement('td');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.id = `preview-try-${index}`;
+    button.textContent = 'Try';
+    button.setAttribute('aria-label', `Try ${spec.label}`);
+    button.disabled = Boolean(result.error);
+    button.addEventListener('click', () => order({ ...action }));
+    actionCell.append(button);
+    row.append(actionCell);
     return row;
   });
   body.replaceChildren(...rows);
