@@ -360,6 +360,17 @@ $('forget-canal').addEventListener('click', () => {
   keptCanal = null;
   renderCanalMemory();
 });
+$('return-canal').addEventListener('click', () => {
+  if (!canReturnCanal()) return;
+  history.push(structuredClone(state));
+  state = structuredClone(keptCanal.state);
+  render();
+});
+function canReturnCanal() {
+  return keptCanal !== null
+    && keptCanal.tripId === selectedTrip.id
+    && JSON.stringify(keptCanal.state) !== JSON.stringify(state);
+}
 function resetTrip() {
   state = create(selectedTrip.spec);
   history.length = 0;
@@ -438,7 +449,9 @@ function renderCanalMemory() {
   const note = $('canal-comparison-note');
   const table = $('canal-memory-table');
   const forget = $('forget-canal');
+  const returnCanal = $('return-canal');
   forget.disabled = keptCanal === null;
+  returnCanal.disabled = !canReturnCanal();
   if (keptCanal === null) {
     info.textContent = 'No canal arrangement kept.';
     note.textContent = 'Keep one arrangement to compare.';

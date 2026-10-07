@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
   <link rel="stylesheet" href="/style.css?v=21">
-  <script type="module" src="/app.mjs?v=118"></script>
+  <script type="module" src="/app.mjs?v=119"></script>
 </head>
 <body>
   <main class="page">
@@ -218,10 +218,12 @@
       <summary>Keep a canal arrangement</summary>
       <div class="canal-memory-controls">
         <button id="keep-canal" type="button">Keep this arrangement</button>
+        <button id="return-canal" type="button" disabled>Return to kept arrangement</button>
         <button id="forget-canal" type="button" disabled>Forget kept arrangement</button>
       </div>
       <p id="canal-kept-info">No canal arrangement kept.</p>
       <p id="canal-comparison-note">Keep one arrangement to compare.</p>
+      <p id="canal-return-help">Return restores the whole arrangement on this trip. Undo brings back the experiment you left.</p>
       <table id="canal-memory-table" hidden>
         <thead><tr><th>Lock</th><th>Now</th><th>Kept</th></tr></thead>
         <tbody></tbody>
