@@ -1,0 +1,402 @@
+[
+  {
+    "trip": {
+      "id": "moor-zigzag-low",
+      "name": "Zigzag from low water",
+      "description": "Leave Lock 2 for Reach 4, reverse to Reach 2, cross to Reach 3, then return to Lock 2. Shut every gate at each stop.",
+      "spec": {
+        "reaches": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "water": [
+          0,
+          1,
+          3
+        ],
+        "start": 3,
+        "target": 3,
+        "stops": [
+          6,
+          2,
+          4,
+          3
+        ],
+        "budget": 3,
+        "finishClosed": true,
+        "closeAtStops": true
+      }
+    },
+    "route": [
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      }
+    ],
+    "moves": 35,
+    "fills": 3
+  },
+  {
+    "trip": {
+      "id": "moor-zigzag-high",
+      "name": "Zigzag from high water",
+      "description": "The same zigzag begins with Lock 2 at level 3. Compare the first departure, not a different canal.",
+      "spec": {
+        "reaches": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "water": [
+          1,
+          3,
+          4
+        ],
+        "start": 3,
+        "target": 3,
+        "stops": [
+          6,
+          2,
+          4,
+          3
+        ],
+        "budget": 2,
+        "finishClosed": true,
+        "closeAtStops": true
+      }
+    },
+    "route": [
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      }
+    ],
+    "moves": 35,
+    "fills": 2
+  }
+]
