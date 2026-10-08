@@ -18,6 +18,7 @@ export function create(spec) {
     state.target = state.stops[0];
   }
   if (spec.finishClosed === true) state.finishClosed = true;
+  if (spec.closeAtStops === true) state.closeAtStops = true;
   return state;
 }
 
@@ -26,8 +27,12 @@ export function act(state, action) {
   if (state.won) return reject('This trip is finished.');
   if (!action || typeof action !== 'object') return reject('Unknown order.');
   const pendingClosure = finalArrival(state) && !state.won;
+  const pendingIntermediateMooring = intermediateMooring(state);
   if (pendingClosure && (action.type === 'sail' || action.type === 'water')) {
     return reject('Close every gate to finish this trip.');
+  }
+  if (pendingIntermediateMooring && (action.type === 'sail' || action.type === 'water')) {
+    return reject('Close every gate to continue this trip.');
   }
 
   if (action.type === 'gate') {
@@ -38,6 +43,7 @@ export function act(state, action) {
     const chamber = state.chambers[lock];
     const opening = !chamber[side];
     if (pendingClosure && opening) return reject('Close every gate to finish this trip.');
+    if (pendingIntermediateMooring && opening) return reject('Close every gate to continue this trip.');
     if (opening) {
       const other = side === 'low' ? 'high' : 'low';
       if (chamber[other]) return reject('Close the other gate first.');
@@ -95,9 +101,13 @@ function succeed(state, changes) {
   const next = { ...state, ...changes, moves: state.moves + 1 };
   if (next.boat === next.target) {
     if (next.stops && next.stopIndex + 1 < next.stops.length) {
-      next.stopIndex++;
-      next.target = next.stops[next.stopIndex];
-      next.won = false;
+      if (next.closeAtStops === true && next.chambers.some(chamber => chamber.low || chamber.high)) {
+        next.won = false;
+      } else {
+        next.stopIndex++;
+        next.target = next.stops[next.stopIndex];
+        next.won = false;
+      }
     } else {
       next.won = !next.finishClosed || next.chambers.every(chamber => !chamber.low && !chamber.high);
     }
@@ -109,4 +119,12 @@ function finalArrival(state) {
   return state.finishClosed === true
     && state.boat === state.target
     && (!state.stops || state.stopIndex === state.stops.length - 1);
+}
+
+function intermediateMooring(state) {
+  return state.closeAtStops === true
+    && state.stops
+    && state.stopIndex + 1 < state.stops.length
+    && state.boat === state.target
+    && state.chambers.some(chamber => chamber.low || chamber.high);
 }

@@ -1,5 +1,5 @@
-import { create, act } from './engine.mjs?v=2';
-import { trips } from './trips.mjs?v=91';
+import { create, act } from './engine.mjs?v=3';
+import { trips } from './trips.mjs?v=92';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -13,6 +13,16 @@ function finalArrival(state) {
 function pendingClosure(state) {
   return finalArrival(state) && !state.won;
 }
+function pendingIntermediateMooring(state) {
+  return state.closeAtStops === true
+    && state.stops
+    && state.stopIndex + 1 < state.stops.length
+    && state.boat === state.target
+    && state.chambers.some(chamber => chamber.low || chamber.high);
+}
+function pendingGateClosure(state) {
+  return pendingClosure(state) || pendingIntermediateMooring(state);
+}
 function openGateCount(state) {
   return state.chambers.reduce((count, chamber) => count + Number(chamber.low) + Number(chamber.high), 0);
 }
@@ -25,7 +35,7 @@ function firstOpenGate(state) {
 }
 export function nextHintControl(state) {
   if (state.won) return null;
-  if (pendingClosure(state)) return firstOpenGate(state);
+  if (pendingGateClosure(state)) return firstOpenGate(state);
   const direction = Math.sign(state.target - state.boat);
   const reach = state.boat % 2 === 0;
   const lock = reach
@@ -48,7 +58,7 @@ export function nextHintControl(state) {
 
 export function nextHint(state) {
   if (state.won) return 'Home. Try another trip.';
-  if (pendingClosure(state)) {
+  if (pendingGateClosure(state)) {
     const id = firstOpenGate(state);
     const [, lock, side] = id.match(/^gate-(\d+)-(low|high)$/);
     return `Try Lock ${Number(lock) + 1}: ${side === 'low' ? 'Lower' : 'Upper'} gate.`;
@@ -436,6 +446,7 @@ function render() {
     });
   }
   $('journey-stage').hidden = !state.stops;
+  $('intermediate-mooring-note').hidden = !pendingIntermediateMooring(state);
   if (state.stops) {
     $('journey-stage').textContent = pendingClosure(state)
       ? 'All stops visited. Close every gate.'
@@ -462,7 +473,7 @@ function render() {
       : 'Finish with every gate shut.';
   $('undo').disabled = history.length === 0;
   $('undo-sail').disabled = !history.some(snapshot => snapshot.boat !== state.boat);
-  for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won || pendingClosure(state);
+  for (const button of [$('sail-forward'), $('sail-back')]) button.disabled = state.won || pendingGateClosure(state);
   renderLocks();
   renderLockJumps();
   renderOrderPreview();
@@ -589,10 +600,10 @@ function renderLocks() {
       status.textContent = text;
       card.append(status);
     }
-    gateLow.disabled = state.won || (pendingClosure(state) && !chamber.low);
-    gateHigh.disabled = state.won || (pendingClosure(state) && !chamber.high);
-    drain.disabled = state.won || pendingClosure(state);
-    fill.disabled = state.won || pendingClosure(state);
+    gateLow.disabled = state.won || (pendingGateClosure(state) && !chamber.low);
+    gateHigh.disabled = state.won || (pendingGateClosure(state) && !chamber.high);
+    drain.disabled = state.won || pendingGateClosure(state);
+    fill.disabled = state.won || pendingGateClosure(state);
     lockControls.append(card);
   });
 }

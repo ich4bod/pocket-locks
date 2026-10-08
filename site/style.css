@@ -35,6 +35,8 @@ header { margin: 0 0 18px; }
 #mooring-state { margin: 8px 0; color: #183b43; font-size: 16px; line-height: 1.5; }
 #journey-itinerary { margin: 0 0 12px; color: #183b43; font-size: 14px; }
 #journey-itinerary[hidden] { display: none; }
+#journey-itinerary #intermediate-mooring-note { margin: 8px 0; }
+#journey-itinerary #intermediate-mooring-note[hidden] { display: none; }
 .itinerary-heading { margin: 0; font-size: 14px; font-weight: 700; }
 #journey-itinerary ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; padding: 0; list-style: none; }
 #journey-itinerary li { padding: 6px 10px; border: 1px solid #183b43; border-radius: 999px; }

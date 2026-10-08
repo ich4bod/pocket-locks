@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=23">
-  <script type="module" src="/app.mjs?v=121"></script>
+  <link rel="stylesheet" href="/style.css?v=24">
+  <script type="module" src="/app.mjs?v=122"></script>
 </head>
 <body>
   <main class="page">
@@ -123,6 +123,7 @@
           <option value="chamber-four-last-low">Lock 4, middle reach, bottom, home — low water</option>
           <option value="chamber-four-last-high">Lock 4, middle reach, bottom, home — high water</option>
           <option value="chamber-three-banks-high">Lock 2, both banks, home — high water</option>
+          <option value="shut-at-each-stop">Shut gates at both moorings</option>
         </optgroup>
       </select>
       <p id="trip-name" aria-live="polite">First hill</p>
@@ -200,6 +201,7 @@
     </section>
     <section id="journey-itinerary" hidden>
       <h2 class="itinerary-heading">Stops in order</h2>
+      <p id="intermediate-mooring-note" hidden>At this stop, shut every gate before the return leg begins.</p>
       <ol></ol>
     </section>
     <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
