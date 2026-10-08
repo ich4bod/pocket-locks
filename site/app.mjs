@@ -93,10 +93,12 @@ const previewLockSelect = $('preview-lock');
 const twoOrderLockSelect = $('two-order-lock');
 const twoOrderFirstSelect = $('two-order-first');
 const twoOrderSecondSelect = $('two-order-second');
+const twoOrderThirdSelect = $('two-order-third');
 let previewLock = 0;
 let twoOrderLock = 0;
 let twoOrderFirst = 'gate-low';
 let twoOrderSecond = 'sail-forward';
+let twoOrderThird = 'none';
 let hintVisible = false;
 $('show-hint').addEventListener('click', () => {
   hintVisible = !hintVisible;
@@ -371,11 +373,12 @@ twoOrderLockSelect.addEventListener('change', () => {
   renderTwoOrderControls();
 });
 $('two-order-apply').addEventListener('click', () => {
-  const evaluation = evaluateTwoOrders(state, twoOrderFirst, twoOrderSecond, twoOrderLock);
+  const evaluation = evaluateTwoOrders(state, twoOrderFirst, twoOrderSecond, twoOrderThird, twoOrderLock);
   renderTwoOrderResults(evaluation);
-  if (evaluation.first.error || !evaluation.second || evaluation.second.error) return;
+  if (evaluation.first.error || !evaluation.second || evaluation.second.error
+    || (twoOrderThird !== 'none' && (!evaluation.third || evaluation.third.error))) return;
   history.push(state);
-  state = evaluation.second.state;
+  state = evaluation.third?.state ?? evaluation.second.state;
   render();
 });
 twoOrderFirstSelect.addEventListener('change', () => {
@@ -384,6 +387,10 @@ twoOrderFirstSelect.addEventListener('change', () => {
 });
 twoOrderSecondSelect.addEventListener('change', () => {
   twoOrderSecond = twoOrderSecondSelect.value;
+  renderTwoOrderControls();
+});
+twoOrderThirdSelect.addEventListener('change', () => {
+  twoOrderThird = twoOrderThirdSelect.value;
   renderTwoOrderControls();
 });
 $('restart').addEventListener('click', resetTrip);
@@ -667,7 +674,8 @@ function renderTwoOrderControls() {
   twoOrderLockSelect.value = String(twoOrderLock);
   twoOrderFirstSelect.value = twoOrderFirst;
   twoOrderSecondSelect.value = twoOrderSecond;
-  renderTwoOrderResults(evaluateTwoOrders(state, twoOrderFirst, twoOrderSecond, twoOrderLock));
+  twoOrderThirdSelect.value = twoOrderThird;
+  renderTwoOrderResults(evaluateTwoOrders(state, twoOrderFirst, twoOrderSecond, twoOrderThird, twoOrderLock));
 }
 function twoOrderAction(value, lock) {
   if (value === 'gate-low') return { type: 'gate', lock, side: 'low' };
@@ -678,10 +686,13 @@ function twoOrderAction(value, lock) {
   if (value === 'sail-back') return { type: 'sail', direction: -1 };
   return { type: 'unknown' };
 }
-function evaluateTwoOrders(source, firstValue, secondValue, lock) {
+function evaluateTwoOrders(source, firstValue, secondValue, thirdValue, lock) {
   const first = act(source, twoOrderAction(firstValue, lock));
   const second = first.error ? null : act(first.state, twoOrderAction(secondValue, lock));
-  return { first, second };
+  const third = thirdValue === 'none' || !second || second.error
+    ? null
+    : act(second.state, twoOrderAction(thirdValue, lock));
+  return { first, second, third };
 }
 function renderTwoOrderResults(evaluation) {
   $('two-order-first-result').textContent = evaluation.first.error
@@ -692,7 +703,16 @@ function renderTwoOrderResults(evaluation) {
     : evaluation.second.error
       ? `Second order: ${evaluation.second.error}`
       : 'Second order: accepted.';
-  $('two-order-apply').disabled = Boolean(evaluation.first.error || !evaluation.second || evaluation.second.error);
+  $('two-order-third-result').textContent = twoOrderThird === 'none'
+    ? 'Third order: not chosen.'
+    : evaluation.first.error || evaluation.second?.error
+      ? 'Third order: not tried because an earlier order was rejected.'
+      : evaluation.third.error
+        ? `Third order: ${evaluation.third.error}`
+        : 'Third order: accepted.';
+  $('two-order-apply').textContent = twoOrderThird === 'none' ? 'Do both orders' : 'Do all three orders';
+  $('two-order-apply').disabled = Boolean(evaluation.first.error || !evaluation.second || evaluation.second.error
+    || (twoOrderThird !== 'none' && (!evaluation.third || evaluation.third.error)));
 }
 function renderCanal() {
   const svg = $('canal');

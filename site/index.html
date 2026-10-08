@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
   <link rel="stylesheet" href="/style.css?v=24">
-  <script type="module" src="/app.mjs?v=123"></script>
+  <script type="module" src="/app.mjs?v=124"></script>
 </head>
 <body>
   <main class="page">
@@ -222,8 +222,8 @@
       </table>
     </details>
     <details id="two-order-reader">
-      <summary>Try two orders</summary>
-      <label for="two-order-lock">Lock for both orders</label>
+      <summary>Try up to three orders</summary>
+      <label for="two-order-lock">Lock for these orders</label>
       <select id="two-order-lock"></select>
       <label for="two-order-first">First order</label>
       <select id="two-order-first">
@@ -245,8 +245,19 @@
         <option value="sail-back">Sail back</option>
       </select>
       <p id="two-order-second-result">Second order: accepted.</p>
+      <label for="two-order-third">Third order (optional)</label>
+      <select id="two-order-third">
+        <option value="none">No third order</option>
+        <option value="gate-low">Toggle lower gate</option>
+        <option value="gate-high">Toggle upper gate</option>
+        <option value="water-low">Drain to lower reach</option>
+        <option value="water-high">Fill from upper reach</option>
+        <option value="sail-forward">Sail forward</option>
+        <option value="sail-back">Sail back</option>
+      </select>
+      <p id="two-order-third-result">Third order: not chosen.</p>
       <button id="two-order-apply" type="button">Do both orders</button>
-      <p id="two-order-help">The second order sees the first order’s result. Doing both makes one Undo step; previews do not change the canal.</p>
+      <p id="two-order-help">Each order sees the previous order’s result. The whole sequence makes one Undo step. If any order is rejected, nothing is applied.</p>
     </details>
     <details id="canal-memory">
       <summary>Keep a canal arrangement</summary>
