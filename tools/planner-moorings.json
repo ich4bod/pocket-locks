@@ -1,0 +1,27 @@
+[
+  {
+    "id": "shut-at-each-stop",
+    "name": "Shut gates at both moorings",
+    "description": "Visit Reach 3, shut every gate, then return to Reach 1 and shut every gate again. The two fills must last both legs.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        2
+      ],
+      "water": [
+        0,
+        1
+      ],
+      "start": 0,
+      "target": 0,
+      "stops": [
+        4,
+        0
+      ],
+      "budget": 2,
+      "finishClosed": true,
+      "closeAtStops": true
+    }
+  }
+]
