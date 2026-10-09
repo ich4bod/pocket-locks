@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=24">
+  <link rel="stylesheet" href="/style.css?v=25">
   <script type="module" src="/app.mjs?v=125"></script>
 </head>
 <body>
@@ -138,76 +138,6 @@
       <p id="trip-description">Lift the boat into the upper reach.</p>
       <p id="mooring-rule" hidden>Moor only after every gate is shut. Closing a gate costs a move, not a fill.</p>
       <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
-      <details id="chamber-comparison">
-        <summary>Start inside a lock</summary>
-        <label for="chamber-route">Route</label>
-        <select id="chamber-route">
-          <option value="banks">Lock 2, both banks, home</option>
-          <option value="three-first">Lock 1, summit, bottom, home</option>
-          <option value="three-middle">Lock 2, bottom, summit, home</option>
-          <option value="three-last">Lock 3, lower reach, summit, home</option>
-          <option value="four-first">Lock 1, summit, lower reach, home</option>
-          <option value="four-second">Lock 2, upper reach, bottom, home</option>
-          <option value="four-third">Lock 3, bottom, summit, home</option>
-          <option value="four-last">Lock 4, middle reach, bottom, home</option>
-          <option value="zigzag">Lock 2: three reversals</option>
-          <option value="upper-door">Lock 2: the upper door</option>
-        </select>
-        <p id="chamber-route-copy"></p>
-        <p class="chamber-token-note">Fill tokens are puzzle allowances, not volumes of canal water.</p>
-        <table>
-          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </details>
-      <details id="prepared-comparison">
-        <summary>Same journey, different water</summary>
-        <p>Reach 3 → Reach 1 → Reach 3. The canal stays at levels 0, 2 and 5; only the starting chamber water and fill allowance change.</p>
-        <table>
-          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </details>
-      <details id="secure-comparison">
-        <summary>Same return, gates shut</summary>
-        <p>Reach 3 → Reach 1 → Reach 3, then close every gate. The same canal needs four fills when its locks start low, or two when they start high. Closing up spends moves, not fills.</p>
-        <table>
-          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </details>
-      <details id="three-return-comparison" class="water-ladder">
-        <summary>Three locks: water waiting for the return</summary>
-        <p>Reach 4 → Reach 1 → Reach 4, then close every gate. The same canal needs 6, 5, 4 or 3 fills as more chambers start high. These are puzzle tokens, not volumes of canal water.</p>
-        <table>
-          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </details>
-      <details id="four-return-comparison" class="water-ladder">
-        <summary>Four locks: low water or high water</summary>
-        <p>Reach 5 → Reach 1 → Reach 5, then close every gate. The same four-lock return needs eight fills from low water, or four from high water. Closing gates costs moves, not fills.</p>
-        <table>
-          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </details>
-      <details id="three-inspection-comparison" class="water-ladder">
-        <summary>Inspect the middle lock, then return</summary>
-        <p>Reach 4 → Lock 2 → Reach 1 → Reach 4, then close every gate. Visiting the middle chamber on the way down adds a stop, but no extra fills: six from low water, three from high water.</p>
-        <table>
-          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </details>
-      <details id="four-inspection-comparison" class="water-ladder">
-        <summary>Inspect the tall lock, then return</summary>
-        <p>Reach 5 → Lock 3 → Reach 1 → Reach 5, then close every gate. The tall chamber is a stop along the descent. Starting low needs eight fills; starting high needs four. The height of a lift does not change its token cost in this puzzle.</p>
-        <table>
-          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </details>
     </section>
     <section id="journey-itinerary" hidden>
       <h2 class="itinerary-heading">Stops in order</h2>
@@ -302,6 +232,79 @@
       </div>
       <div id="lock-controls" class="lock-controls"></div>
     </section>
+    <details id="trip-comparisons">
+      <summary>Compare starting water on other journeys</summary>
+      <details id="chamber-comparison">
+        <summary>Start inside a lock</summary>
+        <label for="chamber-route">Route</label>
+        <select id="chamber-route">
+          <option value="banks">Lock 2, both banks, home</option>
+          <option value="three-first">Lock 1, summit, bottom, home</option>
+          <option value="three-middle">Lock 2, bottom, summit, home</option>
+          <option value="three-last">Lock 3, lower reach, summit, home</option>
+          <option value="four-first">Lock 1, summit, lower reach, home</option>
+          <option value="four-second">Lock 2, upper reach, bottom, home</option>
+          <option value="four-third">Lock 3, bottom, summit, home</option>
+          <option value="four-last">Lock 4, middle reach, bottom, home</option>
+          <option value="zigzag">Lock 2: three reversals</option>
+          <option value="upper-door">Lock 2: the upper door</option>
+        </select>
+        <p id="chamber-route-copy"></p>
+        <p class="chamber-token-note">Fill tokens are puzzle allowances, not volumes of canal water.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+      <details id="prepared-comparison">
+        <summary>Same journey, different water</summary>
+        <p>Reach 3 → Reach 1 → Reach 3. The canal stays at levels 0, 2 and 5; only the starting chamber water and fill allowance change.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+      <details id="secure-comparison">
+        <summary>Same return, gates shut</summary>
+        <p>Reach 3 → Reach 1 → Reach 3, then close every gate. The same canal needs four fills when its locks start low, or two when they start high. Closing up spends moves, not fills.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+      <details id="three-return-comparison" class="water-ladder">
+        <summary>Three locks: water waiting for the return</summary>
+        <p>Reach 4 → Reach 1 → Reach 4, then close every gate. The same canal needs 6, 5, 4 or 3 fills as more chambers start high. These are puzzle tokens, not volumes of canal water.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+      <details id="four-return-comparison" class="water-ladder">
+        <summary>Four locks: low water or high water</summary>
+        <p>Reach 5 → Reach 1 → Reach 5, then close every gate. The same four-lock return needs eight fills from low water, or four from high water. Closing gates costs moves, not fills.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+      <details id="three-inspection-comparison" class="water-ladder">
+        <summary>Inspect the middle lock, then return</summary>
+        <p>Reach 4 → Lock 2 → Reach 1 → Reach 4, then close every gate. Visiting the middle chamber on the way down adds a stop, but no extra fills: six from low water, three from high water.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+      <details id="four-inspection-comparison" class="water-ladder">
+        <summary>Inspect the tall lock, then return</summary>
+        <p>Reach 5 → Lock 3 → Reach 1 → Reach 5, then close every gate. The tall chamber is a stop along the descent. Starting low needs eight fills; starting high needs four. The height of a lift does not change its token cost in this puzzle.</p>
+        <table>
+          <thead><tr><th>Start</th><th>Lock water</th><th>Fill tokens</th><th>Try it</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </details>
+    </details>
     <p id="hint" hidden></p>
     <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
     <footer><a href="https://ichabod-crane.net">Built by Ichabod</a></footer>

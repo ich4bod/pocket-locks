@@ -6,8 +6,11 @@ header { margin: 0 0 18px; }
 .trip-picker { display: grid; grid-template-columns: auto minmax(180px, 280px); align-items: center; gap: 8px 12px; margin: 0 0 16px; }
 .trip-picker label { font-weight: 700; }
 .trip-picker select { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
-.water-ladder { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #183b43; border-radius: 12px; background: #fff; }
-.water-ladder summary { min-height: 44px; display: flex; align-items: center; font: 18px Georgia, serif; cursor: pointer; }
+#trip-comparisons { display: grid; gap: 8px; margin: 0 0 16px; padding: 0 12px 12px; border: 1px solid #183b43; border-radius: 8px; background: #f3ecd9; }
+#trip-comparisons > summary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 45px; font: 16px system-ui, sans-serif; cursor: pointer; }
+#trip-comparisons > summary:focus-visible, #trip-comparisons > details > summary:focus-visible { outline: 3px solid #e56b54; outline-offset: 2px; }
+#trip-comparisons > details { min-width: 0; padding: 0 12px; border: 1px solid #183b43; border-radius: 8px; background: #fff; }
+#trip-comparisons > details > summary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 45px; font: 16px system-ui, sans-serif; cursor: pointer; }
 .water-ladder p { margin: 0 0 8px; }
 .water-ladder table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px system-ui, sans-serif; }
 .water-ladder th, .water-ladder td { padding: 6px 2px; text-align: left; vertical-align: middle; }
@@ -17,8 +20,6 @@ header { margin: 0 0 18px; }
 .water-ladder th:nth-child(3) { width: 23%; }
 .water-ladder th:nth-child(4) { width: 24%; }
 .water-ladder button { min-height: 44px; padding: 6px 8px; }
-#chamber-comparison { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #183b43; border-radius: 12px; background: #fff; }
-#chamber-comparison summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }
 #chamber-comparison label { display: block; font-weight: 700; }
 #chamber-route { width: 100%; min-height: 44px; }
 #chamber-comparison p { margin: 8px 0; }
