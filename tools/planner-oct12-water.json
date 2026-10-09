@@ -1,0 +1,349 @@
+[
+  {
+    "trip": {
+      "id": "same-water-chamber",
+      "name": "Same water, finish inside",
+      "description": "Leave Lock 2 for Reach 3, visit Reach 1, then return to Lock 2. Shut every gate at each stop.",
+      "spec": {
+        "reaches": [
+          0,
+          2,
+          4
+        ],
+        "water": [
+          2,
+          2
+        ],
+        "start": 3,
+        "target": 3,
+        "stops": [
+          4,
+          0,
+          3
+        ],
+        "budget": 2,
+        "finishClosed": true,
+        "closeAtStops": true
+      }
+    },
+    "route": [
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      }
+    ],
+    "moves": 28,
+    "fills": 2
+  },
+  {
+    "trip": {
+      "id": "same-water-top",
+      "name": "Same water, finish above",
+      "description": "Take the same first two stops, then climb out to Reach 3. The final exit needs another fill. Shut every gate at each stop.",
+      "spec": {
+        "reaches": [
+          0,
+          2,
+          4
+        ],
+        "water": [
+          2,
+          2
+        ],
+        "start": 3,
+        "target": 4,
+        "stops": [
+          4,
+          0,
+          4
+        ],
+        "budget": 3,
+        "finishClosed": true,
+        "closeAtStops": true
+      }
+    },
+    "route": [
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      }
+    ],
+    "moves": 32,
+    "fills": 3
+  }
+]
