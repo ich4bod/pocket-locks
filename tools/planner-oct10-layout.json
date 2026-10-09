@@ -1,0 +1,137 @@
+{
+  "slug": "pocket-locks",
+  "controls": [
+    [
+      "trip",
+      "select"
+    ],
+    [
+      "chamber-route",
+      "select"
+    ],
+    [
+      "preview-lock",
+      "select"
+    ],
+    [
+      "two-order-lock",
+      "select"
+    ],
+    [
+      "two-order-first",
+      "select"
+    ],
+    [
+      "two-order-second",
+      "select"
+    ],
+    [
+      "two-order-third",
+      "select"
+    ],
+    [
+      "two-order-apply",
+      "button"
+    ],
+    [
+      "keep-canal",
+      "button"
+    ],
+    [
+      "return-canal",
+      "button"
+    ],
+    [
+      "forget-canal",
+      "button"
+    ],
+    [
+      "sail-forward",
+      "button"
+    ],
+    [
+      "sail-back",
+      "button"
+    ],
+    [
+      "undo",
+      "button"
+    ],
+    [
+      "undo-sail",
+      "button"
+    ],
+    [
+      "restart",
+      "button"
+    ],
+    [
+      "show-hint",
+      "button"
+    ]
+  ],
+  "copy": [
+    {
+      "selector": "#lock-preview-help",
+      "text": "Reading a row does nothing. Try sends that one order; Undo takes it back."
+    },
+    {
+      "selector": "#two-order-help",
+      "text": "Each order sees the previous order’s result. The whole sequence makes one Undo step. If any order is rejected, nothing is applied."
+    },
+    {
+      "selector": "#canal-return-help",
+      "text": "Return restores the whole arrangement on this trip. Undo brings back the experiment you left."
+    },
+    {
+      "selector": "#lock-jump-help",
+      "text": "Choose a lock to jump to its gates."
+    }
+  ],
+  "cases": [
+    {
+      "slug": "pocket-locks",
+      "lane": 7,
+      "mode": "comparisons",
+      "title": "Pocket Locks — Put the boat and gate controls before optional journey comparisons",
+      "depends": "nothing",
+      "goal": "Opening a trip shows its boat, water allowance and legal gate controls before a shelf of other journeys. Comparing starting water remains available without becoming the first thing to read.",
+      "steps": "Create closed details #trip-comparisons after section.controls and before #hint. Move these seven existing intact comparison drawers into it in their original order: chamber-comparison, prepared-comparison, secure-comparison, three-return-comparison, four-return-comparison, three-inspection-comparison, four-inspection-comparison. Move no trip label/select/name/description/mooring-rule/water-note: those stay before the canal. All inner drawer IDs, tables, buttons, row copy and selected family remain unchanged. Keep lock-preview, two-order-reader and canal-memory at their existing locations. Adjust scoped CSS formerly relying on .trip-picker ancestry so moved comparisons retain borders/spacing and phone wrapping. No app/engine changes or auto-opening a comparison.",
+      "groups": [
+        {
+          "id": "trip-comparisons",
+          "summary": "Compare starting water on other journeys",
+          "members": [
+            "#chamber-comparison",
+            "#prepared-comparison",
+            "#secure-comparison",
+            "#three-return-comparison",
+            "#four-return-comparison",
+            "#three-inspection-comparison",
+            "#four-inspection-comparison"
+          ]
+        }
+      ],
+      "outside": [
+        "#trip",
+        "#canal",
+        "#lock-controls",
+        "#sail-forward",
+        "#undo",
+        "#two-order-reader",
+        "#lock-preview"
+      ],
+      "orders": [
+        [
+          "section.controls",
+          "#trip-comparisons"
+        ],
+        [
+          "#trip",
+          "#canal"
+        ]
+      ],
+      "message": "the boat and legal gate controls precede optional comparisons without changing any journey"
+    }
+  ]
+}
