@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs?v=3';
-import { trips } from './trips.mjs?v=93';
+import { trips } from './trips.mjs?v=94';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -172,6 +172,10 @@ const chamberComparisonFamilies = {
   zigzag: {
     ids: ['moor-zigzag-low', 'moor-zigzag-high'],
     copy: 'Lock 2 → Reach 4 → Reach 2 → Reach 3 → Lock 2. Starting water changes the first exit. Shut every gate at each stop.',
+  },
+  'upper-door': {
+    ids: ['upper-door-low', 'upper-door-high'],
+    copy: 'Lock 2 → Reach 3 → Lock 1 → Lock 2. Starting high saves the first fill; shut every gate at each stop.',
   },
 };
 const comparisonIds = ['cold-return', 'prepared-return', 'lower-ready', 'upper-ready'];

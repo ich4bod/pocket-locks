@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
   <link rel="stylesheet" href="/style.css?v=24">
-  <script type="module" src="/app.mjs?v=124"></script>
+  <script type="module" src="/app.mjs?v=125"></script>
 </head>
 <body>
   <main class="page">
@@ -74,6 +74,10 @@
         <optgroup label="Moor and reverse">
           <option value="moor-zigzag-low">Zigzag from low water</option>
           <option value="moor-zigzag-high">Zigzag from high water</option>
+        </optgroup>
+        <optgroup label="Upper door">
+          <option value="upper-door-low">Upper door low</option>
+          <option value="upper-door-high">Upper door high</option>
         </optgroup>
         <optgroup label="Close up the canal">
           <option value="secure-first-hill">Leave the first lock shut</option>
@@ -147,6 +151,7 @@
           <option value="four-third">Lock 3, bottom, summit, home</option>
           <option value="four-last">Lock 4, middle reach, bottom, home</option>
           <option value="zigzag">Lock 2: three reversals</option>
+          <option value="upper-door">Lock 2: the upper door</option>
         </select>
         <p id="chamber-route-copy"></p>
         <p class="chamber-token-note">Fill tokens are puzzle allowances, not volumes of canal water.</p>
