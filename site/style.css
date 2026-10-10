@@ -19,7 +19,7 @@ header { margin: 0 0 18px; }
 .water-ladder th:nth-child(2) { width: 22%; }
 .water-ladder th:nth-child(3) { width: 23%; }
 .water-ladder th:nth-child(4) { width: 24%; }
-.water-ladder button { min-height: 44px; padding: 6px 8px; }
+.water-ladder button { min-height: 45px; padding: 6px 8px; }
 #chamber-comparison label { display: block; font-weight: 700; }
 #chamber-route { width: 100%; min-height: 44px; }
 #chamber-comparison p { margin: 8px 0; }
@@ -29,7 +29,7 @@ header { margin: 0 0 18px; }
 #chamber-comparison th:nth-child(2), #chamber-comparison td:nth-child(2) { width: 22%; }
 #chamber-comparison th:nth-child(3), #chamber-comparison td:nth-child(3) { width: 23%; }
 #chamber-comparison th:nth-child(4), #chamber-comparison td:nth-child(4) { width: 24%; }
-#chamber-comparison button { min-height: 44px; padding: 6px 8px; }
+#chamber-comparison button { min-height: 45px; padding: 6px 8px; }
 #trip-name { grid-column: 1 / -1; margin: 0; color: #183b43; font: 700 16px/1.5 system-ui, sans-serif; white-space: normal; overflow-wrap: anywhere; }
 #trip-description, #mooring-rule, #water-note { grid-column: 1 / -1; margin: 0; }
 #mooring-rule { margin: 8px 0; max-width: 760px; color: #183b43; font-size: 14px; line-height: 1.5; }
@@ -49,7 +49,7 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 #canal { display: block; width: 100%; height: auto; background: #d9dfc4; border: 2px solid #183b43; border-radius: 12px; }
 #lock-jumps { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
 #lock-preview { grid-column: 1 / -1; padding: 0 12px; border: 1px solid #203a32; border-radius: 12px; background: #f3ecd9; color: #203a32; }
-#lock-preview summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }
+#lock-preview summary { display: flex; align-items: center; min-height: 45px; font: 18px Georgia, serif; cursor: pointer; }
 #lock-preview label { display: block; font-weight: 700; }
 #preview-lock { width: 100%; min-height: 44px; }
 #lock-preview p { margin: 8px 0; }
@@ -58,22 +58,22 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 #lock-preview th:nth-child(1), #lock-preview td:nth-child(1) { width: 25%; }
 #lock-preview th:nth-child(2), #lock-preview td:nth-child(2) { width: 55%; }
 #lock-preview th:nth-child(3), #lock-preview td:nth-child(3) { width: 20%; }
-#lock-preview button { min-height: 44px; padding: 6px 4px; border-color: #203a32; background: #f3ecd9; color: #203a32; }
+#lock-preview button { min-height: 45px; padding: 6px 4px; border-color: #203a32; background: #f3ecd9; color: #203a32; }
 #lock-preview button:hover:not(:disabled) { background: #e8f2ef; }
 #lock-preview button:focus-visible { outline: 3px solid #e56b54; outline-offset: 2px; }
 #preview-lock:focus-visible { outline: 3px solid #e56b54; outline-offset: 3px; }
 #two-order-reader { margin: 12px 0; padding: 0 12px; border: 1px solid #203a32; border-radius: 12px; background: #f3ecd9; color: #203a32; }
-#two-order-reader summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }
+#two-order-reader summary { display: flex; align-items: center; min-height: 45px; font: 18px Georgia, serif; cursor: pointer; }
 #two-order-reader label { display: block; margin-top: 8px; font-weight: 700; }
 #two-order-reader select { width: 100%; min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
 #two-order-reader p { margin: 8px 0; overflow-wrap: anywhere; }
-#two-order-reader button { min-height: 44px; }
+#two-order-reader button { min-height: 45px; }
 #two-order-reader button[hidden], #two-order-reader p[hidden] { display: none; }
 #canal-memory { margin: 12px 0; padding: 0 12px; border: 1px solid #203a32; border-radius: 12px; background: #f3ecd9; color: #203a32; }
 #canal-memory[hidden] { display: none; }
-#canal-memory summary { display: flex; align-items: center; min-height: 44px; font: 18px Georgia, serif; cursor: pointer; }
+#canal-memory summary { display: flex; align-items: center; min-height: 45px; font: 18px Georgia, serif; cursor: pointer; }
 #canal-memory .canal-memory-controls { display: flex; flex-wrap: wrap; gap: 8px; }
-#canal-memory button { min-height: 44px; }
+#canal-memory button { min-height: 45px; }
 #canal-memory p { margin: 8px 0; overflow-wrap: anywhere; }
 #canal-memory table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px/1.5 system-ui, sans-serif; }
 #canal-memory table[hidden] { display: none; }
@@ -100,7 +100,7 @@ h1 { margin: 0; font: bold 36px/1.15 Georgia, serif; }
 #journey-stage { flex-basis: 100%; margin: 0; color: #183b43; font-size: 16px; font-weight: 700; }
 #hint { min-height: 48px; margin: 12px 0; padding: 12px; background: #f3ecd9; color: #183b43; font-size: 16px; }
 .sailing, .history { display: flex; flex-wrap: wrap; gap: 10px; }
-button { min-height: 44px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; cursor: pointer; }
+button { min-height: 45px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; cursor: pointer; }
 button:hover:not(:disabled) { background: #e8f2ef; }
 .lock-buttons button[aria-pressed="true"], .lock-buttons button[aria-pressed="true"]:hover { background: #d9dfc4; color: #183b43; }
 button:focus-visible, a:focus-visible { outline: 3px solid #e56b54; outline-offset: 2px; }

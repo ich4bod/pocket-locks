@@ -169,4 +169,64 @@ export const trips = [
       "closeAtStops": true
     }
   },
+  {
+    "id": "uneven-ready-upper",
+    "name": "The upper chamber is ready",
+    "description": "Start below two uneven rises. The upper chamber is waiting at Reach 3; shut every gate at the end.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        3
+      ],
+      "water": [
+        0,
+        3
+      ],
+      "start": 0,
+      "target": 4,
+      "budget": 2,
+      "finishClosed": true
+    }
+  },
+  {
+    "id": "uneven-middle-water",
+    "name": "Both chambers at the middle level",
+    "description": "The same uneven canal begins with both chambers at Reach 2. You have two fills; shut every gate at the end.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        3
+      ],
+      "water": [
+        1,
+        1
+      ],
+      "start": 0,
+      "target": 4,
+      "budget": 2,
+      "finishClosed": true
+    }
+  },
+  {
+    "id": "uneven-downward",
+    "name": "Down the uneven canal",
+    "description": "Start at Reach 3 and bring the boat down both unequal drops. No fill is available; shut every gate at the end.",
+    "spec": {
+      "reaches": [
+        0,
+        1,
+        3
+      ],
+      "water": [
+        1,
+        3
+      ],
+      "start": 4,
+      "target": 0,
+      "budget": 0,
+      "finishClosed": true
+    }
+  },
 ];
