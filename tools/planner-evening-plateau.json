@@ -1,0 +1,479 @@
+[
+  {
+    "trip": {
+      "id": "plateau-two-stops",
+      "name": "Moor on the plateau, then climb",
+      "description": "Shut every gate at Reach 3 before continuing to Reach 4. The middle lock crosses level water.",
+      "spec": {
+        "reaches": [
+          0,
+          2,
+          2,
+          5
+        ],
+        "water": [
+          0,
+          2,
+          2
+        ],
+        "start": 0,
+        "target": 6,
+        "stops": [
+          4,
+          6
+        ],
+        "budget": 2,
+        "finishClosed": true,
+        "closeAtStops": true
+      }
+    },
+    "route": [
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      }
+    ],
+    "moves": 20,
+    "fills": 2
+  },
+  {
+    "trip": {
+      "id": "plateau-descent",
+      "name": "Two closed stops on the way down",
+      "description": "Start at Reach 4. Shut every gate at Reach 2, then continue to Reach 1 without spending a fill.",
+      "spec": {
+        "reaches": [
+          0,
+          2,
+          2,
+          5
+        ],
+        "water": [
+          2,
+          2,
+          5
+        ],
+        "start": 6,
+        "target": 0,
+        "stops": [
+          2,
+          0
+        ],
+        "budget": 0,
+        "finishClosed": true,
+        "closeAtStops": true
+      }
+    },
+    "route": [
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      }
+    ],
+    "moves": 20,
+    "fills": 0
+  },
+  {
+    "trip": {
+      "id": "plateau-circuit",
+      "name": "Letters out and back across the plateau",
+      "description": "Stop at Reach 3, Reach 4 and Reach 2 before returning home. Every stop needs every gate shut.",
+      "spec": {
+        "reaches": [
+          0,
+          2,
+          2,
+          5
+        ],
+        "water": [
+          0,
+          2,
+          2
+        ],
+        "start": 0,
+        "target": 0,
+        "stops": [
+          4,
+          6,
+          2,
+          0
+        ],
+        "budget": 2,
+        "finishClosed": true,
+        "closeAtStops": true
+      }
+    },
+    "route": [
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": 1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "high"
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 1,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 2,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "high"
+      },
+      {
+        "type": "water",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      },
+      {
+        "type": "sail",
+        "direction": -1
+      },
+      {
+        "type": "gate",
+        "lock": 0,
+        "side": "low"
+      }
+    ],
+    "moves": 40,
+    "fills": 2
+  }
+]
