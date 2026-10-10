@@ -117,4 +117,56 @@ export const trips = [
   {"id":"moor-zigzag-high","name":"Zigzag from high water","description":"The same zigzag begins with Lock 2 at level 3. Compare the first departure, not a different canal.","spec":{"reaches":[0,1,3,4],"water":[1,3,4],"start":3,"target":3,"stops":[6,2,4,3],"budget":2,"finishClosed":true,"closeAtStops":true}},
   {"id":"upper-door-low","name":"Upper door low","description":"Leave Lock 2 for Reach 3, visit Lock 1, then moor inside Lock 2. The first departure needs a fill.","spec":{"reaches":[0,2,3],"water":[2,2],"start":3,"target":3,"budget":1,"stops":[4,1,3],"finishClosed":true,"closeAtStops":true}},
   {"id":"upper-door-high","name":"Upper door high","description":"Take the same three stops with Lock 2 already high. Shut every gate at each stop.","spec":{"reaches":[0,2,3],"water":[2,3],"start":3,"target":3,"budget":0,"stops":[4,1,3],"finishClosed":true,"closeAtStops":true}},
+  {
+    "id": "same-water-chamber",
+    "name": "Same water, finish inside",
+    "description": "Leave Lock 2 for Reach 3, visit Reach 1, then return to Lock 2. Shut every gate at each stop.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        4
+      ],
+      "water": [
+        2,
+        2
+      ],
+      "start": 3,
+      "target": 3,
+      "stops": [
+        4,
+        0,
+        3
+      ],
+      "budget": 2,
+      "finishClosed": true,
+      "closeAtStops": true
+    }
+  },
+  {
+    "id": "same-water-top",
+    "name": "Same water, finish above",
+    "description": "Take the same first two stops, then climb out to Reach 3. The final exit needs another fill. Shut every gate at each stop.",
+    "spec": {
+      "reaches": [
+        0,
+        2,
+        4
+      ],
+      "water": [
+        2,
+        2
+      ],
+      "start": 3,
+      "target": 4,
+      "stops": [
+        4,
+        0,
+        4
+      ],
+      "budget": 3,
+      "finishClosed": true,
+      "closeAtStops": true
+    }
+  },
 ];
