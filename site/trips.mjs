@@ -229,4 +229,22 @@ export const trips = [
       "finishClosed": true
     }
   },
+  {
+    id: 'level-lock-up',
+    name: 'A level lock before the rise',
+    description: 'Cross the first lock without changing its water. Climb the second lock, then shut every gate at Reach 3.',
+    spec: { reaches: [0, 0, 3], water: [0, 0], start: 0, target: 4, budget: 1, finishClosed: true },
+  },
+  {
+    id: 'level-lock-down',
+    name: 'Come down through the level lock',
+    description: 'Start above the rise. Drain the second lock, then cross the first at the same level. Shut every gate at Reach 1.',
+    spec: { reaches: [0, 0, 3], water: [0, 3], start: 4, target: 0, budget: 0, finishClosed: true },
+  },
+  {
+    id: 'level-lock-return',
+    name: 'Out and home through a level lock',
+    description: 'Visit Reach 3 and return to Reach 1. The first lock has two gates but no lift. Shut every gate at both stops.',
+    spec: { reaches: [0, 0, 3], water: [0, 0], start: 0, target: 0, stops: [4, 0], budget: 1, finishClosed: true, closeAtStops: true },
+  },
 ];

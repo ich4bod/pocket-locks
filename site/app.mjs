@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs?v=3';
-import { trips } from './trips.mjs?v=96';
+import { trips } from './trips.mjs?v=97';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -763,11 +763,11 @@ function renderCanal() {
   const targetCenter = (state.target + .5) * zoneWidth;
   const flagPoleX = Math.min(targetCenter + 45, 960);
   const waterY = 300 - unit * targetLevel;
-  const flagTop = waterY - 75;
+  const flagTop = Math.max(125, waterY - 75);
   const marker = add('g', { id: 'destination-marker', 'data-zone': state.target });
   add('line', { x1: flagPoleX, y1: flagTop, x2: flagPoleX, y2: waterY, stroke: '#183b43', 'stroke-width': 4 }, marker);
   add('path', { d: `M${flagPoleX} ${flagTop} h32 v22 Z`, fill: '#e56b54' }, marker);
-  add('text', { id: 'destination-label', x: flagPoleX, y: flagTop - 10, 'text-anchor': 'middle', 'font-size': 20, 'font-family': 'system-ui, sans-serif', fill: '#183b43' }, marker).textContent = state.stops && state.stopIndex < state.stops.length - 1 ? 'Stop' : 'Home';
+  add('text', { id: 'destination-label', x: flagPoleX, y: 105, 'text-anchor': 'middle', 'font-size': 20, 'font-family': 'system-ui, sans-serif', fill: '#183b43' }, marker).textContent = state.stops && state.stopIndex < state.stops.length - 1 ? 'Stop' : 'Home';
   const center = (state.boat + .5) * zoneWidth;
   const level = state.boat % 2 === 0 ? state.reaches[state.boat / 2] : state.chambers[(state.boat - 1) / 2].water;
   const base = 300 - unit * level;
