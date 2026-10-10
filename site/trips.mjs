@@ -265,4 +265,22 @@ export const trips = [
     description: 'Stop at Reach 3, Reach 4 and Reach 2 before returning home. Every stop needs every gate shut.',
     spec: { reaches: [0, 2, 2, 5], water: [0, 2, 2], start: 0, target: 0, stops: [4, 6, 2, 0], budget: 2, finishClosed: true, closeAtStops: true },
   },
+  {
+    id: 'summit-return',
+    name: 'Across the summit and home',
+    description: 'Go to Reach 3, then return home. Descending first does not remove the rise on the return.',
+    spec: { reaches: [0, 3, 1], water: [0, 3], start: 0, target: 0, stops: [4, 0], budget: 2, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'summit-west',
+    name: 'Letters from the low far bank',
+    description: 'Start at Reach 3. Moor at Reach 2 before returning to Reach 1; reaching the summit spends one fill.',
+    spec: { reaches: [0, 3, 1], water: [3, 1], start: 4, target: 0, stops: [2, 0], budget: 1, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'summit-revisit',
+    name: 'A reply before the far bank',
+    description: 'Visit Reach 2, return home, then continue to Reach 3. Every stop needs every gate shut.',
+    spec: { reaches: [0, 3, 1], water: [0, 3], start: 0, target: 4, stops: [2, 0, 4], budget: 2, finishClosed: true, closeAtStops: true },
+  },
 ];
