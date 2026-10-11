@@ -31,6 +31,14 @@ header { margin: 0 0 18px; }
 #chamber-comparison th:nth-child(3), #chamber-comparison td:nth-child(3) { width: 23%; }
 #chamber-comparison th:nth-child(4), #chamber-comparison td:nth-child(4) { width: 24%; }
 #chamber-comparison button { min-height: 45px; padding: 6px 8px; }
+#three-questions-pocket-locks { max-width: 100%; overflow-wrap: anywhere; margin: 16px 0; padding: 12px; border: 1px solid #e56b54; border-radius: 8px; font: 16px/1.5 system-ui, sans-serif; }
+#three-questions-pocket-locks > summary, #three-questions-pocket-locks details > summary { box-sizing: border-box; min-height: 45px; max-width: 100%; padding: 8px; overflow-wrap: anywhere; }
+#three-questions-pocket-locks > summary:focus-visible, #three-questions-pocket-locks details > summary:focus-visible { outline: 3px solid #e56b54; outline-offset: 3px; }
+#three-questions-pocket-locks p { margin: 8px 0; max-width: 100%; overflow-wrap: anywhere; }
+#three-questions-pocket-locks > section { max-width: 100%; margin: 16px 0; overflow-wrap: anywhere; }
+#three-questions-pocket-locks h3 { margin: 8px 0; font: bold 18px/1.35 system-ui, sans-serif; }
+#three-questions-pocket-locks section details { max-width: 100%; padding: 8px; border: 1px solid #d9dfc4; border-radius: 6px; overflow-wrap: anywhere; }
+#three-questions-pocket-locks details > summary { cursor: pointer; }
 #trip-name { grid-column: 1 / -1; margin: 0; color: #183b43; font: 700 16px/1.5 system-ui, sans-serif; white-space: normal; overflow-wrap: anywhere; }
 #trip-description, #mooring-rule, #water-note { grid-column: 1 / -1; margin: 0; }
 #mooring-rule { margin: 8px 0; max-width: 760px; color: #183b43; font-size: 14px; line-height: 1.5; }
