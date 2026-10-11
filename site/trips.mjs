@@ -436,4 +436,22 @@ export const trips = [
     description: 'Moor in the summit reach before continuing to the far bank. Close every gate at both stops. The downhill chamber starts full. Only one upward water change is allowed.',
     spec: { reaches: [0, 2, 0], water: [0, 2], start: 0, target: 4, stops: [2, 4], budget: 1, finishClosed: true, closeAtStops: true },
   },
+  {
+    id: 'three-lock-cold',
+    name: 'Three locks from low water',
+    description: 'Stop with every gate shut at the first high reach, then at the far bank, then bring the boat home. All three chambers start at their lower physical levels. 4 upward water changes are allowed.',
+    spec: { reaches: [0, 2, 0, 2], water: [0, 0, 0], start: 0, target: 0, stops: [2, 6, 0], budget: 4, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'three-lock-ready',
+    name: 'Three locks with the descent ready',
+    description: 'Stop with every gate shut at the first high reach, then at the far bank, then bring the boat home. The middle chamber starts high; the two rising chambers start low. 3 upward water changes are allowed.',
+    spec: { reaches: [0, 2, 0, 2], water: [0, 2, 0], start: 0, target: 0, stops: [2, 6, 0], budget: 3, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'three-lock-full',
+    name: 'Three locks from full water',
+    description: 'Stop with every gate shut at the first high reach, then at the far bank, then bring the boat home. All chambers start high; the first must be lowered before entry. 3 upward water changes are allowed.',
+    spec: { reaches: [0, 2, 0, 2], water: [2, 2, 2], start: 0, target: 0, stops: [2, 6, 0], budget: 3, finishClosed: true, closeAtStops: true },
+  },
 ];
