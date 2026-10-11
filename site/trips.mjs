@@ -418,4 +418,22 @@ export const trips = [
       closeAtStops: true,
     },
   },
+  {
+    id: 'moor-cold',
+    name: 'Two moorings from cold chambers',
+    description: 'Moor in the summit reach before continuing to the far bank. Close every gate at both stops. Both chambers start low. Two upward water changes are allowed.',
+    spec: { reaches: [0, 2, 0], water: [0, 0], start: 0, target: 4, stops: [2, 4], budget: 2, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'moor-ready',
+    name: 'Two moorings from full chambers',
+    description: 'Moor in the summit reach before continuing to the far bank. Close every gate at both stops. Both chambers start full, but the first must be lowered before entry. One upward water change is allowed.',
+    spec: { reaches: [0, 2, 0], water: [2, 2], start: 0, target: 4, stops: [2, 4], budget: 1, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'moor-mixed',
+    name: 'Two moorings from a mixed start',
+    description: 'Moor in the summit reach before continuing to the far bank. Close every gate at both stops. The downhill chamber starts full. Only one upward water change is allowed.',
+    spec: { reaches: [0, 2, 0], water: [0, 2], start: 0, target: 4, stops: [2, 4], budget: 1, finishClosed: true, closeAtStops: true },
+  },
 ];
