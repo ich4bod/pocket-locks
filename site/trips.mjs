@@ -283,4 +283,49 @@ export const trips = [
     description: 'Visit Reach 2, return home, then continue to Reach 3. Every stop needs every gate shut.',
     spec: { reaches: [0, 3, 1], water: [0, 3], start: 0, target: 4, stops: [2, 0, 4], budget: 2, finishClosed: true, closeAtStops: true },
   },
+  {
+    id: 'staircase-letter',
+    name: 'Letters up three chambers',
+    description: 'Moor at each reach on the way uphill. Close every gate before continuing.',
+    spec: {
+      reaches: [0, 1, 2, 3],
+      water: [0, 1, 2],
+      start: 0,
+      target: 6,
+      stops: [2, 4, 6],
+      budget: 3,
+      finishClosed: true,
+      closeAtStops: true
+    }
+  },
+  {
+    id: 'staircase-down',
+    name: 'The downhill reply',
+    description: 'Return from the high end with no fill tokens. Shut every gate at the low moorings.',
+    spec: {
+      reaches: [0, 1, 2, 3],
+      water: [1, 2, 3],
+      start: 6,
+      target: 0,
+      stops: [4, 2, 0],
+      budget: 0,
+      finishClosed: true,
+      closeAtStops: true
+    }
+  },
+  {
+    id: 'staircase-circuit',
+    name: 'Three rises and the homeward descent',
+    description: 'Reach the high end, then return home. Descending does not give fill tokens back.',
+    spec: {
+      reaches: [0, 1, 2, 3],
+      water: [0, 1, 2],
+      start: 0,
+      target: 0,
+      stops: [6, 0],
+      budget: 3,
+      finishClosed: true,
+      closeAtStops: true
+    }
+  },
 ];
