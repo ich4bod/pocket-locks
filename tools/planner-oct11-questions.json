@@ -23,7 +23,7 @@
     }
   ],
   "facts": "Existing trips cold-return budget4,prepared-return budget2; steep-middle reaches0/1/4 budget2. valley-out finishClosed, valley-round closeAtStops. Inspect actualtrips before code; no new solver or trip here.",
-  "palette": "#f1efd7/#253b3b/#dce7b7/#e9755c",
+  "palette": "#f3ecd9/#183b43/#d9dfc4/#e56b54",
   "files": [
     "site/index.html",
     "site/style.css"
