@@ -328,4 +328,49 @@ export const trips = [
       closeAtStops: true
     }
   },
+  {
+    id: 'valley-out',
+    name: 'Down through the valley',
+    description: 'Descend, then rise to the far bank. Shut every gate at the valley mooring.',
+    spec: {
+      reaches: [3, 0, 3],
+      water: [3, 0],
+      start: 0,
+      target: 4,
+      stops: [2, 4],
+      budget: 1,
+      finishClosed: true,
+      closeAtStops: true,
+    },
+  },
+  {
+    id: 'valley-home',
+    name: 'The reply across the valley',
+    description: 'Cross from the far bank to home. Each low valley mooring needs shut gates.',
+    spec: {
+      reaches: [3, 0, 3],
+      water: [0, 3],
+      start: 4,
+      target: 0,
+      stops: [2, 0],
+      budget: 1,
+      finishClosed: true,
+      closeAtStops: true,
+    },
+  },
+  {
+    id: 'valley-round',
+    name: 'Across the valley and back',
+    description: 'Carry a reply home through the chamber water left by the outward crossing.',
+    spec: {
+      reaches: [3, 0, 3],
+      water: [3, 0],
+      start: 0,
+      target: 0,
+      stops: [4, 0],
+      budget: 2,
+      finishClosed: true,
+      closeAtStops: true,
+    },
+  },
 ];
