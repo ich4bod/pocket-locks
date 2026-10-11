@@ -1,0 +1,35 @@
+{
+  "slug": "pocket-locks",
+  "lane": 7,
+  "title": "Pocket Locks \u2014 Ask why the downhill reply can still spend water",
+  "id": "three-questions-pocket-locks",
+  "summary": "Try three questions about the water you leave",
+  "lead": "These questions concern the puzzle\u2019s fill tokens, not a real canal\u2019s water volume. A gate name refers to a side of a chamber; that side need not always be physically lower.",
+  "questions": [
+    {
+      "title": "Can the downhill boat need a fill?",
+      "prompt": "Compare Unprepared return with Ready for descent. Both start at Reach 3, visit Reach 1 and return. Look at the chambers before the first sail.",
+      "answer": "Yes. A boat above a low chamber cannot enter until that chamber is brought to the boat\u2019s level. The unprepared down-and-back route needs four fills; preparing both chambers in advance reduces it to two. Descending is not a promise that all the necessary water is already waiting."
+    },
+    {
+      "title": "Does a taller lift spend more tokens?",
+      "prompt": "Compare the two rises in The tall middle hill. One rises by one level and the other by three. Keep your eye on fills, not just on the silhouette.",
+      "answer": "Each upward change spends one token in this puzzle. Its height does not multiply that price. The toy counts fill operations, not the volume of water or the energy of a real lock."
+    },
+    {
+      "title": "Is arrival enough to finish?",
+      "prompt": "Try Down through the valley. When the boat reaches its destination, leave the last gate open for a moment and read the mooring instruction.",
+      "answer": "Not on this journey. Every gate must be shut at the finish. On Across the valley and back, gates must also be shut at the far-bank stop before the return begins. Sailing to a place and making a safe mooring are separate parts of the trip."
+    }
+  ],
+  "facts": "Existing trips cold-return budget4,prepared-return budget2; steep-middle reaches0/1/4 budget2. valley-out finishClosed, valley-round closeAtStops. Inspect actualtrips before code; no new solver or trip here.",
+  "palette": "#f1efd7/#253b3b/#dce7b7/#e9755c",
+  "files": [
+    "site/index.html",
+    "site/style.css"
+  ],
+  "root": "main",
+  "anchor": "footer",
+  "url": "https://pocket-locks.ichabod-crane.net/",
+  "message": "three authored pocket-locks questions stay optional and leave the live experiment alone"
+}

@@ -1,0 +1,501 @@
+{
+  "slug": "pocket-locks",
+  "mode": "ridgewater",
+  "lane": 7,
+  "title": "Pocket Locks — Cross level water before a summit and close both journeys",
+  "rows": [
+    {
+      "trip": {
+        "id": "flat-summit-out",
+        "name": "Level water before the summit",
+        "description": "Cross the level first chamber, climb the summit, then descend to the far bank. Close every gate to moor.",
+        "spec": {
+          "reaches": [
+            1,
+            1,
+            4,
+            1
+          ],
+          "water": [
+            1,
+            1,
+            1
+          ],
+          "start": 0,
+          "target": 6,
+          "stops": [
+            6
+          ],
+          "budget": 2,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        }
+      ],
+      "moves": 21,
+      "fills": 2
+    },
+    {
+      "trip": {
+        "id": "flat-summit-home",
+        "name": "The summit from the far bank",
+        "description": "Start at the far bank. The summit needs preparing before the boat can enter from this side. Close every gate to moor.",
+        "spec": {
+          "reaches": [
+            1,
+            1,
+            4,
+            1
+          ],
+          "water": [
+            1,
+            1,
+            1
+          ],
+          "start": 6,
+          "target": 0,
+          "stops": [
+            0
+          ],
+          "budget": 2,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        }
+      ],
+      "moves": 21,
+      "fills": 2
+    },
+    {
+      "trip": {
+        "id": "flat-summit-round",
+        "name": "Across the summit and back through level water",
+        "description": "Moor at the far bank before returning home. The level chamber spends no fill token; three fills carry the whole round trip.",
+        "spec": {
+          "reaches": [
+            1,
+            1,
+            4,
+            1
+          ],
+          "water": [
+            1,
+            1,
+            1
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            6,
+            0
+          ],
+          "budget": 3,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        }
+      ],
+      "moves": 41,
+      "fills": 3
+    }
+  ],
+  "group": "Level water and summit",
+  "help": "",
+  "helpID": "",
+  "depends": "nothing",
+  "message": "ridgewater studies preserve their supplied values and independent memory"
+}
