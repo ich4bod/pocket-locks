@@ -1,0 +1,507 @@
+{
+  "mode": "ridgewater",
+  "lane": 7,
+  "depends": "nothing",
+  "title": "Pocket Locks — Climb three chambers and bring the downhill reply",
+  "message": "three staircase journeys close every mooring and spend tokens only on rises",
+  "group": "Three chamber staircase",
+  "rows": [
+    {
+      "trip": {
+        "id": "staircase-letter",
+        "name": "Letters up three chambers",
+        "description": "Moor at each reach on the way uphill. Close every gate before continuing.",
+        "spec": {
+          "reaches": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "water": [
+            0,
+            1,
+            2
+          ],
+          "start": 0,
+          "target": 6,
+          "stops": [
+            2,
+            4,
+            6
+          ],
+          "budget": 3,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        }
+      ],
+      "moves": 21,
+      "fills": 3
+    },
+    {
+      "trip": {
+        "id": "staircase-down",
+        "name": "The downhill reply",
+        "description": "Return from the high end with no fill tokens. Shut every gate at the low moorings.",
+        "spec": {
+          "reaches": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "water": [
+            1,
+            2,
+            3
+          ],
+          "start": 6,
+          "target": 0,
+          "stops": [
+            4,
+            2,
+            0
+          ],
+          "budget": 0,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        }
+      ],
+      "moves": 21,
+      "fills": 0
+    },
+    {
+      "trip": {
+        "id": "staircase-circuit",
+        "name": "Three rises and the homeward descent",
+        "description": "Reach the high end, then return home. Descending does not give fill tokens back.",
+        "spec": {
+          "reaches": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "water": [
+            0,
+            1,
+            2
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            6,
+            0
+          ],
+          "budget": 3,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        }
+      ],
+      "moves": 42,
+      "fills": 3
+    }
+  ]
+}
