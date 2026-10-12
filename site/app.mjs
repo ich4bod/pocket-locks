@@ -87,6 +87,15 @@ export function nextHint(state) {
   return `Try Lock ${lock + 1}: ${gate}.`;
 }
 const $ = id => document.getElementById(id);
+const selectedChoiceNotes = {
+  'descent-turn-low': 'About the selected journey: Three fills are allowed. The downhill first chamber is initially too low for entry from the high start, so its entrance needs preparation before the descent.',
+  'descent-turn-ready': 'About the selected journey: Two fills are allowed. The first chamber already matches the high starting reach, saving one upward preparation compared with the low-water start.',
+  'descent-turn-full': 'About the selected journey: Two fills are allowed. The full second chamber must be lowered before entry from the middle reach; that lowering costs a move but not a fill.',
+};
+function updateSelectedChoiceNote() {
+  $('choice-note-pocket-locks').textContent = selectedChoiceNotes[$('trip').value]
+    ?? 'Other choices keep their existing descriptions.';
+}
 const lockControls = $('lock-controls');
 const lockJumps = $('lock-jumps');
 const previewLockSelect = $('preview-lock');
@@ -443,6 +452,7 @@ function order(action) {
   render();
 }
 function render() {
+  updateSelectedChoiceNote();
   const itinerary = $('journey-itinerary');
   itinerary.hidden = !state.stops;
   const stopList = itinerary.querySelector('ol');

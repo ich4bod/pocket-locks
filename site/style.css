@@ -41,6 +41,7 @@ header { margin: 0 0 18px; }
 #three-questions-pocket-locks details > summary { cursor: pointer; }
 #trip-name { grid-column: 1 / -1; margin: 0; color: #183b43; font: 700 16px/1.5 system-ui, sans-serif; white-space: normal; overflow-wrap: anywhere; }
 #trip-description, #mooring-rule, #water-note { grid-column: 1 / -1; margin: 0; }
+#choice-note-pocket-locks { grid-column: 1 / -1; margin: 8px 0; min-width: 0; max-width: 100%; color: #183b43; font: 16px/1.5 system-ui, sans-serif; overflow-wrap: anywhere; }
 #mooring-rule { margin: 8px 0; max-width: 760px; color: #183b43; font-size: 14px; line-height: 1.5; }
 #mooring-state { margin: 8px 0; color: #183b43; font-size: 16px; line-height: 1.5; }
 #journey-itinerary { margin: 0 0 12px; color: #183b43; font-size: 14px; }
