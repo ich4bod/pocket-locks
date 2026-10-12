@@ -454,4 +454,22 @@ export const trips = [
     description: 'Stop with every gate shut at the first high reach, then at the far bank, then bring the boat home. All chambers start high; the first must be lowered before entry. 3 upward water changes are allowed.',
     spec: { reaches: [0, 2, 0, 2], water: [2, 2, 2], start: 0, target: 0, stops: [2, 6, 0], budget: 3, finishClosed: true, closeAtStops: true },
   },
+  {
+    id: 'descent-turn-low',
+    name: 'Descend from low chambers',
+    description: 'Descend to the middle reach, moor there with every gate shut, visit the far bank, and return to the high start. Both chambers start low. 3 upward water changes are allowed.',
+    spec: { reaches: [2, 0, 1], water: [0, 0], start: 0, target: 0, stops: [2, 4, 0], budget: 3, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'descent-turn-ready',
+    name: 'The downhill entrance is ready',
+    description: 'Descend to the middle reach, moor there with every gate shut, visit the far bank, and return to the high start. The first chamber starts at the high entrance; the second starts low. 2 upward water changes are allowed.',
+    spec: { reaches: [2, 0, 1], water: [2, 0], start: 0, target: 0, stops: [2, 4, 0], budget: 2, finishClosed: true, closeAtStops: true },
+  },
+  {
+    id: 'descent-turn-full',
+    name: 'Both chambers start full',
+    description: 'Descend to the middle reach, moor there with every gate shut, visit the far bank, and return to the high start. Both chambers start at their higher physical levels; the second must first be lowered for entry. 2 upward water changes are allowed.',
+    spec: { reaches: [2, 0, 1], water: [2, 1], start: 0, target: 0, stops: [2, 4, 0], budget: 2, finishClosed: true, closeAtStops: true },
+  },
 ];
