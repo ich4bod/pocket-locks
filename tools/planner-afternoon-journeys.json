@@ -1,0 +1,722 @@
+{
+  "slug": "pocket-locks",
+  "mode": "ridgewater",
+  "lane": 7,
+  "group": "Up down up and home",
+  "helpID": "",
+  "help": "",
+  "message": "three up-down-up preparations inherit their water through closed stops and home",
+  "rows": [
+    {
+      "trip": {
+        "id": "updown-low",
+        "name": "Every chamber starts low",
+        "description": "Visit Reach 4 across a rise, a descent and another rise. Shut every gate there, then return to Reach 1 with every gate shut. Every chamber starts at its lower physical level. 4 upward water changes are allowed.",
+        "spec": {
+          "reaches": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "water": [
+            0,
+            1,
+            1
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            6,
+            0
+          ],
+          "budget": 4,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        }
+      ],
+      "moves": 43,
+      "fills": 4,
+      "note": "Every chamber starts at its lower physical level. The complete journey visits Reach 4 and returns to Reach 1, with shut gates at both stops. The allowance is 4 fills; height does not multiply the token price."
+    },
+    {
+      "trip": {
+        "id": "updown-entry",
+        "name": "The descending entrance is ready",
+        "description": "Visit Reach 4 across a rise, a descent and another rise. Shut every gate there, then return to Reach 1 with every gate shut. The middle chamber is ready for entry from Reach 2; the others start low. 3 upward water changes are allowed.",
+        "spec": {
+          "reaches": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "water": [
+            0,
+            2,
+            1
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            6,
+            0
+          ],
+          "budget": 3,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        }
+      ],
+      "moves": 42,
+      "fills": 3,
+      "note": "The middle chamber is ready for entry from Reach 2; the others start low. The complete journey visits Reach 4 and returns to Reach 1, with shut gates at both stops. The allowance is 3 fills; height does not multiply the token price."
+    },
+    {
+      "trip": {
+        "id": "updown-full",
+        "name": "Every chamber starts full",
+        "description": "Visit Reach 4 across a rise, a descent and another rise. Shut every gate there, then return to Reach 1 with every gate shut. Every chamber starts at its higher physical level. 3 upward water changes are allowed.",
+        "spec": {
+          "reaches": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "water": [
+            2,
+            2,
+            3
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            6,
+            0
+          ],
+          "budget": 3,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 2,
+          "side": "low"
+        }
+      ],
+      "moves": 44,
+      "fills": 3,
+      "note": "Every chamber starts at its higher physical level. The complete journey visits Reach 4 and returns to Reach 1, with shut gates at both stops. The allowance is 3 fills; height does not multiply the token price."
+    }
+  ]
+}
