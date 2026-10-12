@@ -1,0 +1,516 @@
+{
+  "slug": "pocket-locks",
+  "mode": "ridgewater",
+  "lane": 7,
+  "title": "Pocket Locks — Descend before the outward climb and high return",
+  "group": "Down first, then home",
+  "helpID": "",
+  "help": "",
+  "rows": [
+    {
+      "trip": {
+        "id": "descent-turn-low",
+        "name": "Descend from low chambers",
+        "description": "Descend to the middle reach, moor there with every gate shut, visit the far bank, and return to the high start. Both chambers start low. 3 upward water changes are allowed.",
+        "spec": {
+          "reaches": [
+            2,
+            0,
+            1
+          ],
+          "water": [
+            0,
+            0
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            2,
+            4,
+            0
+          ],
+          "budget": 3,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        }
+      ],
+      "moves": 29,
+      "fills": 3
+    },
+    {
+      "trip": {
+        "id": "descent-turn-ready",
+        "name": "The downhill entrance is ready",
+        "description": "Descend to the middle reach, moor there with every gate shut, visit the far bank, and return to the high start. The first chamber starts at the high entrance; the second starts low. 2 upward water changes are allowed.",
+        "spec": {
+          "reaches": [
+            2,
+            0,
+            1
+          ],
+          "water": [
+            2,
+            0
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            2,
+            4,
+            0
+          ],
+          "budget": 2,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        }
+      ],
+      "moves": 28,
+      "fills": 2
+    },
+    {
+      "trip": {
+        "id": "descent-turn-full",
+        "name": "Both chambers start full",
+        "description": "Descend to the middle reach, moor there with every gate shut, visit the far bank, and return to the high start. Both chambers start at their higher physical levels; the second must first be lowered for entry. 2 upward water changes are allowed.",
+        "spec": {
+          "reaches": [
+            2,
+            0,
+            1
+          ],
+          "water": [
+            2,
+            1
+          ],
+          "start": 0,
+          "target": 0,
+          "stops": [
+            2,
+            4,
+            0
+          ],
+          "budget": 2,
+          "finishClosed": true,
+          "closeAtStops": true
+        }
+      },
+      "route": [
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": 1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "high"
+        },
+        {
+          "type": "water",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "sail",
+          "direction": -1
+        },
+        {
+          "type": "gate",
+          "lock": 0,
+          "side": "low"
+        },
+        {
+          "type": "gate",
+          "lock": 1,
+          "side": "low"
+        }
+      ],
+      "moves": 29,
+      "fills": 2
+    }
+  ],
+  "depends": "nothing",
+  "message": "ridgewater experiments keep their distinct rules and exact supplied choices",
+  "facts": "The first lock descends2→0, second rises0→1. Side names low/high are left/right gates in engine, not necessarily physical low/high. Water increases cost one fill regardless of lift. Supplied three routes must moor closed at middle, far bank and high home. Exact witnesses and move/fill counts are computed through unchanged engine before posting."
+}
