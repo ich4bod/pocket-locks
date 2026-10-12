@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs?v=3';
-import { trips } from './trips.mjs?v=105';
+import { trips } from './trips.mjs?v=106';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -88,6 +88,9 @@ export function nextHint(state) {
 }
 const $ = id => document.getElementById(id);
 const selectedChoiceNotes = {
+  'updown-low': 'About the selected journey: Every chamber starts at its lower physical level. The complete journey visits Reach 4 and returns to Reach 1, with shut gates at both stops. The allowance is 4 fills; height does not multiply the token price.',
+  'updown-entry': 'About the selected journey: The middle chamber is ready for entry from Reach 2; the others start low. The complete journey visits Reach 4 and returns to Reach 1, with shut gates at both stops. The allowance is 3 fills; height does not multiply the token price.',
+  'updown-full': 'About the selected journey: Every chamber starts at its higher physical level. The complete journey visits Reach 4 and returns to Reach 1, with shut gates at both stops. The allowance is 3 fills; height does not multiply the token price.',
   'descent-turn-low': 'About the selected journey: Three fills are allowed. The downhill first chamber is initially too low for entry from the high start, so its entrance needs preparation before the descent.',
   'descent-turn-ready': 'About the selected journey: Two fills are allowed. The first chamber already matches the high starting reach, saving one upward preparation compared with the low-water start.',
   'descent-turn-full': 'About the selected journey: Two fills are allowed. The full second chamber must be lowered before entry from the middle reach; that lowering costs a move but not a fill.',
