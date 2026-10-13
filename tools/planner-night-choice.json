@@ -516,7 +516,7 @@
   "picker": "trip",
   "noteID": "choice-note-pocket-locks",
   "noteLead": "About the selected journey: ",
-  "noteFallback": "Other choices keep their existing descriptions.",
+  "noteFallback": "",
   "notes": [
     "Three fills are allowed. The downhill first chamber is initially too low for entry from the high start, so its entrance needs preparation before the descent.",
     "Two fills are allowed. The first chamber already matches the high starting reach, saving one upward preparation compared with the low-water start.",
