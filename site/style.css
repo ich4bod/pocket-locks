@@ -5,7 +5,12 @@ body { margin: 0; background: #f3ecd9; font-size: 16px; }
 header { margin: 0 0 18px; }
 .trip-picker { display: grid; grid-template-columns: auto minmax(180px, 280px); align-items: center; gap: 8px 12px; margin: 0 0 16px; }
 .trip-picker label { font-weight: 700; }
-.trip-picker select { min-height: 45px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
+.trip-picker select, #canal-trip-choice select { min-height: 45px; padding: 8px 12px; border: 2px solid #183b43; border-radius: 7px; background: #fff; color: #183b43; font: inherit; }
+#canal-trip-choice { margin: 0 0 16px; }
+#canal-trip-choice > summary { box-sizing: border-box; min-height: 45px; max-width: 100%; padding: 8px; overflow-wrap: anywhere; cursor: pointer; }
+#canal-trip-choice > summary:focus-visible { outline: 3px solid #e56b54; outline-offset: 3px; }
+#canal-trip-choice label { display: block; font-weight: 700; }
+#canal-trip-choice select { width: 100%; }
 #trip:focus-visible { outline: 3px solid #e56b54; outline-offset: 3px; }
 #trip-comparisons { display: grid; gap: 8px; margin: 0 0 16px; padding: 0 12px 12px; border: 1px solid #183b43; border-radius: 8px; background: #f3ecd9; }
 #trip-comparisons > summary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 45px; font: 16px system-ui, sans-serif; cursor: pointer; }

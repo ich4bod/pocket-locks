@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
-  <link rel="stylesheet" href="/style.css?v=29">
+  <link rel="stylesheet" href="/style.css?v=30">
   <script type="module" src="/app.mjs?v=139"></script>
 </head>
 <body>
@@ -15,6 +15,46 @@
       <p class="deck">Carry a little boat uphill. Match the water before you open a gate.</p>
     </header>
     <section class="trip-picker" aria-label="Choose a canal trip">
+      <p id="trip-name" aria-live="polite">First hill</p>
+      <p id="trip-description">Lift the boat into the upper reach.</p>
+      <p id="choice-note-pocket-locks"></p>
+      <p id="mooring-rule" hidden>Moor only after every gate is shut. Closing a gate costs a move, not a fill.</p>
+      <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
+    </section>
+    <section id="journey-itinerary" hidden>
+      <h2 class="itinerary-heading">Stops in order</h2>
+      <p id="intermediate-mooring-note" hidden>At this stop, shut every gate before the return leg begins.</p>
+      <ol></ol>
+    </section>
+    <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
+    <p id="lock-jump-help">Choose a lock to jump to its gates.</p>
+    <nav id="lock-jumps" aria-label="Jump to a lock"></nav>
+    <section class="controls">
+      <p id="water-budget" hidden></p>
+      <div class="journey-controls">
+        <p id="journey-stage" hidden></p>
+        <div class="status-panel" aria-live="polite">
+          <p id="status">Boat in reach 1.</p>
+          <p id="moves-state">Moves: 0</p>
+          <p id="mooring-state" hidden></p>
+        </div>
+        <div class="sailing">
+          <button id="sail-forward" class="sail">Sail forward</button>
+          <button id="sail-back">Sail back</button>
+        </div>
+        <div class="history">
+          <button id="undo" disabled>Undo</button>
+          <button id="undo-sail" type="button" disabled>Undo the last sail</button>
+          <button id="restart">Restart</button>
+          <button id="show-hint" aria-pressed="false">Show a hint</button>
+        </div>
+      </div>
+      <div id="lock-controls" class="lock-controls"></div>
+    </section>
+    <p id="hint" hidden></p>
+    <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
+    <details id="canal-trip-choice">
+      <summary>Choose a different canal trip</summary>
       <label for="trip">Trip</label>
       <select id="trip">
         <optgroup label="Learn the gates">
@@ -190,44 +230,7 @@
           <option value="valley-chamber-mixed">Middle chamber, mixed water</option>
         </optgroup>
       </select>
-      <p id="trip-name" aria-live="polite">First hill</p>
-      <p id="trip-description">Lift the boat into the upper reach.</p>
-      <p id="choice-note-pocket-locks"></p>
-      <p id="mooring-rule" hidden>Moor only after every gate is shut. Closing a gate costs a move, not a fill.</p>
-      <p id="water-note" hidden>Water tokens are a puzzle rule, not a measure of real canal water.</p>
-    </section>
-    <section id="journey-itinerary" hidden>
-      <h2 class="itinerary-heading">Stops in order</h2>
-      <p id="intermediate-mooring-note" hidden>At this stop, shut every gate before the return leg begins.</p>
-      <ol></ol>
-    </section>
-    <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
-    <p id="lock-jump-help">Choose a lock to jump to its gates.</p>
-    <nav id="lock-jumps" aria-label="Jump to a lock"></nav>
-    <section class="controls">
-      <p id="water-budget" hidden></p>
-      <div class="journey-controls">
-        <p id="journey-stage" hidden></p>
-        <div class="status-panel" aria-live="polite">
-          <p id="status">Boat in reach 1.</p>
-          <p id="moves-state">Moves: 0</p>
-          <p id="mooring-state" hidden></p>
-        </div>
-        <div class="sailing">
-          <button id="sail-forward" class="sail">Sail forward</button>
-          <button id="sail-back">Sail back</button>
-        </div>
-        <div class="history">
-          <button id="undo" disabled>Undo</button>
-          <button id="undo-sail" type="button" disabled>Undo the last sail</button>
-          <button id="restart">Restart</button>
-          <button id="show-hint" aria-pressed="false">Show a hint</button>
-        </div>
-      </div>
-      <div id="lock-controls" class="lock-controls"></div>
-    </section>
-    <p id="hint" hidden></p>
-    <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
+    </details>
     <details id="lock-preview">
       <summary>Before changing a lock</summary>
       <label for="preview-lock">Lock to inspect</label>
