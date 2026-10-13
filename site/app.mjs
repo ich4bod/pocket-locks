@@ -1,5 +1,5 @@
 import { create, act } from './engine.mjs?v=3';
-import { trips } from './trips.mjs?v=106';
+import { trips } from './trips.mjs?v=107';
 
 let selectedTrip = trips[0];
 let state = create(selectedTrip.spec);
@@ -94,6 +94,9 @@ const selectedChoiceNotes = {
   'descent-turn-low': 'About the selected journey: Three fills are allowed. The downhill first chamber is initially too low for entry from the high start, so its entrance needs preparation before the descent.',
   'descent-turn-ready': 'About the selected journey: Two fills are allowed. The first chamber already matches the high starting reach, saving one upward preparation compared with the low-water start.',
   'descent-turn-full': 'About the selected journey: Two fills are allowed. The full second chamber must be lowered before entry from the middle reach; that lowering costs a move but not a fill.',
+  'valley-chamber-low': 'About the selected journey: The boat starts inside Lock 2 with every chamber matched to its first-side reach. The first requested exit is toward Reach 1; all gates shut at each stop.',
+  'valley-chamber-high': 'About the selected journey: The same chamber start and ordered reaches now have every chamber matched to its second-side reach. The starting water changes preparation, not the destinations.',
+  'valley-chamber-mixed': 'About the selected journey: Lock 2 starts matched to its second side while the outer chambers begin at three and four. The return inherits whatever water your outward decisions leave.',
 };
 function updateSelectedChoiceNote() {
   $('choice-note-pocket-locks').textContent = selectedChoiceNotes[$('trip').value]

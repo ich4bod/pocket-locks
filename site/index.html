@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f3ecd9">
   <title>Pocket Locks</title>
   <link rel="stylesheet" href="/style.css?v=29">
-  <script type="module" src="/app.mjs?v=138"></script>
+  <script type="module" src="/app.mjs?v=139"></script>
 </head>
 <body>
   <main class="page">
@@ -183,6 +183,11 @@
           <option value="updown-low">Every chamber starts low</option>
           <option value="updown-entry">The descending entrance is ready</option>
           <option value="updown-full">Every chamber starts full</option>
+        </optgroup>
+        <optgroup label="A chamber between two slopes">
+          <option value="valley-chamber-low">Middle chamber, first-side water</option>
+          <option value="valley-chamber-high">Middle chamber, second-side water</option>
+          <option value="valley-chamber-mixed">Middle chamber, mixed water</option>
         </optgroup>
       </select>
       <p id="trip-name" aria-live="polite">First hill</p>

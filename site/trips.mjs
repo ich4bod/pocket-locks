@@ -490,4 +490,22 @@ export const trips = [
     description: 'Visit Reach 4 across a rise, a descent and another rise. Shut every gate there, then return to Reach 1 with every gate shut. Every chamber starts at its higher physical level. 3 upward water changes are allowed.',
     spec: { reaches: [0, 2, 1, 3], water: [2, 2, 3], start: 0, target: 0, stops: [6, 0], budget: 3, finishClosed: true, closeAtStops: true },
   },
+  {
+    id: 'valley-chamber-low',
+    name: 'Middle chamber, first-side water',
+    description: 'Start in Lock 2. Visit Reach 1, then Reach 4, return to Lock 2, and shut every gate at each stop.',
+    spec: { reaches: [3, 1, 4, 2], water: [3, 1, 4], start: 3, target: 3, stops: [0, 6, 3], closeAtStops: true, finishClosed: true, budget: 3 },
+  },
+  {
+    id: 'valley-chamber-high',
+    name: 'Middle chamber, second-side water',
+    description: 'Start in Lock 2. Visit Reach 1, then Reach 4, return to Lock 2, and shut every gate at each stop.',
+    spec: { reaches: [3, 1, 4, 2], water: [1, 4, 2], start: 3, target: 3, stops: [0, 6, 3], closeAtStops: true, finishClosed: true, budget: 4 },
+  },
+  {
+    id: 'valley-chamber-mixed',
+    name: 'Middle chamber, mixed water',
+    description: 'Start in Lock 2. Visit Reach 1, then Reach 4, return to Lock 2, and shut every gate at each stop.',
+    spec: { reaches: [3, 1, 4, 2], water: [3, 4, 4], start: 3, target: 3, stops: [0, 6, 3], closeAtStops: true, finishClosed: true, budget: 3 },
+  },
 ];
