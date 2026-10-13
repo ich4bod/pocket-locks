@@ -197,7 +197,32 @@
       <ol></ol>
     </section>
     <svg id="canal" role="img" aria-label="A little boat moving between canal water levels" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet"></svg>
+    <p id="lock-jump-help">Choose a lock to jump to its gates.</p>
     <nav id="lock-jumps" aria-label="Jump to a lock"></nav>
+    <section class="controls">
+      <p id="water-budget" hidden></p>
+      <div class="journey-controls">
+        <p id="journey-stage" hidden></p>
+        <div class="status-panel" aria-live="polite">
+          <p id="status">Boat in reach 1.</p>
+          <p id="moves-state">Moves: 0</p>
+          <p id="mooring-state" hidden></p>
+        </div>
+        <div class="sailing">
+          <button id="sail-forward" class="sail">Sail forward</button>
+          <button id="sail-back">Sail back</button>
+        </div>
+        <div class="history">
+          <button id="undo" disabled>Undo</button>
+          <button id="undo-sail" type="button" disabled>Undo the last sail</button>
+          <button id="restart">Restart</button>
+          <button id="show-hint" aria-pressed="false">Show a hint</button>
+        </div>
+      </div>
+      <div id="lock-controls" class="lock-controls"></div>
+    </section>
+    <p id="hint" hidden></p>
+    <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
     <details id="lock-preview">
       <summary>Before changing a lock</summary>
       <label for="preview-lock">Lock to inspect</label>
@@ -261,29 +286,6 @@
         <tbody></tbody>
       </table>
     </details>
-    <p id="lock-jump-help">Choose a lock to jump to its gates.</p>
-    <section class="controls">
-      <p id="water-budget" hidden></p>
-      <div class="journey-controls">
-        <p id="journey-stage" hidden></p>
-        <div class="status-panel" aria-live="polite">
-          <p id="status">Boat in reach 1.</p>
-          <p id="moves-state">Moves: 0</p>
-          <p id="mooring-state" hidden></p>
-        </div>
-        <div class="sailing">
-          <button id="sail-forward" class="sail">Sail forward</button>
-          <button id="sail-back">Sail back</button>
-        </div>
-        <div class="history">
-          <button id="undo" disabled>Undo</button>
-          <button id="undo-sail" type="button" disabled>Undo the last sail</button>
-          <button id="restart">Restart</button>
-          <button id="show-hint" aria-pressed="false">Show a hint</button>
-        </div>
-      </div>
-      <div id="lock-controls" class="lock-controls"></div>
-    </section>
     <details id="trip-comparisons">
       <summary>Compare starting water on other journeys</summary>
       <details id="chamber-comparison">
@@ -357,8 +359,6 @@
         </table>
       </details>
     </details>
-    <p id="hint" hidden></p>
-    <p class="instruction">Close both gates to change the water. Open a gate only when the water on both sides is level.</p>
     <details id="three-questions-pocket-locks">
       <summary>Questions about the water you leave</summary>
       <p>These questions concern the puzzle’s fill tokens, not a real canal’s water volume. A gate name refers to a side of a chamber; that side need not always be physically lower.</p>
