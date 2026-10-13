@@ -1,0 +1,725 @@
+{
+  "study": {
+    "mode": "ridgewater",
+    "group": "A chamber between two slopes",
+    "rows": [
+      {
+        "trip": {
+          "id": "valley-chamber-low",
+          "name": "Middle chamber, first-side water",
+          "description": "Start in Lock 2. Visit Reach 1, then Reach 4, return to Lock 2, and shut every gate at each stop.",
+          "spec": {
+            "reaches": [
+              3,
+              1,
+              4,
+              2
+            ],
+            "water": [
+              3,
+              1,
+              4
+            ],
+            "start": 3,
+            "target": 3,
+            "stops": [
+              0,
+              6,
+              3
+            ],
+            "closeAtStops": true,
+            "finishClosed": true,
+            "budget": 3
+          }
+        },
+        "route": [
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          }
+        ],
+        "moves": 42,
+        "fills": 3
+      },
+      {
+        "trip": {
+          "id": "valley-chamber-high",
+          "name": "Middle chamber, second-side water",
+          "description": "Start in Lock 2. Visit Reach 1, then Reach 4, return to Lock 2, and shut every gate at each stop.",
+          "spec": {
+            "reaches": [
+              3,
+              1,
+              4,
+              2
+            ],
+            "water": [
+              1,
+              4,
+              2
+            ],
+            "start": 3,
+            "target": 3,
+            "stops": [
+              0,
+              6,
+              3
+            ],
+            "closeAtStops": true,
+            "finishClosed": true,
+            "budget": 4
+          }
+        },
+        "route": [
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          }
+        ],
+        "moves": 43,
+        "fills": 4
+      },
+      {
+        "trip": {
+          "id": "valley-chamber-mixed",
+          "name": "Middle chamber, mixed water",
+          "description": "Start in Lock 2. Visit Reach 1, then Reach 4, return to Lock 2, and shut every gate at each stop.",
+          "spec": {
+            "reaches": [
+              3,
+              1,
+              4,
+              2
+            ],
+            "water": [
+              3,
+              4,
+              4
+            ],
+            "start": 3,
+            "target": 3,
+            "stops": [
+              0,
+              6,
+              3
+            ],
+            "closeAtStops": true,
+            "finishClosed": true,
+            "budget": 3
+          }
+        },
+        "route": [
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 0,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "water",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": 1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "high"
+          },
+          {
+            "type": "water",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "sail",
+            "direction": -1
+          },
+          {
+            "type": "gate",
+            "lock": 1,
+            "side": "high"
+          },
+          {
+            "type": "gate",
+            "lock": 2,
+            "side": "low"
+          }
+        ],
+        "moves": 43,
+        "fills": 3
+      }
+    ],
+    "notes": [
+      "The boat starts inside Lock 2 with every chamber matched to its first-side reach. The first requested exit is toward Reach 1; all gates shut at each stop.",
+      "The same chamber start and ordered reaches now have every chamber matched to its second-side reach. The starting water changes preparation, not the destinations.",
+      "Lock 2 starts matched to its second side while the outer chambers begin at three and four. The return inherits whatever water your outward decisions leave."
+    ],
+    "noteID": "choice-note-pocket-locks",
+    "noteLead": "About the selected journey: ",
+    "picker": "trip",
+    "facts": "Evenzone2k reachk+1; odd2k+1 lockk+1. first/second-side meansindexedupstream/downstream, NOTnumericallylower/higher ondescendingreaches. Watertokenscountonlyactualincrease; budgetfrom suppliedvalidwitness, notminimumclaim.",
+    "dep": 915,
+    "message": "ridgewater histories keep their authored relationship and independent memory"
+  }
+}
